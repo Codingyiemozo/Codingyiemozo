@@ -8,7 +8,7 @@
         <ul>
             <li><a href="${ pageContext.request.contextPath }/spot/spotList">여행지</a></li>
             <li><a href="${ pageContext.request.contextPath }/stay/stayList">숙박</a></li>
-            <li><a href="${ pageContext.request.contextPath }/food/foodList">맛집</a></li>
+            <li><a href="${ pageContext.request.contextPath }/rest/restList">맛집</a></li>
             <li><a href="${ pageContext.request.contextPath }/board/myPlanner">마이 플래너</a></li>
             <li><a href="${ pageContext.request.contextPath }/review/reviewList">여행 후기</a></li>
         </ul>
