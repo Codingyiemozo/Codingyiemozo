@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import "minyeong.css";
+
+/*
+img {
+	width: 300px;
+	height: 300px;
+	align: "right";
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}*/
+
+#top-banner {
+	width: 100%;
+	height: 30px;
+	background-color: gray;
+	display: block;
+	text-align: center;
+	line-height: 30px;
+}
+
+.btn {
+	background-color: transparent;
+	border: thin;
+	cursor: pointer;
+}
+
+.member-container{
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+#search-bar {	
+	text-align: center;
+	height:50px;
+	line-height: 50px;
+	margin: 10px;
+}
+
+table {
+	border: 1px solid gray;
+	margin-left: auto;
+	margin-right: auto;
+}
+
