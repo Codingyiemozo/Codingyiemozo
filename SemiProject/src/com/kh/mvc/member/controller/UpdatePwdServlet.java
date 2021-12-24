@@ -32,11 +32,11 @@ public class UpdatePwdServlet extends HttpServlet {
     	int result = 0;
     	HttpSession session = request.getSession(false); 
     	Member loginMember = session != null ? (Member) session.getAttribute("loginMember") : null;
-    	String userPwd = request.getParameter("userPwd");
+    	String newPwd = request.getParameter("newPwd");
     	
     	// 어떤 계정 pwd 변경할지 
     	if(loginMember != null) {
-    		result = service.updatePassword(loginMember.getNo(), userPwd);
+    		result = service.updatePassword(loginMember.getNo(), newPwd);
     		
     		// 변경 작업이 끝나면 pwd 변경 창을 닫음 (현재 열려있는 창을 닫음) 
     		if(result > 0) {

@@ -70,13 +70,14 @@
 	<div id="updatePassword-container">
 		<form action="${ pageContext.request.contextPath }/member/updatePwd" method="post">
         <table>
-        	  
+        	<!--   
             <tr>
                 <th>현재 비밀번호</th>
                 <td>
                     <input type="password" name="nowPwd" id="nowPwd">
                 </td>
             </tr>
+            --> 
             
 
             <tr>
