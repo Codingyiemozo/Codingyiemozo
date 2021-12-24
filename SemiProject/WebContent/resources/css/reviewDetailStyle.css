@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+/* 리뷰 메인페이지 */
+.btn-wrap {
+	width: 95%;
+}
+
+#btn-write {
+	float: right;
+}
+
 /* 리뷰 상세페이지 */
 .reviewTitle {
 	text-align: center;
@@ -37,6 +46,12 @@
 #reviewUploadDate {
 	font-size: 13px;
     float: right;
+    margin-right: 10%;
+}
+
+#reviewHits {
+	font-size: 13px;
+	float: right;
 }
 
 .reviewContents {

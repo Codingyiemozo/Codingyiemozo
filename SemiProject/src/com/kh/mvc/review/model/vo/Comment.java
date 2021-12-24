@@ -10,11 +10,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Comment {
+	private int rv_no;
+	
 	private int cm_no;
 	
-	private String cm_writer;
+	private String mem_nm;
 	
-	private Date cm_submitdate;
+	private int mem_no;
+	
+	private Date cm_date;
 	
 	private String cm_content;
 	

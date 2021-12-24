@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.kh.mvc.member.model.vo.Member;
 import com.kh.mvc.review.model.service.ReviewService;
 
 
@@ -21,7 +22,7 @@ public class ReviewWriteServlet extends HttpServlet {
     public ReviewWriteServlet() {
     }
     
-    /* 
+
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	HttpSession session = request.getSession(false); 
@@ -36,9 +37,8 @@ public class ReviewWriteServlet extends HttpServlet {
     	
     	request.getRequestDispatcher(viewName).forward(request, response);
 	}
-	*/
+
     
-    /*
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	int result = 0;
@@ -51,15 +51,15 @@ public class ReviewWriteServlet extends HttpServlet {
     	
     	// 문자에 대한 인코딩 설정
     	String encoding = "UTF-8";
-    	*/
-    
+    	    
     	/*
     	 * DefaultFileRenamePolicy
     	 *   - 업로드되는 파일에 대한 rename 처리에 사용된다.
     	 *   - 중복되는 이름 뒤에 0 ~ 9999 붙인다.
     	 */
     	
-    /*
+
+/*
     	MultipartRequest mr = new MultipartRequest(request, path, maxSize, encoding, new FileRename());
     	
     	// 폼 파라미터로 넘어온 값들(파일에 대한 정보 X)
@@ -99,8 +99,8 @@ public class ReviewWriteServlet extends HttpServlet {
     	}
     	
     	request.getRequestDispatcher("/views/common/msg.jsp").forward(request, response);
-	}
 */
+    }
 
 
 }

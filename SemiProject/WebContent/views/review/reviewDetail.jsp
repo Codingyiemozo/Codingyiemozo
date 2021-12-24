@@ -10,9 +10,10 @@
             <div class="reviewTitle">
                 <div id="reviewTitle">${ review.rv_title }</div>
                 <div class="reviewWriteInf">
-                    <div id="reviewGroup">${ review.rv_group }</div>
-                    <div id="userName">김이영</div>
+                    <div id="reviewGroup">${ review.rv_type }</div>
+                    <div id="userName">${ member.name }</div>
                     <div id="reviewUploadDate">${ review.rv_date }</div>
+                    <div id="reviewHits">${ review.rv_hits }</div>
                 </div>
             </div>
             <div class="reviewContents">
@@ -30,7 +31,7 @@
                 <button id="btn-commentdelete">삭제</button>
             </div>
             <div>
-                <button id="btn-list">목록</button>
+                <button id="btn-list"onclick = "location.href = '/views/review/reviewList.jsp' ">목록</button>
             </div>
         </div>
     </div>

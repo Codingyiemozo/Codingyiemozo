@@ -36,4 +36,24 @@ public class CommentService {
 		return comment;
 	}
 
+
+	public int saveComment(Comment comment) {
+		int result = 0;
+		Connection connection = getConnection();
+		
+		result = dao.insertComment(connection, comment);
+		
+		if(result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		
+		close(connection);
+		
+		return result;
+	}
+}
+
+
 }
