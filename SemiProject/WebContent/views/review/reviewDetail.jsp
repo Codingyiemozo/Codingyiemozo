@@ -25,9 +25,9 @@
                 <button id="btn-commentSubmit">등록</button>
             </div>
             <div class="comments">
-                <div id="commentWriter">댓글 작성자 ${ member.name }</div>
-                <div id="commentContent">우와 맛있을거 같아요! ${ comment.cm_content }</div>
-                <div id="commentSubmitDate">2021-12-22 ${ comment.cm_date }</div>
+                <div id="commentWriter">${ comment.mem_nm }</div>
+                <div id="commentContent">${ comment.cm_content }</div>
+                <div id="commentSubmitDate">${ comment.cm_date }</div>
                 <button id="btn-commentdelete">삭제</button>
             </div>
             <div>
