@@ -17,11 +17,14 @@ public class ReviewDao {
 		String query = 
 				"SELECT "
 				+ 	"RV_NO, "
+				+	"RV_TYPE "
 				+   "RV_TITLE, "
+				+   "RV_IMG_PATH, "
 				+   "RV_DATE, "
-				+   "RV_CONTENT, "
+				+   "RV_COMMENT, "
 				+   "RV_HITS, "
-				+	"RV_GROUP "
+				+   "MEM_NO, "
+				+   "RV_CONTENT, "
 				+ "FROM TB_REVIEW "
 				+ "WHERE RV_NO = ?";
 		
@@ -36,11 +39,14 @@ public class ReviewDao {
 				review = new Review();
 				
 				review.setRv_no(rs.getInt("RV_NO"));
+				review.setRv_type(rs.getString("RV_TYPE"));
 				review.setRv_title(rs.getString("RV_TITLE"));
+				review.setRv_img_path(rs.getString("RV_IMG_PATH"));
 				review.setRv_date(rs.getString("RV_DATE"));
-				review.setRv_content(rs.getString("RV_CONTENT"));
+				review.setRv_comment(rs.getString("RV_COMMENT"));
 				review.setRv_hits(rs.getInt("RV_HITS"));
-				review.setRv_group(rs.getString("RV_GROUP"));
+				review.setMem_no(rs.getInt("MEM_NO"));
+				review.setRv_content(rs.getString("RV_CONTENT"));
 			}			
 		} catch (SQLException e) {
 			e.printStackTrace();
