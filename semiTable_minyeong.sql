@@ -224,24 +224,29 @@ INSERT INTO TB_REST VALUES(SEQ_TB_REST_NO.NEXTVAL, '술집', '미드나잇 제�
 /* -----------------------------------------------------
     여행후기 테이블
 ----------------------------------------------------- */
-CREATE TABLE TB_REVIEW (	
-    RV_NO NUMBER(10) PRIMARY KEY,
+ALTER TABLE TB_MEM ADD CONSTRAINT MEMBER_NM_UQ UNIQUE (MEM_NM);
+ALTER TABLE TB_MEM ADD CONSTRAINT MEMBER_NO_UQ UNIQUE (NO);
+
+CREATE TABLE TB_REVIEW (   
+    RV_NO NUMBER PRIMARY KEY,
+    MEM_NM VARCHAR2(15) NOT NULL,
     RV_TYPE VARCHAR2(20),
     RV_TITLE VARCHAR2(100), 
     RV_IMG_PATH VARCHAR2(50),
     RV_DATE DATE,
-    RV_CONTENT CLOP,
-    RV_COMMENT VARCHAR2(500),
-    RV_HITS NUMBER,
-    MEM_NO NUMBER(30),
-    FOREIGN KEY (MEM_NO) REFERENCES TB_MEM (NO)
+    RV_CONTENT CLOB,
+    RV_COMMNET VARCHAR2(500),
+    RV_HITS VARCHAR2(20),
+    MEM_NO NUMBER,
+    FOREIGN KEY (MEM_NO) REFERENCES TB_MEM (NO),
+    FOREIGN KEY (MEM_NM) REFERENCES TB_MEM (MEM_NM)
 );
 
 CREATE SEQUENCE SEQ_TB_REVIEW_NO;
 
-INSERT INTO TB_REVIEW VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '신창 풍차해안도로 다녀왔어요!', '/resources/images/review/review', SYSDATE, '제주도 드라이브코스 하면 단연 먼저 생각나는 건 제주 신창 풍차 해안도로에요.', NULL, NULL, NULL);
-INSERT INTO TB_REVIEW VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '히든클리프 1박 후기', '/resources/images/review/review', SYSDATE, '룸컨디션도 깔끔하고 직원도 친절해서 좋았는데 무엇보다 가장 큰 장점은 수영장이었던 거 같아요.', NULL, NULL, NULL);
-INSERT INTO TB_REVIEW VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '명진전복에서 전복돌솥밥 먹었어요!', '/resources/images/review/review', SYSDATE, '수요미식회에 소개되었던 전복돌솥밥이 맛있는 명진전복에 다녀왔습니다.', NULL, NULL, NULL);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NM) VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '신창 풍차해안도로 다녀왔어요!', '/resources/images/review/review', SYSDATE, '제주도 드라이브코스 하면 단연 먼저 생각나는 건 제주 신창 풍차 해안도로에요.', '관리자');
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NM) VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '히든클리프 1박 후기', '/resources/images/review/review', SYSDATE, '룸컨디션도 깔끔하고 직원도 친절해서 좋았는데 무엇보다 가장 큰 장점은 수영장이었던 거 같아요.', '관리자');
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NM) VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '명진전복에서 전복돌솥밥 먹었어요!', '/resources/images/review/review', SYSDATE, '수요미식회에 소개되었던 전복돌솥밥이 맛있는 명진전복에 다녀왔습니다.', '관리자');
 
 
 
