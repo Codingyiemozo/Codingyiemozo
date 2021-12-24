@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <jsp:include page="/views/common/header.jsp" />
 
@@ -8,18 +9,14 @@
         <ul>
             <li><a href="${ pageContext.request.contextPath }/spot/spotList">여행지</a></li>
             <li><a href="${ pageContext.request.contextPath }/stay/stayList">숙박</a></li>
-            <li><a href="${ pageContext.request.contextPath }/food/foodList">맛집</a></li>
+            <li><a href="${ pageContext.request.contextPath }/rest/restList">맛집</a></li>
             <li><a href="${ pageContext.request.contextPath }/board/myPlanner">마이 플래너</a></li>
             <li><a href="${ pageContext.request.contextPath }/review/reviewList">여행 후기</a></li>
         </ul>
     </div>
     
     <div class="contents">
-        <div class="search">
-            <input type="text" placeholder="떠나고 싶은 여행지를 입력해주세요.">
-            <button type="submit" title="검색"></button>
-        </div>
-        
+                
         <div class="select-map">
             <img src="${ pageContext.request.contextPath }/resources/images/map.png" alt="" class="img-map">
             <ul class="location-list">
@@ -48,7 +45,7 @@
         <div class="thumb-list spot">
             <h3>여행지</h3>
             <ul>
-		      	<c:forEach var="spot" items="${ spotList }" begin="0" end="7">
+		      	<c:forEach var="spot" items="${ spotList }" begin="0" end="4">
 			        <li>
 			          <a href="${ pageContext.request.contextPath }/spot/spotDetail">
 			            <div class="img-thumb">
@@ -71,7 +68,7 @@
 			            <div class="img-thumb">
 			              <img src="${ pageContext.request.contextPath }${ stay.imgPath }${ stay.no }.png" alt="">
 			            </div>
-			            <strong>${ stay.title }</strong>
+			            <strong>${ stay.name }</strong>
 			            <p>${ stay.content }</p>
 			          </a>
 			        </li>
@@ -88,7 +85,7 @@
 			            <div class="img-thumb">
 			              <img src="${ pageContext.request.contextPath }${ rest.imgPath }${ rest.no }.png" alt="">
 			            </div>
-			            <strong>${ rest.title }</strong>
+			            <strong>${ rest.name }</strong>
 			            <p>${ rest.content }</p>
 			          </a>
 			        </li>
