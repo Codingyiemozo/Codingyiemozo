@@ -4,6 +4,7 @@
 
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 <link rel="stylesheet" href="${ path }/resources/css/detailPage_KHJ.css">
+
 <jsp:include page="/views/common/header.jsp" />
 
 <div class="container">
@@ -32,8 +33,8 @@
 					....
 				</div>
 				<p>
-					블라블라 여행지 소개 블라블라 여행지 소개블라블라 여행지 소개블라블라 여행지 소개 블라블라 여행지 소개 
-					블라블라 여행지 소개블라블라 여행지 소개블라블라 여행지 소개					
+					블라블라 맛집 소개 블라블라 맛집 소개 블라블라 맛집 소개 블라블라 맛집 소개 블라블라 맛집 소개 
+					블라블라 맛집 소개 블라블라 맛집 소개 블라블라 맛집 소개 블라블라 맛집 소개 				
 				<p>
 				<dl>
 					<dt><strong>휴관일</strong></dt>

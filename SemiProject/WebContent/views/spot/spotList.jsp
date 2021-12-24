@@ -21,7 +21,7 @@
           </a>
         </li>
         <li>
-          <a href="${ pageContext.request.contextPath }/views/food/foodDetail.jsp">
+          <a href="#">
             <div class="img-thumb">
               <img src="${ pageContext.request.contextPath }/resources/images/spot/spot02.jpg" alt="">
             </div>
@@ -109,7 +109,7 @@
       <h3>숙박</h3>
       <ul>
         <li>
-          <a href="#">
+          <a href="${ pageContext.request.contextPath }/stay/stayDetail">
             <div class="img-thumb">
               <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
             </div>
@@ -206,7 +206,7 @@
       <h3>맛집</h3>
       <ul>
         <li>
-          <a href="#">
+          <a href="${ pageContext.request.contextPath }/food/foodDetail">
             <div class="img-thumb">
               <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
             </div>
