@@ -1,13 +1,11 @@
 package com.kh.mvc.review.model.service;
 
-import static com.kh.mvc.common.jdbc.JDBCTemplate.close;
-import static com.kh.mvc.common.jdbc.JDBCTemplate.getConnection;
+import static com.kh.mvc.common.jdbc.JDBCTemplate.*;
 
 import java.sql.Connection;
 
 import com.kh.mvc.review.model.dao.CommentDao;
 import com.kh.mvc.review.model.vo.Comment;
-import com.kh.mvc.review.model.vo.Review;
 
 public class CommentService {
 	
@@ -53,7 +51,7 @@ public class CommentService {
 		
 		return result;
 	}
-}
+
 
 
 }

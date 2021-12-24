@@ -1,4 +1,4 @@
-package com.kh.mvc.board.controller;
+package com.kh.mvc.review.controller;
 
 import java.io.IOException;
 
@@ -41,10 +41,10 @@ public class ReviewCommentServlet extends HttpServlet {
 			
 			if(result > 0) {
          		request.setAttribute("msg", "댓글 등록 성공!");
-         		request.setAttribute("location", "/board/view?no=" + boardNo);
+         		request.setAttribute("location", "/review/reviewDetail?no=" + rv_no);
 			} else {
 				request.setAttribute("msg", "댓글 등록 실패!");
-         		request.setAttribute("location", "/board/view?no=" + boardNo);
+         		request.setAttribute("location", "/review/reviewDetail?no=" + rv_no);
 			}
     	} else {
      		request.setAttribute("msg", "로그인 후 사용할 수 있습니다.");

@@ -40,7 +40,6 @@ public class CommentDao {
 				comment.setMem_no(rs.getInt("MEM_NO"));
 				comment.setCm_date(rs.getDate("CM_DATE"));
 				comment.setCm_content(rs.getString("CM_CONTENT"));
-				comment.setMem_nm(rs.getString("MEM_NM"));
 			}			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -52,17 +51,18 @@ public class CommentDao {
 		return comment;
 	}
 
-	public int insertComment(Connection connection, Comment c	omment) {
+	public int insertComment(Connection connection, Comment comment) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "INSERT INTO REPLY VALUES(SEQ_COMMENT_NO.NEXTVAL, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT)";
+		String query = "INSERT INTO TB_COMMENT(CM_NO, RV_NO, MEM_NO, CM_DATE, CM_CONTENT) "
+				+ "		VALUES(SEQ_COMMENT_NO.NEXTVAL,?, ?, SYSDATE, ?)";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setInt(1, reply.getCm_no());
-			pstmt.setInt(2, reply.getMem_no());
-			pstmt.setString(3, reply.getCm_content());
+			pstmt.setInt(1, comment.getCm_no());
+			pstmt.setInt(2, comment.getRv_no());
+			pstmt.setString(3, comment.getCm_content());
 			
 			result = pstmt.executeUpdate();	
 		} catch (SQLException e) {

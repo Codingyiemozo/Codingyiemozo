@@ -1,5 +1,7 @@
 package com.kh.mvc.review.model.vo;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +18,7 @@ public class Review {
 	
 	private String rv_img_path;
 	
-	private String rv_date;
+	private Date rv_date;
 	
 	private String rv_content;
 	

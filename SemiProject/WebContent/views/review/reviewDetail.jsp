@@ -11,7 +11,7 @@
                 <div id="reviewTitle">${ review.rv_title }</div>
                 <div class="reviewWriteInf">
                     <div id="reviewGroup">${ review.rv_type }</div>
-                    <div id="userName">${ member.name }</div>
+                    <div id="userName">작성자 mem.no로 조인 예정${ review.mem_no }</div>
                     <div id="reviewUploadDate">${ review.rv_date }</div>
                     <div id="reviewHits">${ review.rv_hits }</div>
                 </div>
@@ -25,9 +25,9 @@
                 <button id="btn-commentSubmit">등록</button>
             </div>
             <div class="comments">
-                <div id="commentWriter">김이영 ${ comment.cm_writer }</div>
+                <div id="commentWriter">댓글 작성자 ${ comment.com_no }</div>
                 <div id="commentContent">우와 맛있을거 같아요! ${ comment.cm_content }</div>
-                <div id="commentSubmitDate">2021-12-22 ${ comment.cm_submitdate }</div>
+                <div id="commentSubmitDate">2021-12-22 ${ comment.cm_date }</div>
                 <button id="btn-commentdelete">삭제</button>
             </div>
             <div>
