@@ -229,8 +229,8 @@ CREATE TABLE TB_REVIEW (
     RV_TYPE VARCHAR2(20),
     RV_TITLE VARCHAR2(100), 
     RV_IMG_PATH VARCHAR2(50),
-    RV_DATE VARCHAR2(100),
-    RV_CONTENT VARCHAR2(1000),
+    RV_DATE DATE,
+    RV_CONTENT CLOB,
     RV_COMMNET VARCHAR2(500),
     RV_HITS VARCHAR2(20),
     MEM_NO NUMBER(30),
@@ -239,9 +239,13 @@ CREATE TABLE TB_REVIEW (
 
 CREATE SEQUENCE SEQ_TB_REVIEW_NO;
 
+-- 여행지
 INSERT INTO TB_REVIEW VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '신창 풍차해안도로 다녀왔어요!', '/resources/images/review/review', SYSDATE, '제주도 드라이브코스 하면 단연 먼저 생각나는 건 제주 신창 풍차 해안도로에요.', NULL, NULL, NULL);
+-- 숙박
 INSERT INTO TB_REVIEW VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '히든클리프 1박 후기', '/resources/images/review/review', SYSDATE, '룸컨디션도 깔끔하고 직원도 친절해서 좋았는데 무엇보다 가장 큰 장점은 수영장이었던 거 같아요.', NULL, NULL, NULL);
+-- 맛집
 INSERT INTO TB_REVIEW VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '명진전복에서 전복돌솥밥 먹었어요!', '/resources/images/review/review', SYSDATE, '수요미식회에 소개되었던 전복돌솥밥이 맛있는 명진전복에 다녀왔습니다.', NULL, NULL, NULL);
+
 
 
 
