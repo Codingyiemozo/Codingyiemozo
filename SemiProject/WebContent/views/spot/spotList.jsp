@@ -4,310 +4,77 @@
     
 <jsp:include page="/views/common/header.jsp" />
 
-
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
 <div class="container">
   <div class="contents">
-    <h2 class="page-tit">성산읍</h2>
+    <h2 class="page-tit">여행지</h2>
     <div class="thumb-list">
-      <h3>여행지</h3>
+      <h3 class="type-tit">관광명소</h3>
+      
+      
+      <!-- 유일님 일단 여기에 test하긴 했는데 map에서 타고 들어오는 페이지는 하나 더 만들어야할 거 같네요..! -->
       <ul>
-        <li>
-          <a href="${ pageContext.request.contextPath }/spot/spotDetail">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot02.jpg" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기 닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot03.jpg" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기 닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot02.jpg" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot03.jpg" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
+      	<c:forEach var="spot" items="${ spotList }" begin="0" end="7"> <!-- localList1 << 이거 변경해서 test 했음 -->
+	        <li>
+	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ spot.no }">
+	            <div class="img-thumb">
+	              <img src="${ pageContext.request.contextPath }${ spot.imgPath }${ spot.no }.png" alt="">
+	            </div>
+	            <strong>${ spot.title }</strong>
+	            <p>${ spot.content }</p>
+	          </a>
+	        </li>
+        </c:forEach>
       </ul>
-      <button type="button" class="btn-more">더보기</button>
+      <!-- 유일님 일단 여기에 test하긴 했는데 map에서 타고 들어오는 페이지는 하나 더 만들어야할 거 같네요..! -->
+      
+      
+      <%-- <c:if test="${ spot.spotList > 10 }">
+      	<button type="button" class="btn-more">더보기</button>
+      </c:if> --%>
     </div>
 
     <div class="thumb-list">
-      <h3>숙박</h3>
+      <h3>체험</h3>
       <ul>
-        <li>
-          <a href="${ pageContext.request.contextPath }/stay/stayDetail">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot02.jpg" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기 닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot03.jpg" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot02.jpg" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기 닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot03.jpg" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
+      	<c:forEach var="experience" items="${ experienceList }" begin="0" end="7">
+	        <li>
+	          <a href="#">
+	            <div class="img-thumb">
+	              <img src="${ pageContext.request.contextPath }${ experience.imgPath }${ experience.no }.png" alt="">
+	            </div>
+	            <strong>${ experience.title }</strong>
+	            <p>${ experience.content }</p>
+	          </a>
+	        </li>
+        </c:forEach>
       </ul>
-      <button type="button" class="btn-more">더보기</button>
+      <c:if test="${ experience.experienceList > 9 }">
+      	<button type="button" class="btn-more">더보기</button>
+      </c:if>
     </div>
 
     <div class="thumb-list">
-      <h3>맛집</h3>
+      <h3>쇼핑</h3>
       <ul>
-        <li>
-          <a href="${ pageContext.request.contextPath }/food/foodDetail">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기 닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
+        <c:forEach var="shopping" items="${ shoppingList }" begin="0" end="7">
+	        <li>
+	          <a href="#">
+	            <div class="img-thumb">
+	              <img src="${ pageContext.request.contextPath }${ shopping.imgPath }${ shopping.no }.png" alt="">
+	            </div>
+	            <strong>${ shopping.title }</strong>
+	            <p>${ shopping.content }</p>
+	          </a>
+	        </li>
+        </c:forEach>
       </ul>
-      <button type="button" class="btn-more">더보기</button>
-    </div>
-
-    <div class="thumb-list">
-      <h3>여행 후기</h3>
-      <ul>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기 닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="img-thumb">
-              <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-            </div>
-            <strong>닭머르 해안에서 일몰 즐기기</strong>
-            <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-          </a>
-        </li>
-      </ul>
-      <button type="button" class="btn-more">더보기</button>
+      <c:if test="${ shopping.list > 9 }">
+      	<button type="button" class="btn-more">더보기</button>
+      </c:if>
     </div>
 
   </div>
 </div>
-
 
 <jsp:include page="/views/common/footer.jsp" />

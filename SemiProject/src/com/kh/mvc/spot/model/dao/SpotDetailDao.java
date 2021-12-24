@@ -49,7 +49,8 @@ public class SpotDetailDao {
 				detailVo.setImgPath(rs.getString("SP_IMG_PATH"));
 				detailVo.setAddr(rs.getString("SP_ADDR"));
 				detailVo.setPhone(rs.getString("SP_PHONE"));
-				detailVo.setPrice(rs.getString("SP_OFFDAY"));				
+				detailVo.setPrice(rs.getString("SP_PRICE"));
+				detailVo.setOffday(rs.getString("SP_OFFDAY"));
 				detailVo.setContent(rs.getString("SP_CONTENT"));
 				detailVo.setXlat(rs.getString("SP_LAT"));
 				detailVo.setYlong(rs.getString("SP_LONG"));
