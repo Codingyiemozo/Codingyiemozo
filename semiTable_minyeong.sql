@@ -6,7 +6,7 @@
 
 CREATE TABLE TB_REVIEW_2 (	
     RV_NO NUMBER(10) PRIMARY KEY,
-    RV_NAME VARCHAR2(15),
+    RV_NAME VARCHAR2(15) NOT NULL,
     RV_TYPE VARCHAR2(20),
     RV_TITLE VARCHAR2(100), 
     RV_IMG_PATH VARCHAR2(50),
@@ -15,10 +15,18 @@ CREATE TABLE TB_REVIEW_2 (
     RV_COMMNET VARCHAR2(500),
     RV_HITS VARCHAR2(20),
     MEM_NO NUMBER(30),
+    FOREIGN KEY (MEM_NO) REFERENCES TB_MEM (NO),
     FOREIGN KEY (RV_NAME) REFERENCES TB_MEM (MEM_NM)
 );
 
+
+--ALTER TABLE TB_REVIEW_2 
+--ADD FOREIGN KEY (RV_NAME) REFERENCES TB_MEM(PHONE);
+
+DROP TABLE TB_REVIEW_2;
+
 -- FOREIGN KEY (MEM_NO) REFERENCES TB_MEM (NO)
+-- FOREIGN KEY (RV_NAME) REFERENCES TB_MEM (PHONE)
 
 ------------------------------------------------
 --------------- TB_MEM 관련 테이블 ---------------
@@ -36,6 +44,8 @@ CREATE TABLE TB_MEM (
     STATUS VARCHAR2(1) DEFAULT 'Y' CHECK(STATUS IN('Y', 'N')),
     ENROLL_DATE DATE DEFAULT SYSDATE
 );
+
+ALTER TABLE TB_MEM ADD CONSTRAINT MEMNER_NM_UQ UNIQUE (MEM_NM);
 
 COMMENT ON COLUMN TB_MEM.NO IS '회원번호';
 COMMENT ON COLUMN TB_MEM.MEM_ID IS '회원아이디';
@@ -238,6 +248,10 @@ INSERT INTO TB_REST VALUES(SEQ_TB_REST_NO.NEXTVAL, '카페', '카페 노티드 �
 INSERT INTO TB_REST VALUES(SEQ_TB_REST_NO.NEXTVAL, '술집', '미드나잇 제주', '감바스파스타', '/resources/images/rest/rest', '제주 서귀포시 안덕면 신화역사로304번길 98 F002호', '0507-1319-2204', '27,000', '둘째주, 넷째주 수요일', '고객님들께 더 좋은 서비스를 제공하기 위하여 항상 노력하겠습니다.', NULL, NULL, 14);
 
 
+
+
+
+
 /* -----------------------------------------------------
     여행후기 테이블
 ----------------------------------------------------- */
@@ -267,4 +281,12 @@ INSERT INTO TB_REVIEW VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '명진전복�
 
 
 
+
+
+
+
+
+
 COMMIT;
+
+
