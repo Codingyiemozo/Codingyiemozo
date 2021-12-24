@@ -59,7 +59,7 @@ public class MemberService {
 	public int delete(int no) {
 		int result = 0;
 		Connection connection = getConnection();
-		
+
 		result = dao.updateMemberStatus(connection, no, "N");
 		
 		if(result > 0) {

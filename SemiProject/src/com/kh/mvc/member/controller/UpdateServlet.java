@@ -27,7 +27,6 @@ public class UpdateServlet extends HttpServlet {
     	HttpSession session = request.getSession(false); 
     	Member loginMember = session != null ? (Member) session.getAttribute("loginMember") : null;
     	Member member = null;
-    	String hobby = null;
     	int result = 0;
     	
     	if(loginMember != null) {
@@ -39,8 +38,9 @@ public class UpdateServlet extends HttpServlet {
     		member.setId(request.getParameter("userId"));
     		member.setName(request.getParameter("userName"));
     		member.setPhone(request.getParameter("phone"));
-    		member.setAddress(request.getParameter("email"));
+    		member.setEmail(request.getParameter("email"));
     		member.setAddress(request.getParameter("address"));
+		
     		
     		// 3. 회원 정보 수정
     		result = service.save(member);

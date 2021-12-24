@@ -21,7 +21,6 @@ public class MyPageServlet extends HttpServlet {
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	// 로그인 되었을 때 마이페이지 접근 가능
-    	
     	HttpSession session = request.getSession(false); 
     	
     	Member loginMember = session != null ? (Member) session.getAttribute("loginMember") : null;

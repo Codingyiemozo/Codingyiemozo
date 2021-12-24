@@ -15,6 +15,7 @@ import com.kh.mvc.member.model.vo.Member;
 @WebServlet("/member/delete")
 public class DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	// 삭제하는 로직은 MemberService()에서 
 	private MemberService service = new MemberService();
        
     public DeleteServlet() {

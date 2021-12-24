@@ -73,7 +73,7 @@ public class MemberDao {
 	public int updateMember(Connection connection, Member member) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "UPDATE TB_MEM SET NAME=?,PHONE=?,EMAIL=?,ADDRESS=? WHERE NO=?";
+		String query = "UPDATE TB_MEM SET MEM_NM=?,PHONE=?,EMAIL=?,ADDR=? WHERE NO=?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -98,14 +98,15 @@ public class MemberDao {
 	public int updateMemberStatus(Connection connection, int no, String status) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query= "UPDATE MEMBER SET STATUS=? WHERE NO=?";
+		String query= "UPDATE TB_MEM SET STATUS=? WHERE NO=?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setString(1, query);
+			pstmt.setString(1, status);
 			pstmt.setInt(2, no);
 			
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -119,7 +120,7 @@ public class MemberDao {
 	public int updateMemberPassword(Connection connection, int no, String password) {
 		int result = 0;
 		PreparedStatement pstmt = null; 
-		String query = "UPDATE MEMBER SET PASSWORD=? WHERE NO=?";
+		String query = "UPDATE TB_MEM SET PASSWORD=? WHERE NO=?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
