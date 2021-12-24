@@ -55,6 +55,42 @@ public class MemberService {
 		return member;
 	}
 	
+	// 회원탈퇴 관련 
+	public int delete(int no) {
+		int result = 0;
+		Connection connection = getConnection();
+		
+		result = dao.updateMemberStatus(connection, no, "N");
+		
+		if(result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		
+		close(connection);
+		
+		return result;
+	}
+	
+	// 비밀번호 변경 관련 
+	public int updatePassword(int no, String password) {
+		int result = 0;
+		Connection connection = getConnection();
+		
+		result = dao.updateMemberPassword(connection, no, password);
+		
+		if(result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		
+		close(connection);
+		
+		return result;
+	}
+	
 	
 	
 	

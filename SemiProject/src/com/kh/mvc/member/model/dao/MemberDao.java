@@ -94,6 +94,49 @@ public class MemberDao {
 		return result;
 	}
 	
+	// db 회원 status 관련
+	public int updateMemberStatus(Connection connection, int no, String status) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query= "UPDATE MEMBER SET STATUS=? WHERE NO=?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, query);
+			pstmt.setInt(2, no);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	// 비밀번호 변경  
+	public int updateMemberPassword(Connection connection, int no, String password) {
+		int result = 0;
+		PreparedStatement pstmt = null; 
+		String query = "UPDATE MEMBER SET PASSWORD=? WHERE NO=?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, password);
+			pstmt.setInt(2, no);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
 	
 
 
