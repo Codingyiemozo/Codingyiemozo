@@ -13,7 +13,7 @@
       <ul>
       	<c:forEach var="spot" items="${ spotList }" begin="0" end="7">
 	        <li>
-	          <a href="${ pageContext.request.contextPath }/spot/spotDetail">
+	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ spot.no }">
 	            <div class="img-thumb">
 	              <img src="${ pageContext.request.contextPath }${ spot.imgPath }${ spot.no }.png" alt="">
 	            </div>

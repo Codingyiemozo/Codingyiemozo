@@ -1,6 +1,7 @@
 package com.kh.mvc.spot.model.service;
 
-import static com.kh.mvc.common.jdbc.JDBCTemplate.*;
+import static com.kh.mvc.common.jdbc.JDBCTemplate.close;
+import static com.kh.mvc.common.jdbc.JDBCTemplate.getConnection;
 
 import java.sql.Connection;
 import java.util.List;
@@ -44,4 +45,15 @@ public class BoardService {
 		return shoppingList;
 	}
 	
+	public BoardList findBoardByNo(int no) {
+		BoardList board = null; // board 객체
+		Connection connection = getConnection();
+		
+		//dao를 통해 데이터베이스에 접근
+		board = dao.findBoardByNo(connection, no);
+		
+		close(connection);
+		
+		return board;
+	}
 }
