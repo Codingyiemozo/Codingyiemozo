@@ -9,11 +9,11 @@
             <h2 class="page-tit">여행후기</h2>
             <div class="reviewTitle">
                 <div id="reviewTitle">${ review.rv_title }</div>
+                <div id="reviewHits">조회수 ${ review.rv_hits }</div>
                 <div class="reviewWriteInf">
                     <div id="reviewGroup">${ review.rv_type }</div>
-                    <div id="userName">작성자 mem.no로 조인 예정${ review.mem_no }</div>
+                    <div id="userName">작성자 ${ review.mem_nm }</div>
                     <div id="reviewUploadDate">${ review.rv_date }</div>
-                    <div id="reviewHits">${ review.rv_hits }</div>
                 </div>
             </div>
             <div class="reviewContents">
@@ -25,7 +25,7 @@
                 <button id="btn-commentSubmit">등록</button>
             </div>
             <div class="comments">
-                <div id="commentWriter">댓글 작성자 ${ comment.com_no }</div>
+                <div id="commentWriter">댓글 작성자 ${ member.name }</div>
                 <div id="commentContent">우와 맛있을거 같아요! ${ comment.cm_content }</div>
                 <div id="commentSubmitDate">2021-12-22 ${ comment.cm_date }</div>
                 <button id="btn-commentdelete">삭제</button>

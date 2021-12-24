@@ -28,6 +28,9 @@ public class Review {
 	
 	private int mem_no;
 	
+	private String mem_nm;
+
+	
 //	
 //	private String originalFileName;
 //	

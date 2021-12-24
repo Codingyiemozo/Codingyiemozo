@@ -24,8 +24,11 @@ public class ReviewDao {
 				+   "RV_CONTENT, "
 				+   "RV_COMMENT, "
 				+   "RV_HITS, "
+				+   "MEM_NM, "
 				+   "MEM_NO "
-				+ "FROM TB_REVIEW "
+				+ "FROM TB_REVIEW R "
+				+ "JOIN TB_MEM M "
+				+ "ON R.MEM_NO = M.NO "
 				+ "WHERE RV_NO = ?";
 		
 		try {
@@ -46,7 +49,9 @@ public class ReviewDao {
 				review.setRv_comment(rs.getString("RV_COMMENT"));
 				review.setRv_hits(rs.getInt("RV_HITS"));
 				review.setMem_no(rs.getInt("MEM_NO"));
+				review.setMem_nm(rs.getString("MEM_NM"));
 				review.setRv_content(rs.getString("RV_CONTENT"));
+				
 			}			
 		} catch (SQLException e) {
 			e.printStackTrace();
