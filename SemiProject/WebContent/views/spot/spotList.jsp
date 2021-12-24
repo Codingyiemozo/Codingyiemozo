@@ -12,7 +12,7 @@
       <h3>여행지</h3>
       <ul>
         <li>
-          <a href="#">
+          <a href="${ pageContext.request.contextPath }/spot/spotDetail">
             <div class="img-thumb">
               <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
             </div>
@@ -21,7 +21,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="${ pageContext.request.contextPath }/views/food/foodDetail.jsp">
             <div class="img-thumb">
               <img src="${ pageContext.request.contextPath }/resources/images/spot/spot02.jpg" alt="">
             </div>
