@@ -8,7 +8,7 @@
         <ul>
             <li><a href="${ pageContext.request.contextPath }/spot/spotList">여행지</a></li>
             <li><a href="${ pageContext.request.contextPath }/stay/stayList">숙박</a></li>
-            <li><a href="${ pageContext.request.contextPath }/food/foodList">맛집</a></li>
+            <li><a href="${ pageContext.request.contextPath }/rest/restList">맛집</a></li>
             <li><a href="${ pageContext.request.contextPath }/board/myPlanner">마이 플래너</a></li>
             <li><a href="${ pageContext.request.contextPath }/review/reviewList">여행 후기</a></li>
         </ul>
@@ -33,10 +33,16 @@
             <li><a href="#">조천읍</a></li>
             <li><a href="#">구좌읍</a></li>
             <li><a href="#">우도</a></li>
-            <li><a href="#">성산읍</a></li>
+            
+            
+            <!-- 유일님 이런식으로 하면 되지 않을까 했는데 여기서 막히네요... !! 성산읍/서귀포시 클릭했을 때 둘 다 성산읍 데이터만 나와요.ㅋㅋ -->
+            <li><a href="${ pageContext.request.contextPath }/spot/spotList?=${ spot.localType1 }">성산읍</a></li>
             <li><a href="#">표선면</a></li>
             <li><a href="#">남원읍</a></li>
-            <li><a href="#">서귀포시</a></li>
+            <li><a href="${ pageContext.request.contextPath }/spot/spotList">서귀포시</a></li>
+            <!-- 유일님 이런식으로 하면 되지 않을까 했는데 여기서 막히네요... !! 성산읍/서귀포시 클릭했을 때 둘 다 성산읍 데이터만 나와요.ㅋㅋ -->
+            
+            
             <li><a href="#">중문</a></li>
             <li><a href="#">안덕면</a></li>
             <li><a href="#">대정읍</a></li>
