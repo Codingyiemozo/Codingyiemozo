@@ -98,6 +98,8 @@
 	
 	<hr>
 	
+	<!-- ====================================== 다음 카카오 지도 API ====================================== -->
+	
 	<div id="map" style="width:100%;height:350px;"></div>
 
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8b61348dc035a0fa7d71297a6f4a74c5"></script>
@@ -136,7 +138,7 @@
 	
     
     <div class="backspot">
-	    <button class="backbutton" onclick="location.href='${ path }/spot/spotList'" >목록으로 돌아가기</button>
+	    <button class="backbutton" onclick="location.href='${ path }/spot/stayList'" >목록으로 돌아가기</button>
     </div>
     
   </div>

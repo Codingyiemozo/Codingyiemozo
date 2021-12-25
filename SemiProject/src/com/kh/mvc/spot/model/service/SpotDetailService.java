@@ -3,7 +3,6 @@ package com.kh.mvc.spot.model.service;
 import static com.kh.mvc.common.jdbc.JDBCTemplate.*;
 
 import java.sql.Connection;
-import java.util.List;
 
 import com.kh.mvc.spot.model.dao.SpotDetailDao;
 import com.kh.mvc.spot.model.vo.SpotDetailVo;

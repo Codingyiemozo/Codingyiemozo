@@ -22,31 +22,31 @@
 	<div class="des_wrap">	
 		
 		<div class="info_img">
-			<img src="${ path }/resources/images/spot/detailspot/jeju_detailPage_sample.jpg">
+			<img src="${ path }${ detailVo.imgPath }${ detailVo.no }.png">
 		</div>
 		
 		<div class="info_box">
 			<div class="info_contents">
 				<div class="type">
-					<span>태그 1</span>
-					<span>태그 2</span>
-					....
+					<span>${ detailVo.type }</span>
 				</div>
-				<p>
-					블라블라 숙박 소개 블라블라 숙박 소개 블라블라 숙박 소개 블라블라 숙박 소개 블라블라 숙박 소개 블라블라 숙박 소개 
-					블라블라 숙박 소개 블라블라 숙박 소개 블라블라 숙박 소개 					
-				<p>
+				<p>${ detailVo.content }<p>
+				
+				<!-- 숙박은 휴관일 없음 -->
+				<%-- 
 				<dl>
 					<dt><strong>휴관일</strong></dt>
-					<dd>매주 일요일</dd>
-				</dl>
+					<dd>${ detailVo.offday }</dd>
+				</dl> 
+				--%>
+				
 				<dl>
 					<dt><strong>전화번호</strong></dt>
-					<dd>000-0000-0000</dd>
+					<dd>${ detailVo.phone }</dd>
 				</dl>
 				<dl>
 					<dt><strong>입장료</strong></dt>
-					<dd>0000원</dd>
+					<dd>${ detailVo.price }</dd>
 				</dl>				
 			</div>				
 		</div>	
@@ -67,17 +67,17 @@
 			<ul class="slidelist">
 				<li>
 					<a>
-						<img src="${ path }/resources/images/spot/detailspot/image1.jpg">
+						<img src="${ path }${ detailVo.imgPath }001.jpg">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }/resources/images/spot/detailspot/image2.jpg">
+						<img src="${ path }${ detailVo.imgPath }002.jpg">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }/resources/images/spot/detailspot/image3.jpg">
+						<img src="${ path }${ detailVo.imgPath }003.jpg">
 					</a>
 				</li>
 			</ul>
@@ -111,8 +111,8 @@
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
-		        center: new kakao.maps.LatLng(37.49891762096563, 127.03283792435273), // 지도의 중심좌표
-		        level: 3, // 지도의 확대 레벨
+		        center: new kakao.maps.LatLng("${ detailVo.xlat }", "${ detailVo.ylong }"), // 지도의 중심좌표
+		        level: 6, // 지도의 확대 레벨
 		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 		    }; 
 
@@ -121,13 +121,13 @@
 
 		// 지도에 마커를 생성하고 표시한다
 		var marker = new kakao.maps.Marker({
-		    position: new kakao.maps.LatLng(37.49891762096563, 127.03283792435273), // 마커의 좌표
+		    position: new kakao.maps.LatLng("${ detailVo.xlat }", "${ detailVo.ylong }"), // 마커의 좌표
 		    map: map // 마커를 표시할 지도 객체
 		});
 
 		// 마커 위에 표시할 인포윈도우를 생성한다
 		var infowindow = new kakao.maps.InfoWindow({
-		    content : '<div style= padding:5px;">KH정보교육원</div>' // 인포윈도우에 표시할 내용
+		    content : '<div style= padding:5px;">${ detailVo.title }</div>' // 인포윈도우에 표시할 내용
 		});
 
 		// 인포윈도우를 지도에 표시한다
