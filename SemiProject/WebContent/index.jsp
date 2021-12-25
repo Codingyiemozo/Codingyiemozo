@@ -20,26 +20,26 @@
         <div class="select-map">
             <img src="${ pageContext.request.contextPath }/resources/images/map.png" alt="" class="img-map">
             <ul class="location-list">
-            <li><a href="#">추자도</a></li>
-            <li><a href="#">차귀도</a></li>
-            <li><a href="#">비양도</a></li>
-            <li><a href="#">한경면</a></li>
-            <li><a href="#">한림읍</a></li>
-            <li><a href="#">애월읍</a></li>
-            <li><a href="#">제주시</a></li>
-            <li><a href="#">조천읍</a></li>
-            <li><a href="#">구좌읍</a></li>
-            <li><a href="#">우도</a></li>
-            <li><a href="#">성산읍</a></li>
-            <li><a href="#">표선면</a></li>
-            <li><a href="#">남원읍</a></li>
-            <li><a href="#">서귀포시</a></li>
-            <li><a href="#">중문</a></li>
-            <li><a href="#">안덕면</a></li>
-            <li><a href="#">대정읍</a></li>
-            <li><a href="#">가파도</a></li>
-            <li><a href="#">마라도</a></li>
-            </ul>
+            <li><a href="${ path }/local.do?name=1">추자도</a></li>
+            <li><a href="${ path }/local.do?name=2">차귀도</a></li>
+            <li><a href="${ path }/local.do?name=3">비양도</a></li>
+            <li><a href="${ path }/local.do?name=4">한경면</a></li>
+            <li><a href="${ path }/local.do?name=5">한림읍</a></li>
+            <li><a href="${ path }/local.do?name=6">애월읍</a></li>
+            <li><a href="${ path }/local.do?name=7">제주시</a></li>
+            <li><a href="${ path }/local.do?name=8">조천읍</a></li>
+            <li><a href="${ path }/local.do?name=9">구좌읍</a></li>
+            <li><a href="${ path }/local.do?name=10">우도</a></li>
+            <li><a href="${ path }/local.do?name=11">성산읍</a></li>
+            <li><a href="${ path }/local.do?name=12">표선면</a></li>
+            <li><a href="${ path }/local.do?name=13">남원읍</a></li>
+            <li><a href="${ path }/local.do?name=14">서귀포시</a></li>
+            <li><a href="${ path }/local.do?name=15">중문</a></li>
+            <li><a href="${ path }/local.do?name=16">안덕면</a></li>
+            <li><a href="${ path }/local.do?name=17">대정읍</a></li>
+            <li><a href="${ path }/local.do?name=18">가파도</a></li>
+            <li><a href="${ path }/local.do?name=19">마라도</a></li>
+            </ul>                
         </div>
 
         <div class="thumb-list spot">
