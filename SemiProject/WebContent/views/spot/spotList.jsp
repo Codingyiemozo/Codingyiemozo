@@ -11,10 +11,8 @@
     <div class="thumb-list">
       <h3 class="type-tit">관광명소</h3>
       
-      
-      <!-- 유일님 일단 여기에 test하긴 했는데 map에서 타고 들어오는 페이지는 하나 더 만들어야할 거 같네요..! -->
       <ul>
-      	<c:forEach var="spot" items="${ localList1 }" begin="0" end="7"> <!-- localList1 << 이거 변경해서 test 했음 -->
+      	<c:forEach var="spot" items="${ spotList }" begin="0" end="7">
 	        <li>
 	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ spot.no }">
 	            <div class="img-thumb">
@@ -26,7 +24,6 @@
 	        </li>
         </c:forEach>
       </ul>
-      <!-- 유일님 일단 여기에 test하긴 했는데 map에서 타고 들어오는 페이지는 하나 더 만들어야할 거 같네요..! -->
       
       
       <%-- <c:if test="${ spot.spotList > 10 }">
