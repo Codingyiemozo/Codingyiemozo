@@ -49,7 +49,7 @@
 			</tr>
 			<tr>
 				<th>아이디</th>
-				<td><input type="text" name="userId" id="userId" placeholder="아이디를 입력해주세요."></td>
+				<td><input type="text" name="userId" id="userId" placeholder="아이디를 입력해주세요." ></td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
@@ -64,8 +64,7 @@
 		
 		<div id="l-menu">
             <input class="l-btn" type="button" value="회원가입" onclick="location.href='${ path }/member/enroll'"> |
-            <input class="l-btn" type="button" value="아이디 찾기"> |
-            <input class="l-btn" type="button" value="비밀번호 찾기"> 
+            <input class="l-btn" type="button" value="아이디/비밀번호 찾기" onclick="location.href='${ path }/member/search'">
         </div>
 	 	
  	
