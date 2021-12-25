@@ -283,6 +283,14 @@ INSERT INTO TB_REVIEW VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '명진전복�
 
 
 
+-- 지도 클릭시 지역별 목록 조회
+SELECT LOCAL
+FROM TB_SPOT S
+JOIN TB_LOCAL L ON (S.LOCAL = L.NO);
+
+
+
+
 
 
 
