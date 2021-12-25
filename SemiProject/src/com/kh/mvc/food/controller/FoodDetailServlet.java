@@ -14,7 +14,8 @@ import com.kh.mvc.food.model.vo.FoodDetailVo;
 @WebServlet("/food/foodDetail")
 public class FoodDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
+	// 1. service 클래스 및 객체 생성
 	private FoodDetailService service = new FoodDetailService();
 
     public FoodDetailServlet() {
@@ -24,7 +25,10 @@ public class FoodDetailServlet extends HttpServlet {
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	int no = Integer.parseInt(request.getParameter("no"));
+		/* 2. 
+		 *   1) 사용자로부터 받은 no(파란글)값을 request.getParameter() 메소드로 받음
+		 *   2) 
+		 */    	int no = Integer.parseInt(request.getParameter("no"));
 		
 		System.out.println("NO : " + no);
 		
