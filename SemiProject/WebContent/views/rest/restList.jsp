@@ -13,7 +13,7 @@
 		<ul>
 			<c:forEach var="rest" items="${ restList }" begin="0" end="7">
 		        <li>
-		          <a href="${ pageContext.request.contextPath }/rest/restDetail?no=${ reset.no }">
+		          <a href="${ pageContext.request.contextPath }/rest/restDetail?no=${ rest.no }">
 		            <div class="img-thumb">
 		              <img src="${ pageContext.request.contextPath }${ rest.imgPath }${ rest.no }.png" alt="">
 		            </div>

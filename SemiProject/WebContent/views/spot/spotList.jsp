@@ -23,9 +23,7 @@
 	          </a>
 	        </li>
         </c:forEach>
-      </ul>
-      
-      
+      </ul>      
       <%-- <c:if test="${ spot.spotList > 10 }">
       	<button type="button" class="btn-more">더보기</button>
       </c:if> --%>
