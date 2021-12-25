@@ -20,7 +20,7 @@ public class MyPageServlet extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	// 로그인 되었을 때 마이페이지 접근 가능
+    	// 로그인 상태에서 접근 가능
     	HttpSession session = request.getSession(false); 
     	
     	Member loginMember = session != null ? (Member) session.getAttribute("loginMember") : null;
@@ -32,8 +32,6 @@ public class MyPageServlet extends HttpServlet {
     		request.setAttribute("msg", "로그인 후 수정해 주세요.");
 			request.setAttribute("location", "/");
 
-    	
-		// 요청을 jsp로 받을 수 있게 forward 
 		request.getRequestDispatcher("/views/member/myPage.jsp").forward(request, response);
 		
     	}

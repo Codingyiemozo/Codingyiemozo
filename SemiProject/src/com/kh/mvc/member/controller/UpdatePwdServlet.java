@@ -22,7 +22,6 @@ public class UpdatePwdServlet extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	// 비밀번호 변경 화면으로 이동
     	
     	request.getRequestDispatcher("/views/member/updatePwd.jsp").forward(request, response);
 	}
@@ -34,11 +33,10 @@ public class UpdatePwdServlet extends HttpServlet {
     	Member loginMember = session != null ? (Member) session.getAttribute("loginMember") : null;
     	String newPwd = request.getParameter("newPwd");
     	
-    	// 어떤 계정 pwd 변경할지 
+    	// 어떤 계정의 pwd 변경할지 
     	if(loginMember != null) {
     		result = service.updatePassword(loginMember.getNo(), newPwd);
     		
-    		// 변경 작업이 끝나면 pwd 변경 창을 닫음 (현재 열려있는 창을 닫음) 
     		if(result > 0) {
         		request.setAttribute("msg", "비밀번호 변경이 완료되었습니다.");
         		request.setAttribute("script", "self.close()");

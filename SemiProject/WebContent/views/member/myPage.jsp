@@ -187,7 +187,7 @@
 			const url = "${ pageContext.request.contextPath }/member/updatePwd";
 			const status = "left=700px,top=400px,width=600px,height=400px";
 			
-			// 새로운 창을 띄우는 메소드 
+			// 새로운 창 
 			open(url, "", status);
 		});
 		

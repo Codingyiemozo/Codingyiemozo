@@ -70,14 +70,14 @@
 	<div id="updatePassword-container">
 		<form action="${ pageContext.request.contextPath }/member/updatePwd" method="post">
         <table>
-        	<!--   
+        	  
             <tr>
                 <th>현재 비밀번호</th>
                 <td>
                     <input type="password" name="nowPwd" id="nowPwd">
                 </td>
             </tr>
-            --> 
+             
             
 
             <tr>
@@ -109,7 +109,7 @@
 	</div>
 	<script>
 	
-		// 패스워드1, 2 동일한지 확인 , 동일하지 않은 경우 return false;
+		// 비밀번호 일치 확인 
 		function validate() {
 			let pass1 = $("#pass1").val();
 			let pass2 = $("#pass2").val();

@@ -23,17 +23,17 @@ public class UpdateServlet extends HttpServlet {
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  		
-    	// 1. 로그인 된 사용자인지 체크
+    	// 로그인 된 사용자인지 체크
     	HttpSession session = request.getSession(false); 
     	Member loginMember = session != null ? (Member) session.getAttribute("loginMember") : null;
     	Member member = null;
     	int result = 0;
     	
     	if(loginMember != null) {
-    		// 2. 사용자가 수정한 내용을 가지고 Member 객체를 생성
+    		
     		member = new Member();
     		
-    		// 프로필 사진 기능 추가해야함
+ 
     		member.setNo(loginMember.getNo());
     		member.setId(request.getParameter("userId"));
     		member.setName(request.getParameter("userName"));
@@ -41,12 +41,10 @@ public class UpdateServlet extends HttpServlet {
     		member.setEmail(request.getParameter("email"));
     		member.setAddress(request.getParameter("address"));
 		
-    		
-    		// 3. 회원 정보 수정
     		result = service.save(member);
     		
     		if(result > 0) {
-    			// 세션을 갱신한다.
+    			// 세션 갱신
     			session.setAttribute("loginMember", service.findMemberById(loginMember.getId()));
     		
         		request.setAttribute("msg", "회원 정보 수정이 완료되었습니다.");

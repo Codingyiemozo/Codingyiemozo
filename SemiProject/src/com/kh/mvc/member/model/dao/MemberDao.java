@@ -94,7 +94,6 @@ public class MemberDao {
 		return result;
 	}
 	
-	// db 회원 status 관련
 	public int updateMemberStatus(Connection connection, int no, String status) {
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -115,8 +114,7 @@ public class MemberDao {
 		
 		return result;
 	}
-
-	// 비밀번호 변경  
+  
 	public int updateMemberPassword(Connection connection, int no, String password) {
 		int result = 0;
 		PreparedStatement pstmt = null; 
@@ -137,8 +135,5 @@ public class MemberDao {
 		
 		return result;
 	}
-	
-	
-
 
 }
