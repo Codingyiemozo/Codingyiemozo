@@ -92,9 +92,14 @@
 	        <button id="btn2" onclick="location.href='${ pageContext.request.contextPath }/member/searchPWD'">비밀번호 찾기</button>
 	    </div>
 	
-        <form action="${ pageContext.request.contextPath }/member/search" method="post">
+        <form action="${ pageContext.request.contextPath }/member/searchPWD" method="post">
 		    <div class="SID-div">
 		            <table >
+		            	<tr>
+		            		<td>
+		                        <input type="text" name="userId" id="userId" placeholder="아이디 입력" required>
+		                    </td>	
+		            	</tr>
 		                <tr>
 		                    <td>
 		                        <input type="text" name="phone" id="phone" placeholder="휴대전화번호 입력('-'제외)" required>
@@ -108,7 +113,7 @@
 		            </table>		            
 	        </div>
 	        <div class="SID-div">
-	            <input id="submit" type="submit" value="아이디 찾기">
+	            <input id="submit" type="submit" value="비밀번호 찾기">
 	        </div>
 	    </form>
     </div>

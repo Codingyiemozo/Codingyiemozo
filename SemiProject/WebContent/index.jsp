@@ -11,7 +11,9 @@
             <li><a href="${ pageContext.request.contextPath }/spot/spotList">여행지</a></li>
             <li><a href="${ pageContext.request.contextPath }/stay/stayList">숙박</a></li>
             <li><a href="${ pageContext.request.contextPath }/rest/restList">맛집</a></li>
-            <li><a href="${ pageContext.request.contextPath }/board/myPlanner">마이 플래너</a></li>
+            <c:if test="${ !empty loginMember }">
+            	<li><a href="${ pageContext.request.contextPath }/board/myPlanner">마이 플래너</a></li>
+            </c:if>
             <li><a href="${ pageContext.request.contextPath }/review/reviewList">여행 후기</a></li>
         </ul>
     </div>
@@ -94,58 +96,7 @@
 			        </li>
 		        </c:forEach>
       		</ul>
-        </div>
-
-        <div class="thumb-list">
-            <h3>여행 후기</h3>
-            <ul>
-            <li>
-                <a href="#">
-	                <div class="img-thumb">
-	                    <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-	                </div>
-	                <strong>닭머르 해안에서 일몰 즐기기</strong>
-	                <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-	                <div class="img-thumb">
-	                    <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-	                </div>
-	                <strong>닭머르 해안에서 일몰 즐기기 닭머르 해안에서 일몰 즐기기</strong>
-	                <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-	                <div class="img-thumb">
-							<img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-						</div>
-	                <strong>닭머르 해안에서 일몰 즐기기</strong>
-	                <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-	                <div class="img-thumb">
-	                    <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-	                </div>
-	                <strong>닭머르 해안에서 일몰 즐기기</strong>
-	                <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-	                <div class="img-thumb">
-	                    <img src="${ pageContext.request.contextPath }/resources/images/spot/spot01.png" alt="">
-	                </div>
-	                <strong>닭머르 해안에서 일몰 즐기기</strong>
-	                <p>닭머르 해안은 어쩌고 저쩌고 시간에 가면 일몰을 볼 수 있어요. 블라블라.</p>
-                </a>
-            </li>
-            </ul>
-        </div>
+        </div>        
 
     </div>
 </div>
