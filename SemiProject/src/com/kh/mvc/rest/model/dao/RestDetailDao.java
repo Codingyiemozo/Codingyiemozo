@@ -1,4 +1,4 @@
-package com.kh.mvc.food.model.dao;
+package com.kh.mvc.rest.model.dao;
 
 import static com.kh.mvc.common.jdbc.JDBCTemplate.close;
 
@@ -7,13 +7,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.kh.mvc.food.model.vo.FoodDetailVo;
+import com.kh.mvc.rest.model.vo.RestDetailVo;
 
-public class FoodDetailDao {
+public class RestDetailDao {
 
-	public FoodDetailVo findByNo(Connection connection, int no) {
+	public RestDetailVo findByNo(Connection connection, int no) {
 
-		FoodDetailVo detailVo = null;
+		RestDetailVo detailVo = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String query = 
@@ -31,7 +31,7 @@ public class FoodDetailDao {
 				+ 	"RS_LAT, "
 				+ 	"RS_LONG "
 				+ "FROM TB_REST "
-				+ "WHERE SP_NO=?";
+				+ "WHERE RS_NO=?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -42,7 +42,7 @@ public class FoodDetailDao {
 			
 			if(rs.next()) {
 				
-				detailVo = new FoodDetailVo();
+				detailVo = new RestDetailVo();
 				
 				detailVo.setNo(rs.getInt("RS_NO"));
 				detailVo.setType(rs.getString("RS_TYPE"));

@@ -11,10 +11,8 @@
     <div class="thumb-list">
       <h3 class="type-tit">관광명소</h3>
       
-      
-      <!-- 유일님 일단 여기에 test하긴 했는데 map에서 타고 들어오는 페이지는 하나 더 만들어야할 거 같네요..! -->
       <ul>
-      	<c:forEach var="spot" items="${ spotList }" begin="0" end="7"> <!-- localList1 << 이거 변경해서 test 했음 -->
+      	<c:forEach var="spot" items="${ spotList }" begin="0" end="7">
 	        <li>
 	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ spot.no }">
 	            <div class="img-thumb">
@@ -25,10 +23,7 @@
 	          </a>
 	        </li>
         </c:forEach>
-      </ul>
-      <!-- 유일님 일단 여기에 test하긴 했는데 map에서 타고 들어오는 페이지는 하나 더 만들어야할 거 같네요..! -->
-      
-      
+      </ul>      
       <%-- <c:if test="${ spot.spotList > 10 }">
       	<button type="button" class="btn-more">더보기</button>
       </c:if> --%>
@@ -39,7 +34,7 @@
       <ul>
       	<c:forEach var="experience" items="${ experienceList }" begin="0" end="7">
 	        <li>
-	          <a href="#">
+	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ experience.no }">
 	            <div class="img-thumb">
 	              <img src="${ pageContext.request.contextPath }${ experience.imgPath }${ experience.no }.png" alt="">
 	            </div>
@@ -59,7 +54,7 @@
       <ul>
         <c:forEach var="shopping" items="${ shoppingList }" begin="0" end="7">
 	        <li>
-	          <a href="#">
+	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ shopping.no }">
 	            <div class="img-thumb">
 	              <img src="${ pageContext.request.contextPath }${ shopping.imgPath }${ shopping.no }.png" alt="">
 	            </div>

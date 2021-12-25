@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class StayDetailVo {
-
-//	숙박이기 때문에 휴무일(offday) 없음
+public class BoardList {
 	private int no;
 	private String type;
 	private String name;
@@ -21,5 +19,4 @@ public class StayDetailVo {
 	private String xlat;
 	private String ylong;
 	private String local;
-	
 }

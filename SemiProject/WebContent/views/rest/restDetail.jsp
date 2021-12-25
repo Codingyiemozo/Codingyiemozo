@@ -137,7 +137,7 @@
 	<!-- ====================================== 다음 카카오 지도 API ====================================== -->
 	
     <div class="backspot">
-	    <button class="backbutton" onclick="location.href='${ path }/food/foodList'" >목록으로 돌아가기</button>
+	    <button class="backbutton" onclick="location.href='${ path }/rest/restList'" >목록으로 돌아가기</button>
     </div>
     
   </div>

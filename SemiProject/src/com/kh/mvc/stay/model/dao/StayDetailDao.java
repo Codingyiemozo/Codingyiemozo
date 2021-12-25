@@ -19,17 +19,17 @@ public class StayDetailDao {
 		String query = 
 				"SELECT "
 				+ 	"ST_NO, "
-				+ 	"ST_TITLE, "
 				+ 	"ST_TYPE, "
+				+ 	"ST_NAME, "
 				+ 	"ST_IMG_PATH, "
 				+ 	"ST_ADDR, "
 				+ 	"ST_PHONE, "
 				+ 	"ST_PRICE, "
 				+ 	"ST_CONTENT, "
-				+ 	"ST_LAT, "
-				+ 	"ST_LONG "
+				+ 	"SP_LAT, "
+				+ 	"SP_LONG "
 				+ "FROM TB_STAY "
-				+ "WHERE SP_NO=?"; 
+				+ "WHERE ST_NO=?"; 
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -43,15 +43,15 @@ public class StayDetailDao {
 				detailVo = new StayDetailVo();
 				
 				detailVo.setNo(rs.getInt("ST_NO"));
-				detailVo.setTitle(rs.getString("ST_TITLE"));
 				detailVo.setType(rs.getString("ST_TYPE"));
+				detailVo.setName(rs.getString("ST_NAME"));
 				detailVo.setImgPath(rs.getString("ST_IMG_PATH"));
 				detailVo.setAddr(rs.getString("ST_ADDR"));
 				detailVo.setPhone(rs.getString("ST_PHONE"));
 				detailVo.setPrice(rs.getString("ST_PRICE"));
 				detailVo.setContent(rs.getString("ST_CONTENT"));
-				detailVo.setXlat(rs.getString("ST_LAT"));
-				detailVo.setYlong(rs.getString("ST_LONG"));
+				detailVo.setXlat(rs.getString("SP_LAT"));
+				detailVo.setYlong(rs.getString("SP_LONG"));
 				
 			}
 			
