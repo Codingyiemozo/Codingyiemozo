@@ -20,6 +20,7 @@
         <div class="select-map">
             <img src="${ pageContext.request.contextPath }/resources/images/map.png" alt="" class="img-map">
             <ul class="location-list">
+
             <li><a href="${ path }/local.do?no=1&name=추자도">추자도</a></li>
             <li><a href="${ path }/local.do?no=2&name=차귀도">차귀도</a></li>
             <li><a href="${ path }/local.do?no=3&name=비양도">비양도</a></li>
@@ -40,6 +41,7 @@
             <li><a href="${ path }/local.do?no=18&name=가파도">가파도</a></li>
             <li><a href="${ path }/local.do?no=19&name=마라도">마라도</a></li>
             </ul>                
+
         </div>
 
         <div class="thumb-list spot">
