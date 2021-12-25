@@ -44,6 +44,42 @@ public class MemberDao {
 		}
 		return member;
 	}
+	
+	public Member findMemberID(Connection connection, String userName, String phone) {
+		Member member = null;
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM TB_MEM WHERE MEM_NM=? AND PHONE=? AND STATUS='Y'";
+		
+		try {
+			pstm = connection.prepareStatement(query);
+			
+			pstm.setString(1, userName);
+			pstm.setString(2, phone);
+			rs = pstm.executeQuery();
+			
+			if(rs.next()) {
+				member = new Member();
+				
+				member.setNo(rs.getInt("NO"));
+				member.setId(rs.getString("MEM_ID"));
+				member.setPassword(rs.getString("PASSWORD"));
+				member.setRole(rs.getString("ROLE"));
+				member.setName(rs.getString("MEM_NM"));
+				member.setPhone(rs.getString("PHONE"));
+				member.setEmail(rs.getString("EMAIL"));
+				member.setAddress(rs.getString("ADDR"));
+				member.setStatus(rs.getString("STATUS"));
+				member.setEnrollDate(rs.getDate("ENROLL_DATE"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstm);
+		}
+		return member;
+	}
 
 	public int insertMember(Connection connection, Member member) {
 		int result = 0;

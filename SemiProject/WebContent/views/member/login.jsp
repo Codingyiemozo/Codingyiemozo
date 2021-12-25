@@ -49,7 +49,7 @@
 			</tr>
 			<tr>
 				<th>아이디</th>
-				<td><input type="text" name="userId" id="userId" placeholder="아이디를 입력해주세요."></td>
+				<td><input type="text" name="userId" id="userId" placeholder="아이디를 입력해주세요." ></td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>

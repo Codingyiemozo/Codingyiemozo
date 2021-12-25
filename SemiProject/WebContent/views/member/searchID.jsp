@@ -89,27 +89,21 @@
 	
 	    <div class="SID-div" id="btn_group">
 	        <button id="btn1" onclick="location.href='${ pageContext.request.contextPath }/member/search'">아이디 찾기</button>
-	        <button id="btn2">비밀번호 찾기</button>
+	        <button id="btn2" onclick="location.href='${ pageContext.request.contextPath }/member/searchPWD'">비밀번호 찾기</button>
 	    </div>
 	
-        <form action="">
+        <form action="${ pageContext.request.contextPath }/member/search" method="post">
 		    <div class="SID-div">
 		            <table >
 		                <tr>
 		                    <td>
-		                        <input type="number" name="" id="" placeholder="휴대전화번호 입력('-'제외)">
-		                    </td>
-		                    <td>
-		                        <button class="tb_btn" style="width: 100%;">인증번호 전송</button>
-		                    </td>
+		                        <input type="text" name="phone" id="phone" placeholder="휴대전화번호 입력('-'제외)" required>
+		                    </td>		                    
 		                </tr>
 		                <tr>
 		                    <td>
-		                        <input type="number" name="" id="" placeholder=" 인증번호 입력">
-		                    </td>
-		                    <td>
-		                        <button class="tb_btn" style="width: 100%;">확인</button>
-		                    </td>
+		                        <input type="text" name="userName" id="userName" placeholder="이름 입력" required>
+		                    </td>		                    
 		                </tr>
 		            </table>		            
 	        </div>

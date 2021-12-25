@@ -55,6 +55,15 @@ public class MemberService {
 		return member;
 	}
 	
+	public Member findMemberID(String userName, String phone) {
+		Connection connection = getConnection();
+		Member member = dao.findMemberID(connection, userName, phone);
+		
+		close(connection);
+		
+		return member;
+	}
+	
 	
 	
 	
