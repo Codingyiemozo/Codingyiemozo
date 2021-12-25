@@ -12,7 +12,7 @@
             margin: 20px;
             padding-left: 20px;
         }
-
+ 
         .outer {
             position: relative;
             /* top: 100px;
@@ -22,13 +22,13 @@
 
         #first {
             display: inline-block;
-            width: 40%;
+            width: 50%;
             height: 500px;
         }
 
         #second {
             display: inline-block;
-            width: 40%;
+            width: 50%;
             height: 500px;
         }
 
