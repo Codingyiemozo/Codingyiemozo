@@ -39,7 +39,7 @@
             <li><a href="${ path }/local.do?no=17&name=대정읍">대정읍</a></li>
             <li><a href="${ path }/local.do?no=18&name=가파도">가파도</a></li>
             <li><a href="${ path }/local.do?no=19&name=마라도">마라도</a></li>
-            </ul>                
+            </ul>              
         </div>
 
         <div class="thumb-list spot">
