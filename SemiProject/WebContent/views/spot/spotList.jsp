@@ -33,7 +33,7 @@
       <ul>
       	<c:forEach var="experience" items="${ experienceList }" begin="0" end="7">
 	        <li>
-	          <a href="#">
+	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ experience.no }">
 	            <div class="img-thumb">
 	              <img src="${ pageContext.request.contextPath }${ experience.imgPath }${ experience.no }.png" alt="">
 	            </div>
@@ -53,7 +53,7 @@
       <ul>
         <c:forEach var="shopping" items="${ shoppingList }" begin="0" end="7">
 	        <li>
-	          <a href="#">
+	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ shopping.no }">
 	            <div class="img-thumb">
 	              <img src="${ pageContext.request.contextPath }${ shopping.imgPath }${ shopping.no }.png" alt="">
 	            </div>
