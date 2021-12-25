@@ -211,7 +211,7 @@
 
 			<input type="button" value="추가" onclick="addInput2();" />
 			<input type="button" value="삭제" onclick="deleteInput2();"/>
-			<input type="submit" value="전송"/>
+		<!-- 	<input type="submit" value="전송"/> -->
 
 			<div id="parah2"></div>
 
