@@ -44,17 +44,4 @@ public class BoardService {
 		close(connection);
 		return shoppingList;
 	}
-	
-	// 게시글 번호 확인
-	public BoardList findBoardByNo(int no) {
-		BoardList board = null; // board 객체
-		Connection connection = getConnection();
-		
-		//dao를 통해 데이터베이스에 접근
-		board = dao.findBoardByNo(connection, no);
-		
-		close(connection);
-		
-		return board;
-	}
 }

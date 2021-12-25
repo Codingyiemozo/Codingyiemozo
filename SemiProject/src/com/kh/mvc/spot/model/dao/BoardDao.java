@@ -112,50 +112,6 @@ public class BoardDao {
 		}
 		return shoppingList;
 	}
-
-	// 게시글 상세 열기
-	public BoardList findBoardByNo(Connection connection, int no) {
-		BoardList board = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String query = 
-				"SELECT SP_NO, SP_TITLE, SP_TYPE, SP_IMG_PATH, SP_ADDR, SP_PHONE, SP_PRICE, SP_OFFDAY, SP_CONTENT, SP_LAT, SP_LONG, LOCAL "
-						+ "FROM TB_SPOT "
-						+ "WHERE SP_NO=?";
-		
-		try {
-			pstmt = connection.prepareStatement(query);
-			
-			pstmt.setInt(1, no);
-			
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-				board = new BoardList();
-				
-				board.setNo(rs.getInt("SP_NO"));
-				board.setTitle(rs.getString("SP_TITLE"));
-				board.setType(rs.getString("SP_TYPE"));
-				board.setImgPath(rs.getString("SP_IMG_PATH"));
-				board.setAddr(rs.getString("SP_ADDR"));
-				board.setPrice(rs.getString("SP_PRICE"));
-				board.setOffday(rs.getString("SP_OFFDAY"));
-				board.setContent(rs.getString("SP_CONTENT"));
-				board.setXlat(rs.getString("SP_LAT"));
-				board.setYlong(rs.getString("SP_LONG"));
-				board.setLocal(rs.getString("LOCAL"));
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-		
-		return board;
-	}
-	
 }
 
 
