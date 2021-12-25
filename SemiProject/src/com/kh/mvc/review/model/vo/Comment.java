@@ -16,10 +16,11 @@ public class Comment {
 	
 	private int mem_no;
 	
-	private Date cm_date;
+	private String mem_nm;
 	
 	private String cm_content;
 	
-	private String mem_nm;
+	private Date cm_date;
+	
 	
 }

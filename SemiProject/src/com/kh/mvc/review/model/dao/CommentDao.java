@@ -13,7 +13,7 @@ import com.kh.mvc.review.model.vo.Comment;
 
 public class CommentDao {
 	
-	public List<Comment> getRepliesByNo(Connection connection, int cm_no) {
+	public List<Comment> getCommentsByNo(Connection connection, int rv_no) {
 		List<Comment> comments = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -21,18 +21,16 @@ public class CommentDao {
 		
 		try {
 			query = 
-				  "SELECT CM_NO, RV_NO, MEM_NO, MEM_NM, CM_DATE, CM_CONTENT "
+				  "SELECT CM_NO, RV_NO, CM_CONTENT, MEM_NO, MEM_NM, CM_DATE "
 				+ "FROM TB_COMMENT C "
-				+ "JOIN TB_REVIEW R "
-				+ "ON(C.RV_NO = R.RV_NO) "
 				+ "JOIN TB_MEM M "
 				+ "ON(C.MEM_NO = M.NO) "
-				+ "WHERE BOARD_NO=? "
-				+ "ORDER BY R.NO DESC";
+				+ "WHERE RV_NO=? "
+				+ "ORDER BY C.CM_NO DESC";
 			
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setInt(1, cm_no);
+			pstmt.setInt(1, rv_no);
 			
 			rs = pstmt.executeQuery();
 			
@@ -41,10 +39,9 @@ public class CommentDao {
 				
 				comment.setCm_no(rs.getInt("CM_NO"));
 				comment.setRv_no(rs.getInt("RV_NO"));
-				comment.setMem_no(rs.getInt("MEM_NO"));
+				comment.setCm_content(rs.getString("CM_CONTENT"));
 				comment.setMem_nm(rs.getString("MEM_NM"));
 				comment.setCm_date(rs.getDate("CM_DATE"));
-				comment.setCm_content(rs.getString("CM_CONTENT"));
 				
 				comments.add(comment);
 			}
@@ -63,15 +60,14 @@ public class CommentDao {
 	public int insertComment(Connection connection, Comment comment) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "INSERT INTO TB_COMMENT(CM_NO, RV_NO, MEM_NO, CM_DATE, CM_CONTENT) "
-				+ "		VALUES(SEQ_COMMENT_NO.NEXTVAL,?, ?, SYSDATE, ?)";
+		String query = "INSERT INTO TB_COMMENT VALUES(SEQ_TB_COMMENT_NO.NEXTVAL,?, ?, ?, DEFAULT)";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setInt(1, comment.getCm_no());
-			pstmt.setInt(2, comment.getRv_no());
-			pstmt.setString(3, comment.getCm_content());
+			pstmt.setInt(1, comment.getRv_no());
+			pstmt.setString(2, comment.getCm_content());
+			pstmt.setString(3, comment.getMem_nm());
 			
 			result = pstmt.executeUpdate();	
 		} catch (SQLException e) {

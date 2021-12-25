@@ -25,7 +25,7 @@ public class ReviewCommentServlet extends HttpServlet {
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int rv_no = Integer.parseInt(request.getParameter("rv_no"));
-		String content = request.getParameter("content");
+		String content = request.getParameter("cm_content");
     	HttpSession session = request.getSession(false);
     	Member loginMember = session != null ? (Member)session.getAttribute("loginMember") : null;
 
@@ -34,7 +34,7 @@ public class ReviewCommentServlet extends HttpServlet {
 			
 			comment.setRv_no(rv_no);
 			comment.setMem_no(loginMember.getNo());
-//			comment.setMem_nm(loginMember.getMem_nm());
+			comment.setMem_nm(loginMember.getName());
 			comment.setCm_content(content);
 			
 			int result = service.saveComment(comment);

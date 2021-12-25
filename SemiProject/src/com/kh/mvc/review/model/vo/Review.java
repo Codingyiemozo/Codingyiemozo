@@ -1,6 +1,7 @@
 package com.kh.mvc.review.model.vo;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,6 +30,8 @@ public class Review {
 	private String mem_nm;
 	
 	private int cm_no;
+	
+	private List<Comment> comments;
 
 	
 //	

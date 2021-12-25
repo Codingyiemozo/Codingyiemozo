@@ -24,7 +24,6 @@ public class ReviewDao {
 				+   "RV_DATE, "
 				+   "RV_CONTENT, "
 				+	"RV_IMG_PATH, "
-				+   "RV_COMMENT, "
 				+   "RV_HITS, "
 				+   "MEM_NM, "
 				+   "MEM_NO "
@@ -47,11 +46,11 @@ public class ReviewDao {
 				review.setRv_type(rs.getString("RV_TYPE"));
 				review.setRv_title(rs.getString("RV_TITLE"));
 				review.setRv_date(rs.getDate("RV_DATE"));
+				review.setRv_content(rs.getString("RV_CONTENT"));
 				review.setRv_img_path(rs.getString("RV_IMG_PATH"));
 				review.setRv_hits(rs.getInt("RV_HITS"));
-				review.setRv_content(rs.getString("RV_CONTENT"));
-				review.setMem_no(rs.getInt("MEM_NO"));
 				review.setMem_nm(rs.getString("MEM_NM"));
+				review.setMem_no(rs.getInt("MEM_NO"));
 				
 			}			
 		} catch (SQLException e) {

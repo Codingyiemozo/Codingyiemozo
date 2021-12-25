@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     
 <jsp:include page="/views/common/header.jsp" />
 
@@ -19,18 +20,40 @@
             <div class="reviewContents">
                 ${ review.rv_content }
             </div>
+            <!-- 
             <div id="form-commentInfo">
                 <div id="comment-count">댓글 <span id="count">0</span></div>
                 <input id="comment-input" placeholder="댓글을 입력해 주세요."></input>
-                <button id="btn-commentSubmit">등록</button>
+                <button type="submit" id="btn-commentSubmit">등록</button>
             </div>
-            <div class="comments">
-                <div id="commentWriter">${ comment.mem_nm }</div>
-                <div id="commentContent">${ comment.cm_content }</div>
-                <div id="commentSubmitDate">${ comment.cm_date }</div>
-                <button id="btn-commentdelete">삭제</button>
+             -->
+            <div id="comment-container">
+	            <div class="comment-editor">
+		            <form action="${ pageContext.request.contextPath }/review/comment" method="POST" id="frm-comment">
+		            	<input type=hidden name="rv_no" value="${ review.rv_no }">
+		            	<textarea name="cm_content" id="commentContent" rows="3" cols="55"></textarea>
+		            	<button type="submit" id="btn-insert">등록</button>
+		            </form>
+	            </div>
+	            <table id="tbl-comment">
+			    	<c:forEach var="comment" items="${ review.comments }">
+				    	<tr class="level1">
+				    		<td>
+				    			<sub class="comment-writer"><c:out value="${ comment.mem_nm }"/></sub>
+				    			<sub class="comment-date"><fmt:formatDate type="date" value="${ comment.cm_date }"/></sub>
+				    			<br>
+				    			<c:out value="${ comment.cm_content }"/>
+				    		</td>
+				    		<td>
+				    			<c:if test="${ ! empty loginMember && loginMember.mem_nm == comment.mem_nm }">
+			    					<button id="#btn-commentdelete">삭제</button>
+		    					</c:if>
+				    		</td>
+				    	</tr>
+			    	</c:forEach>
+	            </table>
+	            <div>
             </div>
-            <div>
                 <button id="btn-list"onclick = "location.href = '/views/review/reviewList.jsp' ">목록</button>
             </div>
         </div>
