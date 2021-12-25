@@ -13,7 +13,7 @@
     
     <hr>
 			
-	<h3>관광명소 명</h3>
+	<h3>${ detailVo.title }</h3>
 	
 	<hr>
 
@@ -138,7 +138,7 @@
 	<!-- ====================================== 다음 카카오 지도 API ====================================== -->
 	
     <div class="backspot">
-	    <button class="backbutton" onclick="location.href='${ path }/spot/spotList'" >목록으로 돌아가기</button>
+	    <button class="backbutton" onclick="location.href='${ path }/stay/stayList'" >목록으로 돌아가기</button>
     </div>
     
   </div>
