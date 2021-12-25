@@ -27,23 +27,6 @@ public class SpotListSerlvet extends HttpServlet {
     	String spotType = "관광명소";
     	String expirenceType = "체험";
     	String shoppingType = "쇼핑";
-    	
-    	// --------- 유일님 여기 추가 했어요 ----------- 
-    	// int localType1 = 1; // 추자도
-    	// int localType2 = 2; // 차귀도
-    	
-    	int localType1 = 14; // 서귀포시
-    	int localType2 = 11; // 성산
-    	
-    	List<BoardList> localList1 = null;
-    	List<BoardList> localList2 = null;
-    	
-    	localList1 = service.getLocalList1(localType1);
-    	localList1 = service.getLocalList2(localType2);
-    	
-    	request.setAttribute("localList1", localList1);
-    	request.setAttribute("localList2", localList2);
-    	// --------- 유일님 여기 추가 했어요 -----------
 
     	List<BoardList> spotList = null;
     	List<BoardList> experienceList = null;
@@ -56,8 +39,6 @@ public class SpotListSerlvet extends HttpServlet {
     	request.setAttribute("spotList", spotList);
     	request.setAttribute("experienceList", experienceList);
     	request.setAttribute("shoppingList", shoppingList);
-    	request.setAttribute("localList1", localList1);
-    	request.setAttribute("localList2", localList2);
     	
     	request.getRequestDispatcher("/views/spot/spotList.jsp").forward(request, response);
 	}

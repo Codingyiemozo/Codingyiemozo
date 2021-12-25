@@ -57,29 +57,4 @@ public class BoardService {
 		
 		return board;
 	}
-
-	
-	// -------------------------------- 유일님 여기 추가 했어요 ------------------------------------ 
-	// 여행지 : 지역별 조회 (서귀포)
-	public List<BoardList> getLocalList1(int localType1) {
-		List<BoardList> localList1 = null;
-		Connection connection = getConnection();
-		
-		localList1 = dao.findLocalList1(connection, localType1);
-		
-		close(connection);
-		return localList1;
-	}
-	
-	// 여행지 : 지역별 조회 (성산읍)
-	public List<BoardList> getLocalList2(int localType2) {
-		List<BoardList> localList2 = null;
-		Connection connection = getConnection();
-		
-		localList2 = dao.findLocalList2(connection, localType2);
-		
-		close(connection);
-		return localList2;
-	}
-	// -------------------------------- 유일님 여기 추가 했어요 ------------------------------------
 }
