@@ -224,29 +224,78 @@ INSERT INTO TB_REST VALUES(SEQ_TB_REST_NO.NEXTVAL, '술집', '미드나잇 제�
 /* -----------------------------------------------------
     여행후기 테이블
 ----------------------------------------------------- */
-ALTER TABLE TB_MEM ADD CONSTRAINT MEMBER_NM_UQ UNIQUE (MEM_NM);
+
+
 ALTER TABLE TB_MEM ADD CONSTRAINT MEMBER_NO_UQ UNIQUE (NO);
 
 CREATE TABLE TB_REVIEW (   
     RV_NO NUMBER PRIMARY KEY,
-    MEM_NM VARCHAR2(15) NOT NULL,
     RV_TYPE VARCHAR2(20),
     RV_TITLE VARCHAR2(100), 
-    RV_IMG_PATH VARCHAR2(50),
-    RV_DATE DATE,
+    RV_DATE DATE DEFAULT SYSDATE,
+    RV_IMG_PATH VARCHAR(100),
     RV_CONTENT CLOB,
-    RV_COMMNET VARCHAR2(500),
-    RV_HITS VARCHAR2(20),
+    CM_NO VARCHAR2(500),
+    RV_HITS NUMBER DEFAULT 0,
     MEM_NO NUMBER,
     FOREIGN KEY (MEM_NO) REFERENCES TB_MEM (NO),
-    FOREIGN KEY (MEM_NM) REFERENCES TB_MEM (MEM_NM)
+    FOREIGN KEY (CM_NO) REFERENCES TB_COMMENT (CM_NO)
 );
 
 CREATE SEQUENCE SEQ_TB_REVIEW_NO;
 
-INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NM) VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '신창 풍차해안도로 다녀왔어요!', '/resources/images/review/review', SYSDATE, '제주도 드라이브코스 하면 단연 먼저 생각나는 건 제주 신창 풍차 해안도로에요.', '관리자');
-INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NM) VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '히든클리프 1박 후기', '/resources/images/review/review', SYSDATE, '룸컨디션도 깔끔하고 직원도 친절해서 좋았는데 무엇보다 가장 큰 장점은 수영장이었던 거 같아요.', '관리자');
-INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NM) VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '명진전복에서 전복돌솥밥 먹었어요!', '/resources/images/review/review', SYSDATE, '수요미식회에 소개되었던 전복돌솥밥이 맛있는 명진전복에 다녀왔습니다.', '관리자');
+-- 여행지 데이터
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '신창 풍차해안도로 다녀왔어요!', '/resources/images/review/review', SYSDATE, '제주도 드라이브코스 하면 단연 먼저 생각나는 건 제주 신창 풍차 해안도로에요.', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '우도 방문 후기', '/resources/images/review/review', SYSDATE, '바다도 너무 예쁘고 좋았습니다.', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '올레길 1코스 다녀왔습니다!', '/resources/images/review/review', SYSDATE, '성산일출봉이 보이는 광치기 해변의 풍경이 너무 아름다워요.', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '함덕으로 가신다면 서우봉 추천드려요', '/resources/images/review/review', SYSDATE, '함덕 해수욕장 바로 옆 오름이라 접근성도 좋고 뷰도 탁 트여서 좋았습니다.', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '마라도 가보셨나요?', '/resources/images/review/review', SYSDATE, '섬은 우도 외에 안가봤는데 마라도도 너무 좋았어요.<br> 남단쪽으로 가신다면 마라도 가보시는거 추천드려요!!', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '카멜리아 힐에서 인생사진 찍었어요!', '/resources/images/review/review', SYSDATE, '사람은 많지만 동백꽃이 너무 예뻐서 꼭 방문하시는걸 추천드려요!', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '여행지', '오설록 티 뮤지엄 다녀왔습니다~!', '/resources/images/review/review', SYSDATE, '녹차밭에서 인생사진 건졌어요ㅠㅠ<br> 오설록 녹차스프레드도 꼭 드셔보시고 옆에 이니스프리 매장도 들려보세요!', 41);
+
+
+-- 숙박 데이터
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '히든클리프 1박 후기', '/resources/images/review/review', SYSDATE, '룸컨디션도 깔끔하고 직원도 친절해서 좋았는데 무엇보다 가장 큰 장점은 수영장이었던 거 같아요.', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '롯데 호텔 제주에서 묵었어요', '/resources/images/review/review', SYSDATE, '천지연 폭포와 중문 해수욕장이 가까워서 여기저기 보러다니기도 편해요~~', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '제주신라호텔은 꼭 하루라도 가보세요!', '/resources/images/review/review', SYSDATE, '중문 관광단지 내에 있어 운전하기도 편하고 근처에 핫플레이스도 많아요! 시설과 서비스는 물론 좋구요ㅎㅎ', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '신라스테이 제주 가성비 최고..!', '/resources/images/review/review', SYSDATE, '국제공항에서 가까워서 여행 첫날이나 마지막날 묵기에 깔끔하고 너무 좋았어요 ㅎㅎ', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '게스트 하우스는 바바호미 추천드려요~!', '/resources/images/review/review', SYSDATE, '깔끔한 게스트하우스 찾아보다가 예약했는데.. 사장님도 친절하시고 너무 깔끔하고 예뻐서 잘묵고왔어요ㅎㅎ', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '가족들과 방문하신다면 더갤러리펜션 가보세요', '/resources/images/review/review', SYSDATE, '펜션 내 정원도 있어 아이들과 사진찍고 놀기에도 좋았어요 ㅎㅎ', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '라마다 호텔에서 묵어본 후기입니다', '/resources/images/review/review', SYSDATE, '첫날 저녁 비행기라 저렴하고 공항 근처 호텔 찾다가 예약했는데 가성비도 좋고 깔끔합니다.', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '캠핑 좋아하시는 분들 디포레 카라반파크 가보세요', '/resources/images/review/review', SYSDATE, '캠핑장 관리도 깔끔하게 되어있어 캠핑 초보분들도 가기 좋습니다 ㅎㅎ', 41);
+-- 맛집 데이터
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '명진전복에서 전복돌솥밥 먹었어요!', '/resources/images/review/review', SYSDATE, '수요미식회에 소개되었던 전복돌솥밥이 맛있는 명진전복에 다녀왔습니다.', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '흑돼지는 더시즈닝 협재흑돼지 추천합니다', '/resources/images/review/review', SYSDATE, '흑돼지는 물론 파스타도 맛있게 먹었습니다.', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '대우정식당 다녀왔어요!', '/resources/images/review/review', SYSDATE, '전복 솥밥에 마가린+소스 비벼먹고 뚝배기에 누룽지까지 너무 완벽한 식사였습니다..', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '올레국수에서 고기국수 먹었어요!', '/resources/images/review/review', SYSDATE, '고기국수 맛집이 많아서 고민하다 올레국수 가봤는데 국물도 진하고 맛있었어요 ㅎㅎ', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '핫플 우진해장국 추천합니다..', '/resources/images/review/review', SYSDATE, '웨이팅은 많지만 든든한 한끼먹기 너무 좋았어서 방문 추천드립니다', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '스시도모다찌에서 초밥 먹고 왔어요!!', '/resources/images/review/review', SYSDATE, '재료가 싱싱하다 보니 퀄리티도 너무 좋고 가격도 육지에 비해 너무 저렴해서 아주 잘먹고왔습니다.^^', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '제주어항원 다녀왔습니다.', '/resources/images/review/review', SYSDATE, '전복을 좋아해서 갔는데 만족스럽습니다. ^^', 41);
+INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
+VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '모루쿠다 후기', '/resources/images/review/review', SYSDATE, '해산물 들어간 라멘인데 맛있어요', 41);
+
 
 
 /* --------------------

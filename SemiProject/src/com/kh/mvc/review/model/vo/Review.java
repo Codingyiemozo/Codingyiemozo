@@ -15,20 +15,20 @@ public class Review {
 	private String rv_type;
 	
 	private String rv_title;
+		
+	private Date rv_date;
 	
 	private String rv_img_path;
 	
-	private Date rv_date;
-	
 	private String rv_content;
-	
-	private String rv_comment;
 	
 	private int rv_hits;
 	
 	private int mem_no;
 	
 	private String mem_nm;
+	
+	private int cm_no;
 
 	
 //	

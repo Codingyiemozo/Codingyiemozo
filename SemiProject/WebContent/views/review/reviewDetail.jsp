@@ -11,7 +11,7 @@
                 <div id="reviewTitle">${ review.rv_title }</div>
                 <div id="reviewHits">조회수 ${ review.rv_hits }</div>
                 <div class="reviewWriteInf">
-                    <div id="reviewGroup">${ review.rv_type }</div>
+                    <div id="reviewType">${ review.rv_type }</div>
                     <div id="userName">작성자 ${ review.mem_nm }</div>
                     <div id="reviewUploadDate">${ review.rv_date }</div>
                 </div>

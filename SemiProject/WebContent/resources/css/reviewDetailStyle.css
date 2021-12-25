@@ -31,7 +31,7 @@
     padding-bottom: 20px;
 }
 
-#reviewGroup {
+#reviewType {
 	font-size: 13px;
     float: left;
 }
@@ -251,14 +251,14 @@
 	margin-left: 0%;
 }
 
-#select-group {
+#select-type {
 	float: left;
 	width: 100px;
 	font-size: 13px;
 	border: 1px solid #ddd;
 }
 
-#select-group option {
+#select-type option {
 	float: left;
 }
 #form-writer {
