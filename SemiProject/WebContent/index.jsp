@@ -20,25 +20,25 @@
         <div class="select-map">
             <img src="${ pageContext.request.contextPath }/resources/images/map.png" alt="" class="img-map">
             <ul class="location-list">
-            <li><a href="${ path }/local.do?name=1">추자도</a></li>
-            <li><a href="${ path }/local.do?name=2">차귀도</a></li>
-            <li><a href="${ path }/local.do?name=3">비양도</a></li>
-            <li><a href="${ path }/local.do?name=4">한경면</a></li>
-            <li><a href="${ path }/local.do?name=5">한림읍</a></li>
-            <li><a href="${ path }/local.do?name=6">애월읍</a></li>
-            <li><a href="${ path }/local.do?name=7">제주시</a></li>
-            <li><a href="${ path }/local.do?name=8">조천읍</a></li>
-            <li><a href="${ path }/local.do?name=9">구좌읍</a></li>
-            <li><a href="${ path }/local.do?name=10">우도</a></li>
-            <li><a href="${ path }/local.do?name=11">성산읍</a></li>
-            <li><a href="${ path }/local.do?name=12">표선면</a></li>
-            <li><a href="${ path }/local.do?name=13">남원읍</a></li>
-            <li><a href="${ path }/local.do?name=14">서귀포시</a></li>
-            <li><a href="${ path }/local.do?name=15">중문</a></li>
-            <li><a href="${ path }/local.do?name=16">안덕면</a></li>
-            <li><a href="${ path }/local.do?name=17">대정읍</a></li>
-            <li><a href="${ path }/local.do?name=18">가파도</a></li>
-            <li><a href="${ path }/local.do?name=19">마라도</a></li>
+            <li><a href="${ path }/local.do?no=1&name=추자도">추자도</a></li>
+            <li><a href="${ path }/local.do?no=2&name=차귀도">차귀도</a></li>
+            <li><a href="${ path }/local.do?no=3&name=비양도">비양도</a></li>
+            <li><a href="${ path }/local.do?no=4&name=한경면">한경면</a></li>
+            <li><a href="${ path }/local.do?no=5&name=한림읍">한림읍</a></li>
+            <li><a href="${ path }/local.do?no=6&name=애월읍">애월읍</a></li>
+            <li><a href="${ path }/local.do?no=7&name=제주시">제주시</a></li>
+            <li><a href="${ path }/local.do?no=8&name=조천읍">조천읍</a></li>
+            <li><a href="${ path }/local.do?no=9&name=구좌읍">구좌읍</a></li>
+            <li><a href="${ path }/local.do?no=10&name=우도">우도</a></li>
+            <li><a href="${ path }/local.do?no=11&name=성산읍">성산읍</a></li>
+            <li><a href="${ path }/local.do?no=12&name=표선면">표선면</a></li>
+            <li><a href="${ path }/local.do?no=13&name=남원읍">남원읍</a></li>
+            <li><a href="${ path }/local.do?no=14&name=서귀포시">서귀포시</a></li>
+            <li><a href="${ path }/local.do?no=15&name=중문">중문</a></li>
+            <li><a href="${ path }/local.do?no=16&name=안덕면">안덕면</a></li>
+            <li><a href="${ path }/local.do?no=17&name=대정읍">대정읍</a></li>
+            <li><a href="${ path }/local.do?no=18&name=가파도">가파도</a></li>
+            <li><a href="${ path }/local.do?no=19&name=마라도">마라도</a></li>
             </ul>                
         </div>
 
@@ -62,7 +62,7 @@
         <div class="thumb-list">
             <h3>숙박</h3>
             <ul>
-		      	<c:forEach var="stay" items="${ stayList }" begin="0" end="7">
+		      	<c:forEach var="stay" items="${ stayList }" begin="0" end="9">
 			        <li>
 			          <a href="">
 			            <div class="img-thumb">
@@ -79,7 +79,7 @@
         <div class="thumb-list">
             <h3>맛집</h3>
             <ul>
-		      	<c:forEach var="rest" items="${ restList }" begin="0" end="7">
+		      	<c:forEach var="rest" items="${ restList }" begin="0" end="9">
 			        <li>
 			          <a href="">
 			            <div class="img-thumb">

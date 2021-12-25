@@ -24,9 +24,11 @@ public class MapLocalController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int localNo = Integer.parseInt(request.getParameter("name")); 
+		int localNo = Integer.parseInt(request.getParameter("no")); 
+		String localName = request.getParameter("name");
 		
 		System.out.println(localNo);
+		System.out.println(localName);
 		
 		List<RestBoardList> restList = null;
     	List<SpotBoardList> spotList = null;
@@ -39,6 +41,7 @@ public class MapLocalController extends HttpServlet {
     	request.setAttribute("restList", restList);
     	request.setAttribute("spotList", spotList);
     	request.setAttribute("stayList", stayList);
+    	request.setAttribute("localName", localName);
     	
     	request.getRequestDispatcher("/views/map/mapLocal.jsp").forward(request, response);
 		

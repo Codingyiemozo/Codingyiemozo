@@ -1,21 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<jsp:include page="/views/common/header.jsp" />
+
 <style>
-        div {
+        .SID-div {
             margin: 15px;
-            border: 1px solid gray;
             padding: 10px;
             text-align: center;
         }
 
-        div table {
+        .SID-div table {
             margin:0 auto;
+            width: 15%
         }
+        
+        #SID-outer{
+        	margin-top: 5%;
+        	margin-bottom: 10%;
+        }
+        
         #btn1 {
             margin-right: -4px;
             border-bottom-left-radius: 5px;
@@ -74,43 +77,47 @@
         }
         
     </style>
-</head>
-<body>
-    <div style="font-size: 20px;">
-        <button id="top_btn"><img src="./resources/화살표.png" alt=""></button> 아이디 / 비밀번호 찾기
-    </div>
+    
+    
+<section>
 
-    <div id="btn_group">
-        <button id="btn1">아이디 찾기</button>
-        <button id="btn2">비밀번호 찾기</button>
-    </div>
+	<div class="SID-div" id="SID-outer">
+	    <div class="SID-div" style="font-size: 20px;">
+	        <button id="top_btn" onclick="location.href='javascript:history.back();'"><img src="${ pageContext.request.contextPath }/resources/images/direction.png" alt=""></button> 아이디 / 비밀번호 찾기
+	    </div>
 
-    <div>
+	
+	    <div class="SID-div" id="btn_group">
+	        <button id="btn1" onclick="location.href='${ pageContext.request.contextPath }/member/search'">아이디 찾기</button>
+	        <button id="btn2">비밀번호 찾기</button>
+	    </div>
+	
         <form action="">
-            <table >
-                <tr>
-                    <td>
-                        <input type="number" name="" id="" placeholder="휴대전화번호 입력('-'제외)">
-                    </td>
-                    <td>
-                        <button class="tb_btn" style="width: 100%;">인증번호 전송</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="number" name="" id="" placeholder=" 인증번호 입력">
-                    </td>
-                    <td>
-                        <button class="tb_btn" style="width: 100%;">확인</button>
-                    </td>
-                </tr>
-            </table>
+		    <div class="SID-div">
+		            <table >
+		                <tr>
+		                    <td>
+		                        <input type="number" name="" id="" placeholder="휴대전화번호 입력('-'제외)">
+		                    </td>
+		                    <td>
+		                        <button class="tb_btn" style="width: 100%;">인증번호 전송</button>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                        <input type="number" name="" id="" placeholder=" 인증번호 입력">
+		                    </td>
+		                    <td>
+		                        <button class="tb_btn" style="width: 100%;">확인</button>
+		                    </td>
+		                </tr>
+		            </table>		            
+	        </div>
+	        <div class="SID-div">
+	            <input id="submit" type="submit" value="아이디 찾기">
+	        </div>
+	    </form>
+    </div>
             
-        </div>
-        <div>
-            <input id="submit" type="submit" value="아이디 찾기">
-        </div>
-    </form>
-            
-</body>
-</html>
+</section>
+<jsp:include page="/views/common/footer.jsp" />

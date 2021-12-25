@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="contents">
-    <h2 class="page-tit">여행지</h2>
+    <h2 class="page-tit">${ localName }</h2>
     
     
 	<div class="thumb-list">
@@ -30,7 +30,7 @@
     <div class="thumb-list">
             <h3>숙박</h3>
             <ul>
-		      	<c:forEach var="stay" items="${ stayList }" begin="0" end="7">
+		      	<c:forEach var="stay" items="${ stayList }" begin="0" end="4">
 			        <li>
 			          <a href="">
 			            <div class="img-thumb">
@@ -47,7 +47,7 @@
         <div class="thumb-list">
             <h3>맛집</h3>
             <ul>
-		      	<c:forEach var="rest" items="${ restList }" begin="0" end="7">
+		      	<c:forEach var="rest" items="${ restList }" begin="0" end="4">
 			        <li>
 			          <a href="">
 			            <div class="img-thumb">
