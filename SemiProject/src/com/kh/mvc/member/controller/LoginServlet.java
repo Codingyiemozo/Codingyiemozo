@@ -44,10 +44,10 @@ public class LoginServlet extends HttpServlet {
 			
 			session.setAttribute("loginMember", loginMember);
 			
-			response.sendRedirect(request.getContextPath() + "/");
+			response.sendRedirect(request.getContextPath() + "/home");
 		} else {
 			request.setAttribute("msg", "아이디나 비밀번호가 일치하지 않습니다.");
-			request.setAttribute("location", "/");
+			request.setAttribute("location", "/home");
 			
 			request.getRequestDispatcher("/views/common/msg.jsp").forward(request, response);
 		}
