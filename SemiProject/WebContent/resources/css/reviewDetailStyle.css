@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+/* 리뷰 메인페이지 */
+.btn-wrap {
+	width: 95%;
+}
+
+#btn-write {
+	float: right;
+}
+
 /* 리뷰 상세페이지 */
 .reviewTitle {
 	text-align: center;
@@ -22,21 +31,30 @@
     padding-bottom: 20px;
 }
 
-#reviewGroup {
+#reviewType {
 	font-size: 13px;
     float: left;
+	width: 100%;
+	text-align: left;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 #userName {
 	font-size: 13px;
     float: left;
-    margin-left: 80%;
 
 }
 
 #reviewUploadDate {
 	font-size: 13px;
     float: right;
+    margin-right: 20px;
+}
+
+#reviewHits {
+	font-size: 13px;
+	float: right;
 }
 
 .reviewContents {
@@ -46,7 +64,34 @@
 	padding-bottom: 50px;
 	border-bottom: 1px solid #ddd; 
 }
+/*댓글테이블*/
 
+#comment-container {
+	border-bottom: 1px solid #ddd;
+}
+#frm-comment {
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+
+#commentContent {
+	text-align: inherit;
+	margin-top: 30px;
+	width: 98%;
+	resize: none;
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+#btn-insert {
+	float: right;
+	margin: 10px;
+	width: 70px;
+	height: 30px;
+	font-weight: bold;
+	font-size: 12px;
+	border: none;
+}
 #form-commentInfo {
 	width: 100%;
 	text-align: left;
@@ -127,6 +172,7 @@
 	height: 40px;
 	border: none;
 	font-weight: bold;
+	margin-top: 30px;
 }
 
 
@@ -236,14 +282,14 @@
 	margin-left: 0%;
 }
 
-#select-group {
+#select-type {
 	float: left;
 	width: 100px;
 	font-size: 13px;
 	border: 1px solid #ddd;
 }
 
-#select-group option {
+#select-type option {
 	float: left;
 }
 #form-writer {
