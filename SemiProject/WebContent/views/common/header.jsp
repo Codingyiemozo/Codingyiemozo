@@ -7,34 +7,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>제주혼여행</title>
 <link rel="stylesheet" href="${ path }/resources/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="resources/favicon.ico">
 <script src="${ path }/resources/js/jquery-3.6.0.js"></script>
 </head>
 <body>
 	<header>
-		<div class="member-container">
-			<c:if test="${ empty loginMember }">
-				<button class="btn" onclick="location.href='${ path }/member/login'">로그인</button> |
-				<button class="btn" onclick="location.href='${ path }/member/enroll'">회원가입</button>
-			</c:if>
-			<c:if test="${ !empty loginMember }">
-				<table>
-					<tr>
-						<td colspan="2">
-							${ loginMember.name } 님 안녕하세요.
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button onclick="location.href='${ path }/member/myPage'">내 정보</button>
-						</td>
-						<td>
-							<button onclick="location.replace('${ path }/logout')">로그아웃</button>
-						</td>
-					</tr>
-				</table>
-			</c:if>
+		<div class="header-inner">
+			<div class="member-container">
+				<a href="${ path }/home" class="logo">
+					<img src="${ pageContext.request.contextPath }/resources/images/logo.png" alt="메인으로 이동">
+				</a>
+				<c:if test="${ empty loginMember }">
+					<div class="before-login">
+						<button class="btn" onclick="location.href='${ path }/member/login'">로그인</button>
+						<button class="btn" onclick="location.href='${ path }/member/enroll'">회원가입</button>
+					</div>
+				</c:if>
+				<c:if test="${ !empty loginMember }">
+					<div class="after-login">
+						<table>
+							<tr>
+								<td colspan="2">
+									${ loginMember.name }
+								</td>
+								<td>
+									<button onclick="location.href='${ path }/member/myPage'">내 정보</button>
+								</td>
+								<td>
+									<button onclick="location.replace('${ path }/logout')">로그아웃</button>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</c:if>
+			</div>
 		</div>	
 	</header>
