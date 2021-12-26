@@ -120,29 +120,6 @@
                 </td>
             </tr>
             
-            <!--  
-            <div class="profile">
-            <tr>
-                <th>프로필 사진</th>
-                <%-- 
-                <td>
-                	<img id="profile-image" colspan="2" rowspan="2" src="${ pageContext.request.contextPath }/resources/images/profile/profile_image.jpg" alt="">
-                </td>
-                --%>	
-                <td></td>
-                <td>
-                    <input type="file"  name="uploadfile" id="file">	
-				</td>
-				
-				<%-- 	
-				<td>
-                     <input type="button"  value="기본사진">
-                </td>
-                --%>	   
-            </tr>
-            </div>
-            -->
-            
             <tr>
             	<th>전화번호</th>
             	<td>
