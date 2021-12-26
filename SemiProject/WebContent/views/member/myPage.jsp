@@ -49,6 +49,9 @@
 	    border: 1px solid #ff7f27;
 	    border-radius: 0;
 	}
+	.tbl-mypage td input:disabled {
+		background: #eee;
+	}
 	.button-section {
 	    text-align: center;
 	    margin: 20px 0;
@@ -68,6 +71,12 @@
 	.btn-mypage.gray {
 		background: #999;
 	}
+	.notice {
+		display: block;
+		font-size: 12px;
+		color: #888;
+		margin-bottom: 5px;
+	} 
 </style>
 
 <div class="container">
@@ -84,7 +93,8 @@
 	                <th>아이디</th>
 	                <td>
 	                    <input type="text" name="userId" id="newId" 
-	                    	value="${ loginMember.id }" readonly required onfocus="this.blur();">
+	                    	value="${ loginMember.id }" disabled required onfocus="this.blur();">
+	                    <span class="notice">* 아이디는 변경이 불가능합니다.</span>
 	                </td>
 	            </tr>
 	           	<tr>
