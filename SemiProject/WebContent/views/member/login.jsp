@@ -6,39 +6,57 @@
 
 
 <style>
-        #loginSubmit {
-            background-color: #4575cb;
-            border: 1px solid #4575cb;
-            color: white;
-            width: 100px;
-            height: 50px;
-            margin-bottom: 2ex;
-        }
-        #loginFrm {
-        	margin-top: 50px;
-        	margin: 50px auto 0;
-        }
-        #loginFrm table {
-            margin:0 auto;
-            border:1px solid black;
-            width: 30%
-        }
+#loginSubmit {
+	width: 100%;
+    background-color: #ff9227;
+    border: 0;
+    color: white;
+    width: 100px;
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+#loginFrm {
+	width: 30%;
+	text-align: center;
+	border: 1px solid #888;
+	margin: 50px auto 0;
+	padding: 20px 0;
+}
+#loginFrm table {
+    margin: 0 auto;
+    border: 0;
+}
+#loginFrm table th {
+	font-weight: 500;
+	padding: 10px 0;
+}
+#loginFrm table th,
+#loginFrm table td {
+	text-align: left;
+	padding-left: 20px;
+}
+#loginFrm input[type="text"],
+#loginFrm input[type="password"] {
+	height: 30px;
+	border: 1px solid #a5a5a5;
+	outline: 0;
+	padding-left: 10px;
+}
+#loginFrm input[type="text"]:focus,
+#loginFrm input[type="password"]:focus {
+	border: 1px solid #ff7f27;
+	border-radius: 0;
+}
+#l-menu {
+    margin-top: 20px;
+    text-align: center;
+}
+.l-btn {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
 
-        #l-menu {
-            margin-top: 20px;
-            text-align: center;
-            
-        }
-
-        .l-btn {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        tr {
-            line-height: 300%;
-        }
 </style>
 
 <div class="container">
@@ -48,9 +66,6 @@
  	
 		<table>
 			<tr>
-				<th colspan="2">Login</th>
-			</tr>
-			<tr>
 				<th>아이디</th>
 				<td><input type="text" name="userId" id="userId" placeholder="아이디를 입력해주세요." ></td>
 			</tr>
@@ -58,20 +73,15 @@
 				<th>비밀번호</th>
 				<td><input type="password" name="userPwd" id="userPwd" placeholder="비밀번호를 입력해주세요."></td>
 			</tr>
-			<tr>
-				<td colspan="2" style="text-align: center;">
- 				<input type="submit" id="loginSubmit" value="Login">
-				</td>
-			</tr>
 		</table>
 		
-		<div id="l-menu">
-            <input class="l-btn" type="button" value="회원가입" onclick="location.href='${ path }/member/enroll'"> |
-            <input class="l-btn" type="button" value="아이디 찾기" onclick="location.href='${ path }/member/search'">
-        </div>
-	 	
- 	
+		<input type="submit" id="loginSubmit" value="로그인">	
  	</form>
+ 	
+ 	<div id="l-menu">
+         <input class="l-btn" type="button" value="회원가입" onclick="location.href='${ path }/member/enroll'"> | 
+         <input class="l-btn" type="button" value="아이디 찾기" onclick="location.href='${ path }/member/search'">
+     </div>
  	
  </section>
 </div>
