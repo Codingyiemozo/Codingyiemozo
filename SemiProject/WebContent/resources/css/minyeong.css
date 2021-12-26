@@ -8,6 +8,10 @@ a {
   color: #333;
   text-decoration: none;
 }
+button[type="button"],
+input[type="submit"] {
+	cursor: pointer;
+}
 
 .wrap {
 }
@@ -16,24 +20,65 @@ header {
   border-bottom: 1px solid #ddd;
 }
 .header-inner {
+  width: 980px;
+  margin: 0 auto;
+}
+.header-inner .before-login button {
+	position: relative;
+	font-size: 14px;
+}
+.header-inner .before-login button:first-child {
+	padding-right: 10px;
+	margin-right: 4px;
+}
+.header-inner .before-login button:first-child:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 1px;
+	height: 14px;
+	background: #888;
+	transform: translateY(-50%);
+}
+.header-inner .after-login table {
+	border: 0;
+}
+.header-inner .after-login table td {
+	padding: 0 5px;
+}
+.header-inner .after-login button {
+	font-size: 14px;
+	border: 0;
+	background: none;
+	cursor: pointer;
+}
+.member-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 980px;
-  margin: 0 auto;
 }
 
 header + .container {
   margin-top: -1px;
 }
+header .logo img {
+	width: 160px;
+}
+
 
 
 
 .container {
   width: 100%;
+  min-height: 100%;
   overflow: hidden;
   margin-bottom: 100px;
+}
+.contents {
+	min-height: 100%;
+	height: 100%;
 }
 .page-tit {
   font-size: 20px;
@@ -41,7 +86,7 @@ header + .container {
 }
 .menu-bar {
   width: 100%;
-  background: #4575cb;
+  background: #ff9227;
 }
 .menu-bar ul {
   display: flex;
@@ -51,6 +96,7 @@ header + .container {
 }
 .menu-bar li {
   list-style: none;
+  font-size: 18px;
 }
 .menu-bar li a {
   display: inline-block;
@@ -73,9 +119,8 @@ footer {
   font-size: 12px;
   margin: 0 auto;
 }
-.footer-inner .logo {
-  font-size: 14px;
-  font-weight: bold;
+.footer-inner .logo img {
+  width: 100px;
 }
 .footer-inner .team ul {
   display: flex;
@@ -92,55 +137,6 @@ footer {
 
 
 
-/* main > 사용자 정보 */
-.user-info {
-  font-size: 14px;
-}
-.user-info > div {
-  display: flex;
-  align-items: center;
-}
-/* login 전 */
-.user-info .before-login a {
-  display: inline-block;
-}
-.user-info .before-login a:first-child {
-  margin-right: 10px;
-}
-/* .user-info .before-login a:first-child:after {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 14px;
-  background-color: #ccc;
-  margin-left: 10px;
-} */
-/* login 후 */
-.user-info .after-login {
-}
-.user-info .after-login .user {
-  display: flex;
-  align-items: center;
-}
-.user-info .after-login .user .img-user {
-  width: 30px;
-  height: 30px;
-  background-color: #ddd;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-.user-info .after-login p span {
-  font-weight: bold;
-}
-.user-info .after-login a {
-  margin: 0 10px;
-}
-.user-info .after-login .btn-logout {
-  font-size: 14px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 
 
 
@@ -185,130 +181,128 @@ footer {
 
 /* main > 지도 선택 */
 .select-map {
+	width: 980px;
   position: relative;
+  text-align: center;
 }
 .select-map .img-map {
   width: 900px;
   margin: 50px auto 0;
 }
-.select-map .location-list {
-
-}
 .select-map .location-list li {
   position: absolute;
   top: 70px;
-  left: 185px;
+  left: 225px;
   width: 85px;
   height: 65px;
   list-style: none;
   text-indent: -999em;
-  border: 1px solid red;
 }
 .select-map .location-list li:nth-child(2) {
   top: 370px;
-  left: 10px;
+  left: 50px;
   width: 50px;
   height: 40px;
 }
 .select-map .location-list li:nth-child(3) {
   top: 250px;
-  left: 95px;
+  left: 135px;
   width: 50px;
   height: 40px;
 }
 .select-map .location-list li:nth-child(4) {
   top: 370px;
-  left: 106px;
+  left: 146px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(5) {
   top: 310px;
-  left: 155px;
+  left: 195px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(6) {
   top: 260px;
-  left: 259px;
+  left: 299px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(7) {
   top: 220px;
-  left: 420px;
+  left: 460px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(8) {
   top: 170px;
-  left: 560px;
+  left: 600px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(9) {
   top: 150px;
-  left: 680px;
+  left: 720px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(10) { /* 우도 */
   top: 110px;
-  left: 840px;
+  left: 880px;
   width: 45px;
   height: 80px;
 }
 .select-map .location-list li:nth-child(11) { /* 성산읍 */
   top: 255px;
-  left: 754px;
+  left: 794px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(12) { /* 표선면 */
   top: 310px;
-  left: 660px;
+  left: 700px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(13) { /* 남원읍 */
   top: 360px;
-  left: 550px;
+  left: 590px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(14) { /* 서귀포시 */
   top: 400px;
-  left: 440px;
+  left: 480px;
   width: 61px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(15) { /* 중문 */
   top: 410px;
-  left: 340px;
+  left: 380px;
   width: 40px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(16) { /* 안덕면 */
   top: 415px;
-  left: 210px;
+  left: 250px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(17) { /* 대정읍 */
   top: 445px;
-  left: 120px;
+  left: 160px;
   width: 45px;
   height: 30px;
 }
 .select-map .location-list li:nth-child(18) { /* 가파도 */
   top: 555px;
-  left: 125px;
+  left: 165px;
   width: 65px;
   height: 40px;
 }
 .select-map .location-list li:nth-child(19) { /* 마라도 */
   top: 605px;
-  left: 125px;
+  left: 165px;
   width: 65px;
   height: 40px;
 }
@@ -376,7 +370,7 @@ footer {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   font-size: 16px;
-  margin: 5px 0;
+  margin: 5px 0 0;
 }
 .thumb-list ul li p {
   font-size: 12px;

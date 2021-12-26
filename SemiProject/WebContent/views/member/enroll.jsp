@@ -5,7 +5,6 @@
 <jsp:include page="/views/common/header.jsp" />
 
 <style>
-
        	#E-title {
        		margin-top: 5%;
        	}
@@ -41,12 +40,6 @@
             margin: 10px; 
         }
 
-        img {
-            width: 30px;
-            height: 20px;
-            margin-right: 20px;
-        }
-
         #top_btn {
             background-color: transparent;
             cursor: pointer;
@@ -56,7 +49,7 @@
 
 <section id="content">
     <div>        
-            <h2 align="center" id="E-title"><button id="top_btn" onclick="location.href='javascript:history.back();'"><img src="${ pageContext.request.contextPath }/resources/images/direction.png" alt=""></button> 회원가입</h2> 
+        <h2 align="center" id="E-title">회원가입</h2> 
         
         <div>
         	<form name="memberEnrollFrm" action="${ pageContext.request.contextPath }/member/enroll" method="post">
