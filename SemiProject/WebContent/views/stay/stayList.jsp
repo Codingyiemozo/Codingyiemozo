@@ -66,7 +66,7 @@
 	        <li>
 	          <a href="${ pageContext.request.contextPath }/stay/stayDetail?no=${ camping.no }">
 	            <div class="img-thumb">
-	              <img src="${ pageContext.request.contextPath }${ hotel.imgPath }${ hotel.no }.png" alt="">
+	              <img src="${ pageContext.request.contextPath }${ camping.imgPath }${ camping.no }.png" alt="">
 	            </div>
 	            <strong>${ camping.name }</strong>
 	            <p>${ camping.content }</p>
