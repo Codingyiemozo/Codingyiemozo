@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${ path }/resources/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <script src="${ path }/resources/js/jquery-3.6.0.js"></script>
 </head>
 <body>
@@ -27,7 +28,7 @@
 					</tr>
 					<tr>
 						<td>
-							<button>내 정보</button>
+							<button onclick="location.href='${ path }/member/myPage'">내 정보</button>
 						</td>
 						<td>
 							<button onclick="location.replace('${ path }/logout')">로그아웃</button>

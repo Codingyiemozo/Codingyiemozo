@@ -1,21 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("utf-8"); %>
 
 <jsp:include page="/views/common/header.jsp" />
 
 <style>
 
-       
+       	#E-title {
+       		margin-top: 5%;
+       	}
 
         table {
-            border-spacing: 15px;
-            font-size: 20px;
-            width: 50%;
-            margin:0 auto;
+            border-spacing: 0px;
+            font-size: 15px;
+            width: 35%;
+            margin-top: 5%;
+            margin-bottom: 10%;
+            margin-left: 42.5%;
+            padding: 0px;
+            border: hidden;
         }
 
         th, td {
             text-align: left;
+            border-spacing: 0px;
+            padding: 0px;
         }
         
         input {
@@ -29,6 +38,7 @@
             border: 1px solid #4575cb;
             font-size: 15px;
             border-radius: 10px;
+            margin: 10px; 
         }
 
         img {
@@ -46,14 +56,14 @@
 
 <section id="content">
     <div>        
-            <h2 align="center"><button id="top_btn" onclick="location.href='${ pageContext.request.contextPath }/'"><img src="resources/images/direction.png" alt=""></button> 회원가입</h2> 
+            <h2 align="center" id="E-title"><button id="top_btn" onclick="location.href='javascript:history.back();'"><img src="${ pageContext.request.contextPath }/resources/images/direction.png" alt=""></button> 회원가입</h2> 
         
         <div>
         	<form name="memberEnrollFrm" action="${ pageContext.request.contextPath }/member/enroll" method="post">
 	            <table>
 	                <tr>
-	                    <th>아이디</th>
-	                    <td>
+	                    <th style="width: 100px">아이디</th>
+	                    <td style="width: 150px;">
 	                    	<input type="text" name="userId" id="newId" placeholder="내용을 입력해주세요" required>
 	                    </td>
 	                    <td>
@@ -69,7 +79,7 @@
 	                <tr>
 	                    <th>비밀번호 확인</th>
 	                    <td>
-	                    	<input type="password" id="pass2">
+	                    	<input type="password" id="pass2" required>
 	                    </td>
 	                </tr>
 	                <tr>
@@ -77,16 +87,11 @@
 	                    <td>
 	                    	<input type="text" name="userName" id="" placeholder="내용을 입력해주세요" required>
 	                    </td>
-	                </tr>
-	                <tr>
-	                    <th>프로필 사진</th>
-	                    <td></td>
-	                    <td><input type="file" name="photo" id="photo"></td>
-	                </tr>
+	                </tr>	                
 	                <tr>
                     	<th>휴대폰</th>
                     	<td>
-                    		<input type="tel" name="phone" id="phone" maxlength="11" placeholder="(-없이)01012345678">
+                    		<input type="tel" name="phone" id="phone" maxlength="11" placeholder="(-없이)01012345678" required>
                     	</td>
                 	</tr>
                 	<tr>
@@ -98,10 +103,13 @@
 	                    <td><input type="email" name="email" id="email" placeholder="abc@abc.com"></td>
 	                </tr>
 	                
-	                <tr>
-                    <td colspan="3" style="text-align: center;" >
-                        <input type="submit" id="enrollSubmit" value="회원가입">	
+	                <tr><td>
+	                </td>
+                    <td colspan="3">
+                        <input type="submit" id="enrollSubmit" value="회원가입" style="margin-left: 50px">	
                     </td>
+                    <td></td>
+                   
                 </tr>
 	            </table>
             </form>
