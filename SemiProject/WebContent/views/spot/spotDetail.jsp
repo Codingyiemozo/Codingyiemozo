@@ -138,7 +138,7 @@
 	
     
     <div class="backspot">
-	    <button class="backbutton" onclick="location.href='${ path }/spot/stayList'" >목록으로 돌아가기</button>
+	    <button class="backbutton" onclick="location.href='${ path }/spot/spotList'" >목록으로 돌아가기</button>
     </div>
     
   </div>
