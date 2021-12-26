@@ -66,17 +66,17 @@
 			<ul class="slidelist">
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }001.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_1.png">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }002.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_2.png">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }003.jpg.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_3.png">
 					</a>
 				</li>
 			</ul>
