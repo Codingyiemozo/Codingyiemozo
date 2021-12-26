@@ -153,8 +153,13 @@ INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '제주 감성 편집샵 제�
 INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '서쪽가게', '쇼핑', '/resources/images/spot/spot', '제주 제주시 한림읍 한림로 372-7', '064-796-8178', '-', '-', '환경은 더 이상 선택이 아닌 필수가 되야 한다고 생각한 저희는 더 이상 지구가 아프지 않았으면 좋겠다는 바람으로 샵의 철학을 정리하는 시간을 가졌어요', '33.39566798622275', '126.24389155539822', 5);
 INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '아코제주', '쇼핑', '/resources/images/spot/spot', '제주 제주시 구좌읍 구좌로 75-1', '070-8869-2177', '-', '-', '아코제주에서 제주를 연상케 하는 소품들을 준비했습니다. 다양한 소품을 통해 제주를 느껴보세요.', '33.521506314642444', '126.85880724374273', 9);
 
-
-
+-- 추가
+INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '이호테우해수욕장', '관광명소', '/resources/images/spot/spot', '제주 제주시 이호일동', '064-728-3994', '-', '-', '해수욕장 길목에는 아카시아숲이 우거져 있고, 모래사장 뒤에는 소나무숲이 형성되어 있는 도심에서 가장 가까운 해수욕장에서 해수욕과 산림욕을 즐겨보세요', '33.49809', '126.45318', 7);
+INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '한라수목원', '관광명소', '/resources/images/spot/spot', '제주 제주시 수목원길 72', '064-710-7575', '-', '-', '녹색으로 가득한 한라수목원에서 마음의 여유를 느끼며 걸을 수 있어서 좋았습니다.', '33.47012', '126.49328', 7);
+INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '제주양떼목장', '관광명소', '/resources/images/spot/spot', '제주 제주시 애월읍 도치돌길 289-13', '064-799-7346', '-', '-', '평창 양떼목장보다 규모는 작지만 아기자기하고 이쁜 카페가 있습니다. 이 곳에서 여유를 즐겨보세요', '33.41250', '126.36605', 6);
+INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '새별오름', '관광명소', '/resources/images/spot/spot', '제주 제주시 애월읍 봉성리 산59-8', '-', '-', '-', '오름을 오르는 입구에서 약 30분 정도면 정상에 도착할 수 있는 아름다운 곳 입니다. ', '33.36662', '126.35644', 6);
+INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '곽지해수욕장', '관광명소', '/resources/images/spot/spot', '제주 제주시 애월읍 곽지리', '064-728-3985', '-', '-', '해질녘의 모습은 감히 제주도를 넘어 전국 최고의 모습이 아닐까 하는 생각이 듭니다.', '33.45162', '126.30547', 6);
+INSERT INTO TB_SPOT VALUES(SEQ_TB_SPOT_NO.NEXTVAL, '981 파크', '체험', '/resources/images/spot/spot', '제주 제주시 애월읍 천덕로 880-24', '1833-9810', '-', '-', '같이 방문한 일행 뿐만아니라 지금까지 방문한 사람들과의 기록경쟁을 할 수 있습니다.', '33.39157', '126.36651', 6);
 
 
 /* -----------------------------------------------------
