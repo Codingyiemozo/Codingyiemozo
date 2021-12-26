@@ -33,7 +33,7 @@
 				<p>${ detailVo.content }<p>
 				<dl>
 					<dt><strong>입장료</strong></dt>
-					<dd>${ detailVo.phone }</dd>
+					<dd>${ detailVo.price }</dd>
 				</dl>				
 				<dl>
 					<dt><strong>전화번호</strong></dt>
@@ -62,17 +62,17 @@
 			<ul class="slidelist">
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }001.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_1.png">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }002.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_2.png">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }003.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_3.png">
 					</a>
 				</li>
 			</ul>
