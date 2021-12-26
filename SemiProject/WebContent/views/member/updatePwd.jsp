@@ -94,7 +94,6 @@
 	            &nbsp;
                 <input type="button" id="closeBtn" class="btn-mypage" value="닫기" onclick="self.close();">
 	        </div>
-	        
 			<input	type="hidden" name="userId">	
 		</form>
 	</div>
@@ -102,14 +101,14 @@
 	<script>
 		// 비밀번호 일치 확인 
 		function validate() {
-			let pass1 = $("#pass1").val();
-			let pass2 = $("#pass2").val();
+			let pass3 = $("#pass3").val();
+			let pass4 = $("#pass4").val();
 			
-			if(pass1.trim() != pass2.trim()){
+			if(pass3.trim() != pass4.trim()){
 				alert("비밀번호가 일치하지 않습니다.");
-				$("#pass1").val("");
-				$("#pass2").val("");
-				$("#pass1").focus();
+				$("#pass3").val("");
+				$("#pass4").val("");
+				$("#pass3").focus();
 				
 				return false;
 			}

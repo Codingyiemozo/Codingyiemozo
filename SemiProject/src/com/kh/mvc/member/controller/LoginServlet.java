@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.kh.mvc.member.model.service.MemberService;
 import com.kh.mvc.member.model.vo.Member;
 
-@WebServlet(name = "login", urlPatterns = "/member/login")
+@WebServlet(name="login", urlPatterns="/member/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
