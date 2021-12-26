@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.kh.mvc.member.model.service.MemberService;
 import com.kh.mvc.member.model.vo.Member;
 
-@WebServlet(name="login", urlPatterns="/member/login")
+@WebServlet(name = "login", urlPatterns = "/member/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -44,10 +44,10 @@ public class LoginServlet extends HttpServlet {
 			
 			session.setAttribute("loginMember", loginMember);
 			
-			response.sendRedirect(request.getContextPath() + "/");
+			response.sendRedirect(request.getContextPath() + "/home");
 		} else {
 			request.setAttribute("msg", "아이디나 비밀번호가 일치하지 않습니다.");
-			request.setAttribute("location", "/");
+			request.setAttribute("location", "/home");
 			
 			request.getRequestDispatcher("/views/common/msg.jsp").forward(request, response);
 		}

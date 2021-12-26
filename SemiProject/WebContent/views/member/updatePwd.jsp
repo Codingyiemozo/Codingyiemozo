@@ -72,19 +72,19 @@
 	            <tr>
 	                <th>현재 비밀번호</th>
 	                <td>
-	                    <input type="password" name="nowPwd" id="nowPwd">
+	                    <input type="password" id="nowPwd" required>
 	                </td>
 	            </tr>
 	            <tr>
 	                <th>새 비밀번호</th>
 	                <td>
-	                    <input type="password" name="newPwd" id="newPwd" required>
+	                    <input type="password" name="userPwd" id="pass1" required>
 	                </td>
 	            </tr>
 	            <tr>
 	                <th>새 비밀번호 확인</th>
 	                <td>
-	                    <input type="password" name="checkPwd" id="checkPwd">
+	                    <input type="password" id="pass2" required>
 	                </td>
 	            </tr>
 	        </table>
