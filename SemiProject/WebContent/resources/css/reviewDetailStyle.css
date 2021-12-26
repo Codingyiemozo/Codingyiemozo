@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+/* 리뷰 상세페이지 */
+.reviewTitle {
+	text-align: center;
+	margin-top: 30px;
+	border-bottom: 1px solid #ddd; 
+	padding: 20px; 
+	padding-bottom: 30px;
+}
+
+#reviewTitle {
+	text-align: left;	
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
+.reviewWriteIfm {
+    width: 90%;
+    margin: 0% auto;
+    padding-bottom: 20px;
+}
+
+#reviewGroup {
+	font-size: 13px;
+    float: left;
+}
+
+#userName {
+	font-size: 13px;
+    float: left;
+    margin-left: 80%;
+
+}
+
+#reviewUploadDate {
+	font-size: 13px;
+    float: right;
+}
+
+.reviewContents {
+	text-align: left;
+	margin-top: 30px;
+	padding: 30px; 
+	padding-bottom: 50px;
+	border-bottom: 1px solid #ddd; 
+}
+
+#form-commentInfo {
+	width: 100%;
+	text-align: left;
+	padding: 20px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #ddd;
+}
+.reviewCommentSubmit {
+	text-align: left;
+	padding: 20px; 
+	padding-bottom: 50px;
+	border-bottom: 1px solid #ddd; 
+}
+
+#comment-count {
+	font-weight: bold;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+
+#comment-input {
+	width: 90%;
+	height: 5em;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+#btn-commentSubmit {
+	margin-top: 13px;
+	float: right;
+	width: 4em;	
+	height: 3em;
+	font-size: 13px;
+	font-weight: bold;
+	margin-right: 3%;
+	border: none;
+}
+
+.comments {
+	margin: 10px;
+	width: 95%;
+	margin-bottom: 50px;
+}
+
+.comments #commentWriter {
+	width: 100%;
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.comments #commentContent {
+	font-size: 13px;
+	float: left;
+	width: 85%;
+}
+
+.comments #commentSubmitDate {
+	font-size: 13px;
+	float: left;	
+	width: 10%;
+}
+
+.comments #btn-commentdelete {
+	float: right;
+	border: none;
+	background-color: white;
+}
+
+.comments #btn-commentdelete:hover{
+	color: red;
+}
+
+#btn-list {
+	float: right;
+	width: 100px;
+	height: 40px;
+	border: none;
+	font-weight: bold;
+}
+
+
+/* 리뷰 작성 */
+
+#reviewWrite {
+	text-align: center;
+	margin-top: 30px;
+	border-bottom: 1px solid #ddd;
+	padding: 20px;
+	padding-bottom: 30px;
+	
+}
+
+#title {
+	float: left;
+	text-align: left;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 45px;
+	margin-bottom: 35px;
+	width: 100%;
+	height: 30px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	padding: 5px;
+	margin-left: 0%;
+}
+
+#select-group {
+	float: left;
+	width: 100px;
+	font-size: 13px;
+	border: 1px solid #ddd;
+}
+
+#select-group option {
+	float: left;
+}
+#form-writer {
+	float: right;
+	font-size: 13px;
+	margin-left: 82%;
+	margin-right: 2%;
+	margin-bottom: 20px;
+}
+
+#form-content {
+	width: 97.5%;
+	float: left;
+	text-align: initial;
+	padding: 10px;
+	margin-bottom: 30px;
+	resize: none;
+}
+
+#btn-rv_submit {
+	float: right;
+	width: 100px;
+	height: 40px;
+	border: none;
+	background-color: skyblue;
+}
+=======
+#commentTitle {
+	font-weight: bold;
+	font-size: 13px;
+	padding-bottom: 20px;
+}
+
+#commentForm {
+	width: 100%;
+	height: 70px;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+}
+
+#commentSubmitBtn {
+	margin-top: 13px;
+	float: right;
+	width: 8%;	
+}
+
+/* 리뷰 작성 */
+
+#reviewWrite {
+	text-align: center;
+	margin-top: 30px;
+	border-bottom: 1px solid #ddd;
+	padding: 20px;
+	padding-bottom: 30px;
+
+}
+
+#title {
+	float: left;
+	text-align: left;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 45px;
+	margin-bottom: 35px;
+	width: 100%;
+	height: 30px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	padding: 5px;
+	margin-left: 0%;
+}
+
+#select-group {
+	float: left;
+	width: 100px;
+	font-size: 13px;
+	border: 1px solid #ddd;
+}
+
+#select-group option {
+	float: left;
+}
+#form-writer {
+	float: right;
+	font-size: 13px;
+	margin-left: 82%;
+	margin-right: 2%;
+	margin-bottom: 20px;
+}
+
+#form-content {
+	width: 97.5%;
+	float: left;
+	text-align: initial;
+	padding: 10px;
+	margin-bottom: 30px;
+	resize: none;
+}
+
+#btn-rv_submit {
+	float: right;
+	width: 100px;
+	height: 40px;
+	border: none;
+	background-color: skyblue;
+}
+
+

@@ -44,5 +44,4 @@ public class BoardService {
 		close(connection);
 		return shoppingList;
 	}
-
 }

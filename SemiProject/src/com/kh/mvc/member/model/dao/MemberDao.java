@@ -44,6 +44,79 @@ public class MemberDao {
 		}
 		return member;
 	}
+	
+	public Member findMemberID(Connection connection, String userName, String phone) {
+		Member member = null;
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM TB_MEM WHERE MEM_NM=? AND PHONE=? AND STATUS='Y'";
+		
+		try {
+			pstm = connection.prepareStatement(query);
+			
+			pstm.setString(1, userName);
+			pstm.setString(2, phone);
+			rs = pstm.executeQuery();
+			
+			if(rs.next()) {
+				member = new Member();
+				
+				member.setNo(rs.getInt("NO"));
+				member.setId(rs.getString("MEM_ID"));
+				member.setPassword(rs.getString("PASSWORD"));
+				member.setRole(rs.getString("ROLE"));
+				member.setName(rs.getString("MEM_NM"));
+				member.setPhone(rs.getString("PHONE"));
+				member.setEmail(rs.getString("EMAIL"));
+				member.setAddress(rs.getString("ADDR"));
+				member.setStatus(rs.getString("STATUS"));
+				member.setEnrollDate(rs.getDate("ENROLL_DATE"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstm);
+		}
+		return member;
+	}
+	
+	public Member findMemberPWD(Connection connection, String userId, String userName, String phone) {
+		Member member = null;
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM TB_MEM WHERE MEM_ID=? AND MEM_NM=? AND PHONE=? AND STATUS='Y'";
+		
+		try {
+			pstm = connection.prepareStatement(query);
+			
+			pstm.setString(1, userId);
+			pstm.setString(2, userName);
+			pstm.setString(3, phone);
+			rs = pstm.executeQuery();
+			
+			if(rs.next()) {
+				member = new Member();
+				
+				member.setNo(rs.getInt("NO"));
+				member.setId(rs.getString("MEM_ID"));
+				member.setPassword(rs.getString("PASSWORD"));
+				member.setRole(rs.getString("ROLE"));
+				member.setName(rs.getString("MEM_NM"));
+				member.setPhone(rs.getString("PHONE"));
+				member.setEmail(rs.getString("EMAIL"));
+				member.setAddress(rs.getString("ADDR"));
+				member.setStatus(rs.getString("STATUS"));
+				member.setEnrollDate(rs.getDate("ENROLL_DATE"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstm);
+		}
+		return member;
+	}
 
 	public int insertMember(Connection connection, Member member) {
 		int result = 0;
@@ -73,7 +146,7 @@ public class MemberDao {
 	public int updateMember(Connection connection, Member member) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "UPDATE TB_MEM SET NAME=?,PHONE=?,EMAIL=?,ADDRESS=? WHERE NO=?";
+		String query = "UPDATE TB_MEM SET MEM_NM=?,PHONE=?,EMAIL=?,ADDR=? WHERE NO=?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -94,7 +167,46 @@ public class MemberDao {
 		return result;
 	}
 	
-	
-
+	public int updateMemberStatus(Connection connection, int no, String status) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query= "UPDATE TB_MEM SET STATUS=? WHERE NO=?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, status);
+			pstmt.setInt(2, no);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+  
+	public int updateMemberPassword(Connection connection, int no, String password) {
+		int result = 0;
+		PreparedStatement pstmt = null; 
+		String query = "UPDATE TB_MEM SET PASSWORD=? WHERE NO=?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, password);
+			pstmt.setInt(2, no);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 
 }
