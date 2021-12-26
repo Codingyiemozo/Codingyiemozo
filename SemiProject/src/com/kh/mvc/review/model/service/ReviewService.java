@@ -35,8 +35,7 @@ public class ReviewService {
 		
 		return review;
 	}
-
-
+	
 	public int save(Review review) {
 		int result = 0;
 		Connection connection = getConnection();

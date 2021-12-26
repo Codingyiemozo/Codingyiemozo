@@ -24,9 +24,8 @@
             border-spacing: 15px;
             font-size: 20px;
             width: 50%;
-            margin:0 auto;
             color: lightsalmon;
-            margin-bottom: 50px;
+            margin: 50px auto;
         }
         .tbl-mypage th, .tbl-mypage td {
             text-align: left;
@@ -95,9 +94,7 @@
 <div class="container">
 <div class="contents">
 <div class="frame">
-    <div class="member-section">
-            <span class=memberInfo>회원 정보</span>
-    </div>
+	<h2 class="page-tit">회원 정보</h2>
     
     <div>
     <!-- 정보 수정 누르면 이동 -->

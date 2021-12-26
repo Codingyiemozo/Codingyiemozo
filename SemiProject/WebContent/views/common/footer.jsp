@@ -3,9 +3,9 @@
 
 <footer>
 	<div class="footer-inner">
-		<a href="${ path }/home" class="logo">
+		<div class="logo">
 			<img src="${ pageContext.request.contextPath }/resources/images/logo.png" alt="메인으로 이동">
-		</a>
+		</div>
         <div>
             Copyright 2021. <strong>여행이모조</strong>. All rights reserved.
         </div>
