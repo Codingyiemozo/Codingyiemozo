@@ -1,15 +1,18 @@
 @charset "UTF-8";
 @import "minyeong.css";
+@import "reviewDetailStyle.css";
 
-/*
-img {
-	width: 300px;
-	height: 300px;
-	align: "right";
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}*/
+
+html {
+	height: 100%;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
 
 #top-banner {
 	width: 100%;
@@ -24,11 +27,6 @@ img {
 	background-color: transparent;
 	border: thin;
 	cursor: pointer;
-}
-
-.member-container{
-	text-align: right;
-	margin-bottom: 10px;
 }
 
 #search-bar {	

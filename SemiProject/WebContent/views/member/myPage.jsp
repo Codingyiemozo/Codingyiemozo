@@ -20,19 +20,18 @@
     	
     	}
     	
-        table {
+        .tbl-mypage {
             border-spacing: 15px;
             font-size: 20px;
             width: 50%;
-            margin:0 auto;
             color: lightsalmon;
-            margin-bottom: 50px;
+            margin: 50px auto;
         }
-        th, td {
+        .tbl-mypage th, .tbl-mypage td {
             text-align: left;
         }
         
-        input {
+        .tbl-mypage input {
             border-radius: 5px;
             height: 25px;
         }
@@ -92,10 +91,10 @@
 
 </style>
 
+<div class="container">
+<div class="contents">
 <div class="frame">
-    <div class="member-section">
-            <span class=memberInfo>회원 정보</span>
-    </div>
+	<h2 class="page-tit">회원 정보</h2>
     
     <div>
     <!-- 정보 수정 누르면 이동 -->
@@ -104,7 +103,7 @@
     <%--
     <input type="hidden" name="userNo" value="${loginMember.no }">
      --%>
-    <table>
+    <table class="tbl-mypage">
            <tr>
                 <th>아이디</th>
                 <td>
@@ -171,15 +170,17 @@
  
     </table>
     
-            <div class="button-section">
-	        <button type="button" id="updatePwd">비밀번호변경</button>
-	        <input type="button" id="btnDelete" value="탈퇴">
-	        </div>
-	        
-	        <div class="update-button">
-	        <input type="submit" id="updateMem" value="정보수정">
-	        </div> 
+   	<div class="button-section">
+	    <button type="button" id="updatePwd">비밀번호변경</button>
+	    <input type="button" id="btnDelete" value="탈퇴">
+    </div>
+    
+    <div class="update-button">
+    	<input type="submit" id="updateMem" value="정보수정">
+    </div> 
 </form>
+</div>
+</div>
 </div>
 </div>
 

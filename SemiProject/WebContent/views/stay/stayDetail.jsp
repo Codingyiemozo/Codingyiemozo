@@ -7,7 +7,7 @@
 
 <jsp:include page="/views/common/header.jsp" />
 
-<div class="container">
+<div class="container" style="display: block; flex: none; height: auto;">
   <div class="contents">
     <h2 class="page-tit">숙박</h2>
     
@@ -67,17 +67,17 @@
 			<ul class="slidelist">
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }001.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_1.png">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }002.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_2.png">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }003.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_3.png">
 					</a>
 				</li>
 			</ul>

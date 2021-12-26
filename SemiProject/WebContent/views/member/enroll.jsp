@@ -5,7 +5,6 @@
 <jsp:include page="/views/common/header.jsp" />
 
 <style>
-
        	#E-title {
        		margin-top: 5%;
        	}
@@ -41,12 +40,6 @@
             margin: 10px; 
         }
 
-        img {
-            width: 30px;
-            height: 20px;
-            margin-right: 20px;
-        }
-
         #top_btn {
             background-color: transparent;
             cursor: pointer;
@@ -56,7 +49,7 @@
 
 <section id="content">
     <div>        
-            <h2 align="center" id="E-title"><button id="top_btn" onclick="location.href='javascript:history.back();'"><img src="${ pageContext.request.contextPath }/resources/images/direction.png" alt=""></button> 회원가입</h2> 
+        <h2 align="center" id="E-title">회원가입</h2> 
         
         <div>
         	<form name="memberEnrollFrm" action="${ pageContext.request.contextPath }/member/enroll" method="post">
@@ -79,7 +72,7 @@
 	                <tr>
 	                    <th>비밀번호 확인</th>
 	                    <td>
-	                    	<input type="password" id="pass2">
+	                    	<input type="password" id="pass2" required>
 	                    </td>
 	                </tr>
 	                <tr>
@@ -87,16 +80,11 @@
 	                    <td>
 	                    	<input type="text" name="userName" id="" placeholder="내용을 입력해주세요" required>
 	                    </td>
-	                </tr>
-	                <tr>
-	                    <th>프로필 사진</th>
-	                    <td></td>
-	                    <td><input type="file" name="photo" id="photo"></td>
-	                </tr>
+	                </tr>	                
 	                <tr>
                     	<th>휴대폰</th>
                     	<td>
-                    		<input type="tel" name="phone" id="phone" maxlength="11" placeholder="(-없이)01012345678">
+                    		<input type="tel" name="phone" id="phone" maxlength="11" placeholder="(-없이)01012345678" required>
                     	</td>
                 	</tr>
                 	<tr>

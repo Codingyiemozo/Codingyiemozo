@@ -154,11 +154,11 @@
 */
 .imgsldsection .slide-control .left {
 	left: 30px;
-	background: url('../images/spot/detailspot/left.png') center center / 100% no-repeat;
+	background: url('../images/common/left.png') center center / 100% no-repeat;
 }
 .imgsldsection .slide-control .right {
 	right: 30px;
-	background: url('../images/spot/detailspot/right.png') center center / 100% no-repeat;
+	background: url('../images/common/right.png') center center / 100% no-repeat;
 }
 .imgsldsection .slide-control [class*="control"] {
 	display: none;
@@ -186,7 +186,10 @@
 }
 
 .backbutton{
+	color: #fff;
 	font-size: 15px;
   	border-radius: 5px;
-  	padding: 5px 15px;
+  	border: 0;
+  	background: #ff9227;
+  	padding: 7px 15px;
 }

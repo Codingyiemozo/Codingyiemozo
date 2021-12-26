@@ -11,7 +11,9 @@
 
         .SID-div table {
             margin:0 auto;
-            width: 15%
+            width: 15%;
+            border: hidden;
+          
         }
         
         #SID-outer{
@@ -56,9 +58,7 @@
             border: none;
         }
 
-        #btn_group {
-            height: 50px;
-        }
+       
 
         #submit {
             height: 50px;
@@ -83,14 +83,10 @@
 
 	<div class="SID-div" id="SID-outer">
 	    <div class="SID-div" style="font-size: 20px;">
-	        <button id="top_btn" onclick="location.href='javascript:history.back();'"><img src="${ pageContext.request.contextPath }/resources/images/direction.png" alt=""></button> 아이디 / 비밀번호 찾기
+	        <button id="top_btn" onclick="location.href='javascript:history.back();'"><img src="${ pageContext.request.contextPath }/resources/images/direction.png" alt=""></button> <span style="font-size: 40px;">아이디 찾기</span>
 	    </div>
 
 	
-	    <div class="SID-div" id="btn_group">
-	        <button id="btn1" onclick="location.href='${ pageContext.request.contextPath }/member/search'">아이디 찾기</button>
-	        <button id="btn2" onclick="location.href='${ pageContext.request.contextPath }/member/searchPWD'">비밀번호 찾기</button>
-	    </div>
 	
         <form action="${ pageContext.request.contextPath }/member/search" method="post">
 		    <div class="SID-div">

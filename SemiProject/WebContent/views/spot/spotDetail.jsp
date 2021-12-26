@@ -7,7 +7,7 @@
 
 <jsp:include page="/views/common/header.jsp" />
 
-<div class="container">
+<div class="container" style="display: block; flex: none; height: auto;">
   <div class="contents">
     <h2 class="page-tit">여행지</h2>
     
@@ -33,7 +33,7 @@
 				<p>${ detailVo.content }<p>
 				<dl>
 					<dt><strong>입장료</strong></dt>
-					<dd>${ detailVo.phone }</dd>
+					<dd>${ detailVo.price }</dd>
 				</dl>				
 				<dl>
 					<dt><strong>전화번호</strong></dt>
@@ -62,17 +62,17 @@
 			<ul class="slidelist">
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }001.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_1.png">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }002.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_2.png">
 					</a>
 				</li>
 				<li>
 					<a>
-						<img src="${ path }${ detailVo.imgPath }003.jpg">
+						<img src="${ path }${ detailVo.imgPath }${ detailVo.no }_3.png">
 					</a>
 				</li>
 			</ul>
@@ -134,11 +134,9 @@
 	
 	
 	
-	
-	
     
     <div class="backspot">
-	    <button class="backbutton" onclick="location.href='${ path }/spot/stayList'" >목록으로 돌아가기</button>
+	    <button class="backbutton" onclick="location.href='${ path }/spot/spotList'" >목록으로 돌아가기</button>
     </div>
     
   </div>
