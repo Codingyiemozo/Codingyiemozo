@@ -15,9 +15,9 @@
 .reviewTitle {
 	text-align: center;
 	margin-top: 30px;
+	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd; 
-	padding: 20px; 
-	padding-bottom: 30px;
+	padding: 20px 0 30px;
 }
 
 #reviewTitle {
@@ -83,16 +83,20 @@
 	resize: none;
 	padding: 10px;
 	border: 1px solid #ddd;
+	outline: 0;
+}
+#commentContent:focus {
+	border: 1px solid #ff9227;
 }
 
 #btn-insert {
 	float: right;
-	margin: 10px;
-	width: 70px;
-	height: 30px;
-	font-weight: bold;
-	font-size: 12px;
+	color: #fff;
+	font-size: 14px;
 	border: none;
+	margin-top: 10px;
+	background: #ff9227;
+	padding: 7px 15px;
 }
 #form-commentInfo {
 	width: 100%;
@@ -170,11 +174,12 @@
 
 #btn-list {
 	float: right;
-	width: 100px;
-	height: 40px;
+	color: #fff;
 	border: none;
-	font-weight: bold;
 	margin-top: 30px;
+	background: #ff9227;
+	padding: 7px 15px;
+	font-size: 14px;
 }
 
 
