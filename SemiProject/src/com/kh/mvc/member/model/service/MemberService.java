@@ -64,6 +64,15 @@ public class MemberService {
 		return member;
 	}
 	
+	public Member findMemberPWD(String userId, String userName, String phone) {
+		Connection connection = getConnection();
+		Member member = dao.findMemberPWD(connection, userId, userName, phone);
+		
+		close(connection);
+		
+		return member;
+	}
+	
 	// 회원탈퇴
 	public int delete(int no) {
 		int result = 0;
