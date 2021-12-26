@@ -186,7 +186,10 @@
 }
 
 .backbutton{
+	color: #fff;
 	font-size: 15px;
   	border-radius: 5px;
-  	padding: 5px 15px;
+  	border: 0;
+  	background: #ff9227;
+  	padding: 7px 15px;
 }

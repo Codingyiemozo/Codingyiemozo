@@ -7,7 +7,7 @@
 
 <jsp:include page="/views/common/header.jsp" />
 
-<div class="container">
+<div class="container" style="display: block; flex: none; height: auto;">
   <div class="contents">
     <h2 class="page-tit">숙박</h2>
     

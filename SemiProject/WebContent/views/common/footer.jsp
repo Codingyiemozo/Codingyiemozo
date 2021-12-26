@@ -4,10 +4,10 @@
 <footer>
 	<div class="footer-inner">
 		<div class="logo">
-            여행이모조
-        </div>
+			<img src="${ pageContext.request.contextPath }/resources/images/logo.png" alt="메인으로 이동">
+		</div>
         <div>
-            Copyright 2021. 여행이모조. All rights reserved.
+            Copyright 2021. <strong>여행이모조</strong>. All rights reserved.
         </div>
         <div class="team">
 			<ul>
