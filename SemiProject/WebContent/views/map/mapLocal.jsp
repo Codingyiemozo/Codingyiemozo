@@ -15,7 +15,7 @@
         <ul>
     		<c:forEach var="spot" items="${ spotList }" begin="0" end="3">
 		       <li>
-		         <a href="${ pageContext.request.contextPath }/spot/spotDetail">
+		         <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ spot.no }">
 		           <div class="img-thumb">
 		             <img src="${ pageContext.request.contextPath }${ spot.imgPath }${ spot.no }.png" alt="">
 		           </div>
@@ -32,7 +32,7 @@
             <ul>
 		      	<c:forEach var="stay" items="${ stayList }" begin="0" end="3">
 			        <li>
-			          <a href="">
+			          <a href="${ pageContext.request.contextPath }/stay/stayDetail?no=${ stay.no }">
 			            <div class="img-thumb">
 			              <img src="${ pageContext.request.contextPath }${ stay.imgPath }${ stay.no }.png" alt="">
 			            </div>
@@ -49,7 +49,7 @@
             <ul>
 		      	<c:forEach var="rest" items="${ restList }" begin="0" end="3">
 			        <li>
-			          <a href="">
+			          <a href="${ pageContext.request.contextPath }/stay/stayDetail?no=${ rest.no }">
 			            <div class="img-thumb">
 			              <img src="${ pageContext.request.contextPath }${ rest.imgPath }${ rest.no }.png" alt="">
 			            </div>
