@@ -23,20 +23,23 @@
 	    text-align: center;
 	    border: 1px solid #888;
 	    margin: 50px auto 0;
-	    padding: 20px 0;
+	    padding: 50px 0 20px;
 	}
 	#memberFrm .tbl-mypage {
 	    margin: 0 auto;
 	    border: 0;
 	}
 	.tbl-mypage th {
+		vertical-align: top;
 	    font-weight: 500;
-	    padding: 10px 0;
+	    padding: 0 0 20px 30px;
 	}
 	.tbl-mypage th,
 	.tbl-mypage td {
 	    text-align: left;
-	    padding-left: 20px;
+	}
+	.tbl-mypage td {
+	    padding-left: 40px;
 	}
 	.tbl-mypage td input {
 	    width: 80%;
