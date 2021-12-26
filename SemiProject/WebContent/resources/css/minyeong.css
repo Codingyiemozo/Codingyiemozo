@@ -346,12 +346,14 @@ footer {
 .thumb-list ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .thumb-list ul li {
   list-style: none;
   width: calc(100% / 4 - 10px);
   margin-bottom: 20px;
+}
+.thumb-list ul li + li {
+	margin-left: 13px;
 }
 .thumb-list ul li a {
   display: block;
