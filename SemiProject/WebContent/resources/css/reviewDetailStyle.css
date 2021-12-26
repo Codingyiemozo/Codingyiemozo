@@ -34,19 +34,22 @@
 #reviewType {
 	font-size: 13px;
     float: left;
+	width: 100%;
+	text-align: left;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 #userName {
 	font-size: 13px;
     float: left;
-    margin-left: 80%;
 
 }
 
 #reviewUploadDate {
 	font-size: 13px;
     float: right;
-    margin-right: 10%;
+    margin-right: 20px;
 }
 
 #reviewHits {
@@ -62,6 +65,7 @@
 	border-bottom: 1px solid #ddd; 
 }
 /*댓글테이블*/
+
 #comment-container {
 	border-bottom: 1px solid #ddd;
 }

@@ -224,7 +224,7 @@ INSERT INTO TB_REST VALUES(SEQ_TB_REST_NO.NEXTVAL, '술집', '미드나잇 제�
 /* -----------------------------------------------------
     여행후기 테이블
 ----------------------------------------------------- */
-
+COMMIT;
 
 ALTER TABLE TB_MEM ADD CONSTRAINT MEMBER_NO_UQ UNIQUE (NO);
 
@@ -235,11 +235,9 @@ CREATE TABLE TB_REVIEW (
     RV_DATE DATE DEFAULT SYSDATE,
     RV_IMG_PATH VARCHAR(100),
     RV_CONTENT CLOB,
-    CM_NO VARCHAR2(500),
     RV_HITS NUMBER DEFAULT 0,
     MEM_NO NUMBER,
-    FOREIGN KEY (MEM_NO) REFERENCES TB_MEM (NO),
-    FOREIGN KEY (CM_NO) REFERENCES TB_COMMENT (CM_NO)
+    FOREIGN KEY (MEM_NO) REFERENCES TB_MEM (NO)
 );
 
 CREATE SEQUENCE SEQ_TB_REVIEW_NO;
@@ -278,6 +276,7 @@ INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT
 VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '라마다 호텔에서 묵어본 후기입니다', '/resources/images/review/review', SYSDATE, '첫날 저녁 비행기라 저렴하고 공항 근처 호텔 찾다가 예약했는데 가성비도 좋고 깔끔합니다.', 41);
 INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
 VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '숙박', '캠핑 좋아하시는 분들 디포레 카라반파크 가보세요', '/resources/images/review/review', SYSDATE, '캠핑장 관리도 깔끔하게 되어있어 캠핑 초보분들도 가기 좋습니다 ㅎㅎ', 41);
+
 -- 맛집 데이터
 INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_DATE, RV_CONTENT, MEM_NO) 
 VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '명진전복에서 전복돌솥밥 먹었어요!', '/resources/images/review/review', SYSDATE, '수요미식회에 소개되었던 전복돌솥밥이 맛있는 명진전복에 다녀왔습니다.', 41);
@@ -305,16 +304,17 @@ VALUES(SEQ_TB_REVIEW_NO.NEXTVAL, '맛집', '모루쿠다 후기', '/resources/im
 CREATE TABLE TB_COMMENT (   
     CM_NO NUMBER PRIMARY KEY,
     RV_NO NUMBER,
-    MEM_NO NUMBER, 
-    CM_DATE DATE,
-    CM_CONTENT VARCHAR2(1000),
+    MEM_NO NUMBER,
+    CM_CONTENT VARCHAR2(1000),    
+    CM_DATE DATE DEFAULT SYSDATE,
     FOREIGN KEY (MEM_NO) REFERENCES TB_MEM (NO),
     FOREIGN KEY (RV_NO) REFERENCES TB_REVIEW (RV_NO)
 );
 
+
 CREATE SEQUENCE SEQ_TB_COMMENT_NO;
 
-INSERT INTO TB_COMMENT(CM_NO, RV_NO, MEM_NO, CM_DATE, CM_CONTENT) VALUES(SEQ_TB_COMMENT_NO.NEXTVAL, 16, 41, SYSDATE, '저도 가보고싶어요 ㅠㅠ');
+INSERT INTO TB_COMMENT VALUES(SEQ_TB_COMMENT_NO.NEXTVAL, 41, 41, '저도 가보고싶어요 ㅠㅠ', DEFAULT);
 
 
 COMMIT;

@@ -30,7 +30,6 @@ public class ReviewDetailServlet extends HttpServlet {
 		Review review = service.findReviewByNo(rv_no, hasRead);
 		
 		System.out.println(review);
-		System.out.println(review.getRv_comments());
 
 		request.setAttribute("review", review);
 		request.getRequestDispatcher("/views/review/reviewDetail.jsp").forward(request, response);

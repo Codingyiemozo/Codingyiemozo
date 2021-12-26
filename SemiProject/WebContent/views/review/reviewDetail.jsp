@@ -9,10 +9,10 @@
         <div class="contents">
             <h2 class="page-tit">여행후기</h2>
             <div class="reviewTitle">
+                <div id="reviewType">${ review.rv_type }</div>
                 <div id="reviewTitle">${ review.rv_title }</div>
                 <div id="reviewHits">조회수 ${ review.rv_hits }</div>
                 <div class="reviewWriteInf">
-                    <div id="reviewType">${ review.rv_type }</div>
                     <div id="userName">작성자 ${ review.mem_nm }</div>
                     <div id="reviewUploadDate">${ review.rv_date }</div>
                 </div>
@@ -29,14 +29,14 @@
 		            	<button type="submit" id="btn-insert">등록</button>
 		            </form>
 	            </div>
-	            <table id="tbl-comment">
+	            <table id="tbl-comment" style="border: none; margin-bottom: 30px;">
 			    	<c:forEach var="comment" items="${ review.rv_comments }">
 				    	<tr class="level1">
 				    		<td>
-				    			<sub class="comment-writer"><c:out value="${ comment.mem_nm }"/></sub>
-				    			<sub class="comment-date"><fmt:formatDate type="date" value="${ comment.cm_date }"/></sub>
+				    			<sub class="comment-writer" style="font-weight: bold;"><c:out value="${ comment.mem_nm }"/></sub>
+				    			<sub class="comment-date" style="font-size: 13px; float: right; margin-right: 10px;"><fmt:formatDate type="date" value="${ comment.cm_date }"/></sub>
 				    			<br>
-				    			<c:out value="${ comment.cm_content }"/>
+				    			<sub class="comment-contents" style="font-size: 13px;"><c:out value="${ comment.cm_content }"/></sub>
 				    		</td>
 				    		<td>
 				    			<c:if test="${ ! empty loginMember && loginMember.no == comment.mem_no }">
@@ -48,7 +48,7 @@
 	            </table>
 	            <div>
             </div>
-                <button id="btn-list"onclick = "location.href = '/views/review/reviewList.jsp' ">목록</button>
+                <button id="btn-list"onclick = "location.href = '/review/reviewList' ">목록</button>
             </div>
         </div>
     </div>
