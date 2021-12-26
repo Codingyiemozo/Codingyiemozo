@@ -13,7 +13,7 @@
 	<div class="thumb-list">
         <h3>여행지</h3>
         <ul>
-    		<c:forEach var="spot" items="${ spotList }" begin="0" end="4">
+    		<c:forEach var="spot" items="${ spotList }" begin="0" end="3">
 		       <li>
 		         <a href="${ pageContext.request.contextPath }/spot/spotDetail">
 		           <div class="img-thumb">
@@ -30,7 +30,7 @@
     <div class="thumb-list">
             <h3>숙박</h3>
             <ul>
-		      	<c:forEach var="stay" items="${ stayList }" begin="0" end="4">
+		      	<c:forEach var="stay" items="${ stayList }" begin="0" end="3">
 			        <li>
 			          <a href="">
 			            <div class="img-thumb">
@@ -47,7 +47,7 @@
         <div class="thumb-list">
             <h3>맛집</h3>
             <ul>
-		      	<c:forEach var="rest" items="${ restList }" begin="0" end="4">
+		      	<c:forEach var="rest" items="${ restList }" begin="0" end="3">
 			        <li>
 			          <a href="">
 			            <div class="img-thumb">
