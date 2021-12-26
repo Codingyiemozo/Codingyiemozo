@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.kh.mvc.member.model.vo.Member;
 import com.kh.mvc.review.model.service.CommentService;
+import com.kh.mvc.review.model.vo.Comment;
 
 @WebServlet("/review/comment")
 public class ReviewCommentServlet extends HttpServlet {
@@ -22,30 +24,28 @@ public class ReviewCommentServlet extends HttpServlet {
 
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
 		int rv_no = Integer.parseInt(request.getParameter("rv_no"));
-		String content = request.getParameter("rv_content");
+		String cm_content = request.getParameter("cm_content");
     	HttpSession session = request.getSession(false);
-    	
-    	// 멤버 테이블을 가져오지 않아서 불러올 수 없음.
-//    	Member loginMember = session != null ? (Member)session.getAttribute("loginMember") : null;
+    	Member loginMember = session != null ? (Member)session.getAttribute("loginMember") : null;
 
-    	// 로그인 여부 확인
-    	/*
     	if(loginMember != null) {
 			Comment comment = new Comment();
 			
-			comment.setCm_writer(loginMember.getName);
-			comment.setWriterId(loginMember.getId());
-			comment.setContent(content);
+			comment.setRv_no(rv_no);
+			comment.setMem_no(loginMember.getNo());
+			comment.setMem_nm(loginMember.getName());
+			comment.setCm_content(cm_content);
 			
-			int result = service.saveReply(reply);
+			int result = service.saveComment(comment);
 			
 			if(result > 0) {
          		request.setAttribute("msg", "댓글 등록 성공!");
-         		request.setAttribute("location", "/board/view?no=" + boardNo);
+         		request.setAttribute("location", "/review/reviewDetail?rv_no=" + rv_no);
 			} else {
 				request.setAttribute("msg", "댓글 등록 실패!");
-         		request.setAttribute("location", "/board/view?no=" + boardNo);
+         		request.setAttribute("location", "/review/reviewDetail?rv_no=" + rv_no);
 			}
     	} else {
      		request.setAttribute("msg", "로그인 후 사용할 수 있습니다.");
@@ -53,6 +53,5 @@ public class ReviewCommentServlet extends HttpServlet {
     	}
     	
     	request.getRequestDispatcher("/views/common/msg.jsp").forward(request, response);
-    	 */
    	}
 }

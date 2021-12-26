@@ -12,7 +12,7 @@
       <h3 class="type-tit">관광명소</h3>
       
       <ul>
-      	<c:forEach var="spot" items="${ spotList }" begin="0" end="7">
+      	<c:forEach var="spot" items="${ spotList }" begin="0" end="3">
 	        <li>
 	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ spot.no }">
 	            <div class="img-thumb">
@@ -32,7 +32,7 @@
     <div class="thumb-list">
       <h3>체험</h3>
       <ul>
-      	<c:forEach var="experience" items="${ experienceList }" begin="0" end="7">
+      	<c:forEach var="experience" items="${ experienceList }" begin="0" end="3">
 	        <li>
 	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ experience.no }">
 	            <div class="img-thumb">
@@ -52,7 +52,7 @@
     <div class="thumb-list">
       <h3>쇼핑</h3>
       <ul>
-        <c:forEach var="shopping" items="${ shoppingList }" begin="0" end="7">
+        <c:forEach var="shopping" items="${ shoppingList }" begin="0" end="3">
 	        <li>
 	          <a href="${ pageContext.request.contextPath }/spot/spotDetail?no=${ shopping.no }">
 	            <div class="img-thumb">

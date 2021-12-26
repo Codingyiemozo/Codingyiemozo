@@ -17,4 +17,6 @@ public class BoardList {
 	private String comment;
 	private String hits;
 	private String no2;
+
 }
+
