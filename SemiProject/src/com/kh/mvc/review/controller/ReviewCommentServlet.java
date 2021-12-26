@@ -24,6 +24,7 @@ public class ReviewCommentServlet extends HttpServlet {
 
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
 		int rv_no = Integer.parseInt(request.getParameter("rv_no"));
 		String cm_content = request.getParameter("cm_content");
     	HttpSession session = request.getSession(false);
