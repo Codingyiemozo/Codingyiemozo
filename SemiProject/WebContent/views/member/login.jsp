@@ -64,7 +64,7 @@
 		
 		<div id="l-menu">
             <input class="l-btn" type="button" value="회원가입" onclick="location.href='${ path }/member/enroll'"> |
-            <input class="l-btn" type="button" value="아이디/비밀번호 찾기" onclick="location.href='${ path }/member/search'">
+            <input class="l-btn" type="button" value="아이디 찾기" onclick="location.href='${ path }/member/search'">
         </div>
 	 	
  	
