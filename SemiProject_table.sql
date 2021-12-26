@@ -229,8 +229,8 @@ INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '파크선샤인제
 INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '에어비엔비', '제주 애월 감성 공유 민박', '/resources/images/stay/stay', '제주도 제주시 애월읍', '110,000원', '064-781-1290', '제주 촌집의 따뜻한 감성은 남기고 이용에 편리하도록 리모델링한 숙소입니다.', '33.45224262788046', '126.30800060776457', 6);
 -- 에어비엔비 추가
 INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '에어비엔비', '묵다여관', '/resources/images/stay/stay', '제주 제주시 한경면 일주서로', '175,000원', '0507-1478-1635', '숙소에서 바로 바다를 볼 수 있고 1분이면 바다로 나갈 수 있는 묵다여관입니다.', '33.45224262788046', '126.30800060776457', 6);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '에어비엔비', '어울다', '/resources/images/stay/stay', '제주 제주시 한림읍 협재1길 63', '250,000원', '010-4472-2570', '침실에서 비양도를 바라보며 아름다운 노을을 감상해 보세요.', '', '', 6);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '에어비엔비', '류은주택', '/resources/images/stay/stay', '제주 서귀포시 남원읍 하례로620번길 80', '220,000원', '0507-1364-1354', '차와 커피를 마시며 휴식과 위로가 되는 공간을 느껴보세요.', '', '', 6);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '에어비엔비', '어울다', '/resources/images/stay/stay', '제주 제주시 한림읍 협재1길 63', '250,000원', '010-4472-2570', '침실에서 비양도를 바라보며 아름다운 노을을 감상해 보세요.', '33.39912001883623', '126.24631239142332', 6);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '에어비엔비', '류은주택', '/resources/images/stay/stay', '제주 서귀포시 남원읍 하례로620번길 80', '220,000원', '0507-1364-1354', '차와 커피를 마시며 휴식과 위로가 되는 공간을 느껴보세요.', '33.29546562140557', '126.6190792230592', 6);
 
 -- 펜션
 INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '펜션', '더갤러리펜션', '/resources/images/stay/stay', '제주 제주시 조천읍 남조로 1717-24', '90,000원', '064-651-3344', '품격있는 휴식공간을 만들기 위해 최상의 자재로 럭셔리하고 클래식한 분위기와 아름다운 정원을 만들었습니다.', '33.422109416961966', '126.6755097508577', 8);
