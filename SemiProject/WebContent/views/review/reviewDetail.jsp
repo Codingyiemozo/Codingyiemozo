@@ -13,7 +13,7 @@
                 <div id="reviewTitle">${ review.rv_title }</div>
                 <div id="reviewHits">조회수 ${ review.rv_hits }</div>
                 <div class="reviewWriteInf">
-                    <div id="userName">작성자 ${ review.mem_nm }</div>
+                    <div id="userName">${ review.mem_nm }</div>
                     <div id="reviewUploadDate">${ review.rv_date }</div>
                 </div>
             </div>
