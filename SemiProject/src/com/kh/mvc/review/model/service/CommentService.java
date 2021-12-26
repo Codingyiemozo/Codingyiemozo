@@ -5,11 +5,12 @@ import static com.kh.mvc.common.jdbc.JDBCTemplate.*;
 import java.sql.Connection;
 
 import com.kh.mvc.review.model.dao.CommentDao;
+import com.kh.mvc.review.model.dao.ReviewDao;
 import com.kh.mvc.review.model.vo.Comment;
 
 public class CommentService {
 	
-	private CommentDao dao = new CommentDao();
+	private ReviewDao dao = new ReviewDao();
 
 	public int saveComment(Comment comment) {
 		int result = 0;

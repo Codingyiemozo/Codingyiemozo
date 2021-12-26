@@ -59,27 +59,27 @@ public class CommentDao {
 //	}
 	
 
-	public int insertComment(Connection connection, Comment comment) {
-		int result = 0;
-		PreparedStatement pstmt = null;
-		String query = "INSERT INTO TB_COMMENT(CM_NO, RV_NO, CM_CONTENT, MEM_NO, CM_DATE) VALUES(SEQ_TB_COMMENT_NO.NEXTVAL,?, ?, ?,DEFAULT)";
-		
-		try {
-			pstmt = connection.prepareStatement(query);
-			
-			pstmt.setInt(1, comment.getRv_no());
-			pstmt.setString(2, comment.getCm_content());
-			pstmt.setInt(3, comment.getMem_no());
-			
-			result = pstmt.executeUpdate();	
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
+//	public int insertComment(Connection connection, Comment comment) {
+//		int result = 0;
+//		PreparedStatement pstmt = null;
+//		String query = "INSERT INTO TB_COMMENT(CM_NO, RV_NO, CM_CONTENT, MEM_NO, CM_DATE) VALUES(SEQ_TB_COMMENT_NO.NEXTVAL,?, ?, ?,DEFAULT)";
+//		
+//		try {
+//			pstmt = connection.prepareStatement(query);
+//			
+//			pstmt.setInt(1, comment.getRv_no());
+//			pstmt.setString(2, comment.getCm_content());
+//			pstmt.setInt(3, comment.getMem_no());
+//			
+//			result = pstmt.executeUpdate();	
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close(pstmt);
+//		}
+//		
+//		return result;
+//	}
 
 	
 }

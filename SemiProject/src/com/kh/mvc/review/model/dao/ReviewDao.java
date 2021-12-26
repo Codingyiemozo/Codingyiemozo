@@ -52,6 +52,8 @@ public class ReviewDao {
 				review.setRv_hits(rs.getInt("RV_HITS"));
 				review.setMem_nm(rs.getString("MEM_NM"));
 				review.setMem_no(rs.getInt("MEM_NO"));
+				review.setRv_comments(this.getCommentsByNo(connection, no));
+
 				
 			}			
 		} catch (SQLException e) {
@@ -136,6 +138,7 @@ public class ReviewDao {
 		return result;
 	}
 	
+	
 	public List<Comment> getCommentsByNo(Connection connection, int rv_no) {
 		List<Comment> rv_comments = new ArrayList<>();
 		PreparedStatement pstmt = null;
@@ -146,8 +149,7 @@ public class ReviewDao {
 			query = 
 				  "SELECT CM_NO, RV_NO, CM_CONTENT, MEM_NO, MEM_NM, CM_DATE "
 				+ "FROM TB_COMMENT C "
-				+ "JOIN TB_MEM M "
-				+ "ON(C.MEM_NO = M.NO) "
+				+ "JOIN TB_MEM M ON(C.MEM_NO = M.NO) "
 				+ "WHERE RV_NO=? "
 				+ "ORDER BY CM_NO DESC";
 			
@@ -157,7 +159,7 @@ public class ReviewDao {
 			
 			rs = pstmt.executeQuery();
 			
-			System.out.println(rv_comments);
+
 			
 			while(rs.next()) {
 				Comment comment = new Comment();
@@ -179,6 +181,28 @@ public class ReviewDao {
 		}		
 		
 		return rv_comments;
+	}
+	
+	public int insertComment(Connection connection, Comment comment) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query = "INSERT INTO TB_COMMENT(CM_NO, RV_NO, CM_CONTENT, MEM_NO, CM_DATE) VALUES(SEQ_TB_COMMENT_NO.NEXTVAL,?, ?, ?,DEFAULT)";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setInt(1, comment.getRv_no());
+			pstmt.setString(2, comment.getCm_content());
+			pstmt.setInt(3, comment.getMem_no());
+			
+			result = pstmt.executeUpdate();	
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 	
