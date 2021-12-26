@@ -25,7 +25,7 @@ public class ReviewCommentServlet extends HttpServlet {
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int rv_no = Integer.parseInt(request.getParameter("rv_no"));
-		String content = request.getParameter("cm_content");
+		String cm_content = request.getParameter("cm_content");
     	HttpSession session = request.getSession(false);
     	Member loginMember = session != null ? (Member)session.getAttribute("loginMember") : null;
 
@@ -35,16 +35,16 @@ public class ReviewCommentServlet extends HttpServlet {
 			comment.setRv_no(rv_no);
 			comment.setMem_no(loginMember.getNo());
 			comment.setMem_nm(loginMember.getName());
-			comment.setCm_content(content);
+			comment.setCm_content(cm_content);
 			
 			int result = service.saveComment(comment);
 			
 			if(result > 0) {
          		request.setAttribute("msg", "댓글 등록 성공!");
-         		request.setAttribute("location", "/review/reviewDetail?no=" + rv_no);
+         		request.setAttribute("location", "/review/reviewDetail?rv_no=" + rv_no);
 			} else {
 				request.setAttribute("msg", "댓글 등록 실패!");
-         		request.setAttribute("location", "/review/reviewDetail?no=" + rv_no);
+         		request.setAttribute("location", "/review/reviewDetail?rv_no=" + rv_no);
 			}
     	} else {
      		request.setAttribute("msg", "로그인 후 사용할 수 있습니다.");

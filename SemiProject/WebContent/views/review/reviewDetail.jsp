@@ -20,13 +20,7 @@
             <div class="reviewContents">
                 ${ review.rv_content }
             </div>
-            <!-- 
-            <div id="form-commentInfo">
-                <div id="comment-count">댓글 <span id="count">0</span></div>
-                <input id="comment-input" placeholder="댓글을 입력해 주세요."></input>
-                <button type="submit" id="btn-commentSubmit">등록</button>
-            </div>
-             -->
+
             <div id="comment-container">
 	            <div class="comment-editor">
 		            <form action="${ pageContext.request.contextPath }/review/comment" method="POST" id="frm-comment">
@@ -36,7 +30,7 @@
 		            </form>
 	            </div>
 	            <table id="tbl-comment">
-			    	<c:forEach var="comment" items="${ review.comments }">
+			    	<c:forEach var="comment" items="${ review.rv_comments }">
 				    	<tr class="level1">
 				    		<td>
 				    			<sub class="comment-writer"><c:out value="${ comment.mem_nm }"/></sub>
@@ -45,7 +39,7 @@
 				    			<c:out value="${ comment.cm_content }"/>
 				    		</td>
 				    		<td>
-				    			<c:if test="${ ! empty loginMember && loginMember.mem_nm == comment.mem_nm }">
+				    			<c:if test="${ ! empty loginMember && loginMember.no == comment.mem_no }">
 			    					<button id="#btn-commentdelete">삭제</button>
 		    					</c:if>
 				    		</td>

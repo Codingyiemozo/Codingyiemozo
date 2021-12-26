@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kh.mvc.review.model.vo.Comment;
 import com.kh.mvc.review.model.vo.Review;
 
 public class ReviewDao {
@@ -66,7 +67,7 @@ public class ReviewDao {
 	public int updateReadCount(Connection connection, Review review) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "UPDATE TB_REVIEW SET RV_HITS=? WHERE NO=?";
+		String query = "UPDATE TB_REVIEW SET RV_HITS=? WHERE RV_NO=?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -90,7 +91,7 @@ public class ReviewDao {
 	public int updateReview(Connection connection, Review review) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "UPDATE TB_REVIEW SET TITLE=?,CONTENT=? WHERE NO=?";
+		String query = "UPDATE TB_REVIEW SET TITLE=?,CONTENT=? WHERE RV_NO=?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -134,106 +135,52 @@ public class ReviewDao {
 		
 		return result;
 	}
-
 	
-	
-	
-	// 썸네일용 리스트 생성
-	// 여행지 리스트 작성
-	public List<Review> getspotList(Connection connection, String spotType) {
-		List<Review> spotList = new ArrayList<>();
+	public List<Comment> getCommentsByNo(Connection connection, int rv_no) {
+		List<Comment> rv_comments = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = 
-				"SELECT RV_NO, RV_TYPE, RV_IMG_PATH, RV_CONTENT "
-						+ "FROM TB_REVIEW "
-						+ "WHERE RV_TYPE=?";
-
+		String query = null;
+		
 		try {
+			query = 
+				  "SELECT CM_NO, RV_NO, CM_CONTENT, MEM_NO, MEM_NM, CM_DATE "
+				+ "FROM TB_COMMENT C "
+				+ "JOIN TB_MEM M "
+				+ "ON(C.MEM_NO = M.NO) "
+				+ "WHERE RV_NO=? "
+				+ "ORDER BY CM_NO DESC";
+			
 			pstmt = connection.prepareStatement(query);
-			pstmt.setString(1, spotType);
+			
+			pstmt.setInt(1, rv_no);
+			
 			rs = pstmt.executeQuery();
 			
+			System.out.println(rv_comments);
+			
 			while(rs.next()) {
-				Review spotListData = new Review();
-				spotListData.setRv_no(rs.getInt("RV_NO"));
-				spotListData.setRv_type(rs.getString("RV_TYPE"));
-				spotListData.setRv_img_path(rs.getString("RV_IMG_PATH"));
-				spotListData.setRv_content(rs.getString("RV_CONTENT"));
-				spotList.add(spotListData);
+				Comment comment = new Comment();
+				
+				comment.setCm_no(rs.getInt("CM_NO"));
+				comment.setRv_no(rs.getInt("RV_NO"));
+				comment.setCm_content(rs.getString("CM_CONTENT"));
+				comment.setMem_nm(rs.getString("MEM_NM"));
+				comment.setCm_date(rs.getDate("CM_DATE"));
+				
+				rv_comments.add(comment);
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close(rs);
 			close(pstmt);
-		}
-		return spotList;
+		}		
+		
+		return rv_comments;
 	}
-	// 맛집 리스트 생성
-	public List<Review> getRestList(Connection connection, String restType) {
-		List<Review> restList = new ArrayList<>();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String query = 
-				"SELECT RV_NO, RV_TYPE, RV_IMG_PATH, RV_CONTENT "
-				+ "FROM TB_REVIEW "
-				+ "WHERE RV_TYPE=?";
 
-		try {
-			pstmt = connection.prepareStatement(query);
-			pstmt.setString(1, restType);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				Review restListData = new Review();
-				restListData.setRv_no(rs.getInt("RV_NO"));
-				restListData.setRv_type(rs.getString("RV_TYPE"));
-				restListData.setRv_img_path(rs.getString("RV_IMG_PATH"));
-				restListData.setRv_content(rs.getString("RV_CONTENT"));
-				restList.add(restListData);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-		return restList;
-	}
 	
-	// 숙소 리스트 생성
-	public List<Review> getstayList(Connection connection, String stayType) {
-		List<Review> stayList = new ArrayList<>();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String query = 
-				"SELECT RV_NO, RV_TYPE, RV_IMG_PATH, RV_CONTENT "
-						+ "FROM TB_REVIEW "
-						+ "WHERE RV_TYPE=?";
-
-		try {
-			pstmt = connection.prepareStatement(query);
-			pstmt.setString(1, stayType);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				Review stayListData = new Review();
-				stayListData.setRv_no(rs.getInt("RV_NO"));
-				stayListData.setRv_type(rs.getString("RV_TYPE"));
-				stayListData.setRv_img_path(rs.getString("RV_IMG_PATH"));
-				stayListData.setRv_content(rs.getString("RV_CONTENT"));
-				stayList.add(stayListData);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-		return stayList;
-	}
-	
-
 	
 }

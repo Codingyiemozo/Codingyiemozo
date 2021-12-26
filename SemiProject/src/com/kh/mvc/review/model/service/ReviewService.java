@@ -20,7 +20,7 @@ public class ReviewService {
 		
 		review = dao.findReviewByNo(connection, no);
 		
-		// 게시글 조회수를 증가시키는 로직
+		// 게시글 조회수 증가
 		if(review != null && !hasRead) {
 			int result = dao.updateReadCount(connection, review);
 			
@@ -59,36 +59,5 @@ public class ReviewService {
 	}	
 	
 
-	// 여행지 목록 조회
-	public List<Review> getSpotList(String spotType) {
-		List<Review> spotList = null;
-		Connection connection = getConnection();
-		
-		spotList = dao.getspotList(connection, spotType);
-		
-		close(connection);
-		return spotList;
-	}
-
-	// 맛집 목록 조회
-	public List<Review> getRestList(String restType) {
-		List<Review> restList = null;
-		Connection connection = getConnection();
-		
-		restList = dao.getRestList(connection, restType);
-		
-		close(connection);
-		return restList;
-	}
-	// 숙소 목록 조회
-	public List<Review> getStayList(String stayType) {
-		List<Review> stayList = null;
-		Connection connection = getConnection();
-		
-		stayList = dao.getstayList(connection, stayType);
-		
-		close(connection);
-		return stayList;
-	}
 
 }

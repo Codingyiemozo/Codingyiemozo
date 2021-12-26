@@ -31,21 +31,7 @@ public class Review {
 	
 	private int cm_no;
 	
-	private List<Comment> comments;
+	private List<Comment> rv_comments;
 
-	
-//	
-//	private String originalFileName;
-//	
-//	private String renamedFileName;
-//	
-//	private int readCount;
-//	
-//	private String status;
-//	
-//	private List<Reply> replies;
-//	
-//	private Date createDate;
-//	
-//	private Date modifyDate;
+
 }
