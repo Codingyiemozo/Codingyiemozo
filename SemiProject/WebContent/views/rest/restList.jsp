@@ -11,7 +11,7 @@
     <div class="thumb-list">
    		<h3 class="type-tit">음식점</h3>
 		<ul>
-			<c:forEach var="rest" items="${ restList }" begin="0" end="7">
+			<c:forEach var="rest" items="${ restList }" begin="0" end="3">
 		        <li>
 		          <a href="${ pageContext.request.contextPath }/rest/restDetail?no=${ rest.no }">
 		            <div class="img-thumb">
@@ -28,7 +28,7 @@
     <div class="thumb-list">
    		<h3 class="type-tit">카페</h3>
 		<ul>
-			<c:forEach var="cafe" items="${ cafeList }" begin="0" end="7">
+			<c:forEach var="cafe" items="${ cafeList }" begin="0" end="3">
 		        <li>
 		          <a href="${ pageContext.request.contextPath }/rest/restDetail?no=${ cafe.no }">
 		            <div class="img-thumb">
@@ -45,7 +45,7 @@
     <div class="thumb-list">
    		<h3 class="type-tit">술집</h3>
 		<ul>
-			<c:forEach var="bar" items="${ barList }" begin="0" end="7">
+			<c:forEach var="bar" items="${ barList }" begin="0" end="3">
 		        <li>
 		          <a href="${ pageContext.request.contextPath }/rest/restDetail?no=${ bar.no }">
 		            <div class="img-thumb">
