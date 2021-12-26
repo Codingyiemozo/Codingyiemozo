@@ -44,7 +44,7 @@ public class EnrollServlet extends HttpServlet {
     	if(result > 0) {
     		// 회원 가입 완료
 			request.setAttribute("msg", "회원 가입 성공!");
-			request.setAttribute("location", "/home");
+			request.setAttribute("location", "/member/login");
     	} else {
     		// 회원 가입 실패
 			request.setAttribute("msg", "회원 가입 실패!");
