@@ -33,7 +33,7 @@ public class ReviewWriteServlet extends HttpServlet {
     	if(loginMember == null) {    
     		viewName = "/views/common/msg.jsp";
     		request.setAttribute("msg", "로그인 후 사용할 수 있습니다.");
-			request.setAttribute("location", "/");
+    		request.setAttribute("location", "/member/login");
     	}
     	
     	request.getRequestDispatcher(viewName).forward(request, response);

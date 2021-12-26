@@ -10,7 +10,7 @@
 		<h2 class="page-tit">여행후기</h2>
 
 		<div class="reviewWrite">
-			<form action="/review/write" method="post">
+			<form action="${ pageContext.request.contextPath }/review/write" method="post">
 				<div class="form-type">
 					<input type="text" class="form-control" id="title"
 						placeholder="제목을 입력해 주세요." name="title" required="required">

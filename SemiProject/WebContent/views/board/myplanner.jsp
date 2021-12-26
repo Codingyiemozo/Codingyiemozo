@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	//인코딩 설정
+	request.setCharacterEncoding("utf-8");
+
+	//form 파라미터 값 읽어오기
+	String travel_title = request.getParameter("travel_title");
+	
+	String dateIn = request.getParameter("dateIn");
+	String dateIn2 = request.getParameter("dateIn2");
+	String[] addText = request.getParameterValues("addText");
+	String[] addText2 = request.getParameterValues("addText2");
+	
+%>
 
 <jsp:include page="/views/common/header.jsp" />
 
@@ -62,68 +75,65 @@
         
 </style>
 
-<section>
+<div class="container">
+<div class="contents">
 		<br>
-        <h1>마이 플래너</h1>
+        <h2 class="page-tit">마이 플래너</h1>
         <br>
         <hr>
         <h2 align="center">나 혼자 제주도 간다(1박 2일)</h2>
-        <label class="label">출발일</label><input type="text" id="s-date" readonly><br><br>
-        <label class="label">도착일</label><input type="text" id="s-date" readonly><br><br>
+         여행 타이틀 : <%= travel_title %> <br><br>
+        <label class="label">출발일</label> : <%=dateIn %><br><br>
+        <label class="label">도착일</label> : <%=dateIn2 %><br><br>
         <hr>
         
         <div class="outer">
             <div class="inner" id="first">
                 <h2 class="sch-date">1일차</h2>
+               
                 <ul style="font-size: 30px;">
                     <li class="schedule">
-                        <input type="text" id="d1s1" readonly>
+                        <%= addText[0] %>
                     </li>
                     <li class="schedule">
-                        <input type="text" id="d1s2" readonly>
+                         <%= addText[1] %>
                     </li>
                     <li class="schedule">
-                        <input type="text" id="d1s3" readonly>
-                    </li>
+                         <%= addText[2] %>
+                    </li> 
                     <li class="schedule">
-                        <input type="text" id="d1s4" readonly>
+                         <%= addText[3] %>
                     </li>
-                    <li class="schedule">
-                        <input type="text" id="d1s5" readonly>
-                    </li>
-                    <li class="schedule">
-                        <input type="text" id="d1s6" readonly>
-                    </li>
+                   
+                  
+                    
                 </ul>
                 
             </div>
             <div class="inner" id="second">
                 <h2 class="sch-date">2일차</h2>
+               
                 <ul style="font-size: 30px;">
                     <li class="schedule">
-                        <input type="text" id="d2s1" readonly>
+                         <%= addText2[0] %>
                     </li>
                     <li class="schedule">
-                        <input type="text" id="d2s2" readonly>
+                         <%= addText2[1] %>
                     </li>
                     <li class="schedule">
-                        <input type="text" id="d2s3" readonly>
+                         <%= addText2[2] %>
                     </li>
                     <li class="schedule">
-                        <input type="text" id="d2s4" readonly>
+                         <%= addText2[3] %>
                     </li>
-                    <li class="schedule">
-                        <input type="text" id="d2s5" readonly>
-                    </li>
-                    <li class="schedule">
-                        <input type="text" id="d2s6" readonly>
-                    </li>
+					
                 </ul>
-        		<button id="planner-btn" onclick="location.href='${ pageContext.request.contextPath }/board/Write'">플래너 수정 및 추가</button>
+        		<button type="button" id="planner-btn" onClick="location.href='myplannerWrite.jsp'">플래너 수정 및 추가</button>
             </div>
         </div>
         
 
-    </section>
+    </div>
+</div>
 
 <jsp:include page="/views/common/footer.jsp" />

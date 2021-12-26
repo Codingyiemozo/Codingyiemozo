@@ -45,7 +45,7 @@
 					<dd>${ detailVo.phone }</dd>
 				</dl>
 				<dl>
-					<dt><strong>입장료</strong></dt>
+					<dt><strong>객실 요금</strong></dt>
 					<dd>${ detailVo.price }</dd>
 				</dl>				
 			</div>				
@@ -104,8 +104,10 @@
 	<hr>
 	
 	<!-- ====================================== 다음 카카오 지도 API ====================================== -->
-	
-	<div id="map" style="width:100%;height:350px;"></div>
+	<div class="map-wrap">
+		<p>${ detailVo.addr }</p>
+		<div id="map" style="width:100%;height:350px;"></div>
+	</div>
 
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8b61348dc035a0fa7d71297a6f4a74c5"></script>
 	<script>
