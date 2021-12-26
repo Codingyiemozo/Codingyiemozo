@@ -33,7 +33,7 @@
 				<p>${ detailVo.content }<p>
 				<dl>
 					<dt><strong>입장료</strong></dt>
-					<dd>${ detailVo.phone }</dd>
+					<dd>${ detailVo.price }</dd>
 				</dl>				
 				<dl>
 					<dt><strong>전화번호</strong></dt>
