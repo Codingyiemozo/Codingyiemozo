@@ -55,6 +55,60 @@ public class MemberService {
 		return member;
 	}
 	
+	public Member findMemberID(String userName, String phone) {
+		Connection connection = getConnection();
+		Member member = dao.findMemberID(connection, userName, phone);
+		
+		close(connection);
+		
+		return member;
+	}
+	
+	public Member findMemberPWD(String userId, String userName, String phone) {
+		Connection connection = getConnection();
+		Member member = dao.findMemberPWD(connection, userId, userName, phone);
+		
+		close(connection);
+		
+		return member;
+	}
+	
+	// 회원탈퇴
+	public int delete(int no) {
+		int result = 0;
+		Connection connection = getConnection();
+
+		result = dao.updateMemberStatus(connection, no, "N");
+		
+		if(result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		
+		close(connection);
+		
+		return result;
+	}
+	
+	// 비밀번호 변경
+	public int updatePassword(int no, String password) {
+		int result = 0;
+		Connection connection = getConnection();
+		
+		result = dao.updateMemberPassword(connection, no, password);
+		
+		if(result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		
+		close(connection);
+		
+		return result;
+	}
+	
 	
 	
 	

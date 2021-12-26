@@ -120,3 +120,15 @@ public class BoardDao {
 	
 }
 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,15 +9,19 @@
   <div class="contents">
     <h2 class="page-tit">여행후기</h2>
 	<div class="btn-wrap">
+<<<<<<< HEAD
 		<a href="${ pageContext.request.contextPath }/review/write" style="float: right;">글쓰기</a>
+=======
+		<a href="${ pageContext.request.contextPath }/review/revieView">여행후기 작성</a>
+>>>>>>> main
 	</div>
 	
     <div class="thumb-list">
       <h3>여행지</h3>
       <ul>
-        <c:forEach var="spot" items="${ spotList }" begin="0" end="7">
+        <c:forEach var="spot" items="${ spotList }" begin="0" end="3">
 	        <li>
-	          <a href="${ pageContext.request.contextPath }/review/reviewDetail?rv_no=${ spot.no }">
+	          <a href="${ pageContext.request.contextPath }/review/reviewDetail?no=${ camping.no }">
 	            <div class="img-thumb">
 	              <img src="${ pageContext.request.contextPath }${ spot.imgPath }${ spot.no }.png" alt="">
 	            </div>
@@ -32,9 +36,9 @@
     <div class="thumb-list">
       <h3>숙박</h3>
       <ul>
-        <c:forEach var="stay" items="${ stayList }" begin="0" end="7">
+        <c:forEach var="stay" items="${ stayList }" begin="0" end="3">
 	        <li>
-	          <a href="${ pageContext.request.contextPath }/review/reviewDetail?rv_no=${ stay.no }">
+	          <a href="${ pageContext.request.contextPath }/review/reviewDetail?no=${ stay.no }">
 	            <div class="img-thumb">
 	              <img src="${ pageContext.request.contextPath }${ stay.imgPath }${ stay.no }.png" alt="">
 	            </div>
@@ -49,9 +53,9 @@
     <div class="thumb-list">
       <h3>맛집</h3>
       <ul>
-        <c:forEach var="reset" items="${ restList }" begin="0" end="7">
+        <c:forEach var="reset" items="${ restList }" begin="0" end="3">
 	        <li>
-	          <a href="${ pageContext.request.contextPath }/review/reviewDetail?rv_no=${ reset.no }">
+	          <a href="${ pageContext.request.contextPath }/review/reviewDetail?no=${ reset.no }">
 	            <div class="img-thumb">
 	              <img src="${ pageContext.request.contextPath }${ reset.imgPath }${ reset.no }.png" alt="">
 	            </div>

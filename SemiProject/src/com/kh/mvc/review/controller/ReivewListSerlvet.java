@@ -27,6 +27,7 @@ public class ReivewListSerlvet extends HttpServlet {
     	String stayType = "숙박";
     	String restType = "맛집";
 
+
     	List<BoardList> spotList = null;
     	List<BoardList> stayList = null;
     	List<BoardList> restList = null;
