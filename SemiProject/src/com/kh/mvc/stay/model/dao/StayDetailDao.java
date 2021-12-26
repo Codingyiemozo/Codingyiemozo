@@ -26,8 +26,8 @@ public class StayDetailDao {
 				+ 	"ST_PHONE, "
 				+ 	"ST_PRICE, "
 				+ 	"ST_CONTENT, "
-				+ 	"SP_LAT, "
-				+ 	"SP_LONG "
+				+ 	"ST_LAT, "
+				+ 	"ST_LONG "
 				+ "FROM TB_STAY "
 				+ "WHERE ST_NO=?"; 
 		
@@ -50,8 +50,8 @@ public class StayDetailDao {
 				detailVo.setPhone(rs.getString("ST_PHONE"));
 				detailVo.setPrice(rs.getString("ST_PRICE"));
 				detailVo.setContent(rs.getString("ST_CONTENT"));
-				detailVo.setXlat(rs.getString("SP_LAT"));
-				detailVo.setYlong(rs.getString("SP_LONG"));
+				detailVo.setXlat(rs.getString("ST_LAT"));
+				detailVo.setYlong(rs.getString("ST_LONG"));
 				
 			}
 			
