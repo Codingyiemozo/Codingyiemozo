@@ -75,9 +75,10 @@
         
 </style>
 
-<section>
+<div class="container">
+<div class="contents">
 		<br>
-        <h1>마이 플래너</h1>
+        <h2 class="page-tit">마이 플래너</h1>
         <br>
         <hr>
         <h2 align="center">나 혼자 제주도 간다(1박 2일)</h2>
@@ -132,6 +133,7 @@
         </div>
         
 
-    </section>
+    </div>
+</div>
 
 <jsp:include page="/views/common/footer.jsp" />

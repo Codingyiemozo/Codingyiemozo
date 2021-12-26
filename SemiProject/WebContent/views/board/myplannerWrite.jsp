@@ -64,17 +64,24 @@
             float: center;
             margin-right: 100px;
         }
+        strong {
+        	font-weight: 500;
+        }
+        table {
+        	border: 0;
+       	}
 
 
 
 </style>
-<section>
+<div class="container">
+	<div class="contents">
 		<br>
-        <h1>마이 플래너</h1>
+        <h2 class="page-tit">마이 플래너</h1>
 		<br>
 		<hr>
 		<br>
-		<h2 align="center">나 혼자 제주도 간다(1박 2일)</h2>
+		<strong>1박 2일 일정을 등록해주세요.</strong>
 		<div id = "inputDay">
 		    <form action = "myplanner.jsp" method="post"> <!--myplanner으로 입력받은 데이터넘김  -->
 		        <br>
@@ -249,7 +256,8 @@
             
           
 
-</section>
+</div>
+</div>
 
 
 <jsp:include page="/views/common/footer.jsp" />

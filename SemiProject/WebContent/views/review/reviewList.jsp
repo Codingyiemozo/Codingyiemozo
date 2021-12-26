@@ -8,9 +8,6 @@
 <div class="container">
   <div class="contents">
     <h2 class="page-tit">여행후기</h2>
-	<div class="btn-wrap">
-		<a href="${ pageContext.request.contextPath }/review/write" style="float: right;">글쓰기</a>
-	</div>
 	
     <div class="thumb-list">
       <h3>여행지</h3>
@@ -62,6 +59,10 @@
         </c:forEach>
       </ul>
     </div>
+    
+	<div class="btn-wrap">
+		<a href="${ pageContext.request.contextPath }/review/write">여행후기 작성</a>
+	</div>
 
   </div>
 </div>

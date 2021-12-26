@@ -352,6 +352,9 @@ footer {
   width: calc(100% / 4 - 10px);
   margin-bottom: 20px;
 }
+.thumb-list ul li:nth-child(5) {
+	margin-left: 0;
+}
 .thumb-list ul li + li {
 	margin-left: 13px;
 }
@@ -381,6 +384,7 @@ footer {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   font-size: 16px;
+  font-weight: 500;
   margin: 5px 0 0;
 }
 .thumb-list ul li p {
@@ -404,6 +408,9 @@ footer {
   float: left;
   width: 186px;
   margin-right: 10px;
+}
+.thumb-list.spot ul li + li {
+	margin-left: 0;
 }
 .thumb-list.spot ul li:first-child{
   width: 585px;
@@ -430,7 +437,38 @@ footer {
 
 
 
+.btn-wrap a {
+	float: none;
+	display: inline-block;
+	color: #fff;
+	background: #ff9227;
+	padding: 7px 10px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
+}
+
+
+
+
+.map-wrap {
+	margin-top: 20px;
+}
+.map-wrap p {
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 20px;
+}
+.map-wrap p:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: url(/SemiProject/resources/images/maker.png) 0 0 no-repeat;
+	background-size: 20px;
+	transform: translateY(-50%);
 }
