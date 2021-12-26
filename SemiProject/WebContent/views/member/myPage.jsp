@@ -53,6 +53,7 @@
 	    border-radius: 0;
 	}
 	.tbl-mypage td input:disabled {
+		color: #999;
 		background: #eee;
 	}
 	.button-section {
@@ -78,7 +79,7 @@
 		display: block;
 		font-size: 12px;
 		color: #888;
-		margin-bottom: 5px;
+		margin: 5px 0;
 	} 
 </style>
 
