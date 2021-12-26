@@ -104,7 +104,10 @@
 	
 	<!-- ====================================== 다음 카카오 지도 API ====================================== -->
 	
-	<div id="map" style="width:100%;height:350px;"></div>
+	<div class="map-wrap">
+		<p>${ detailVo.addr }</p>
+		<div id="map" style="width:100%;height:350px;"></div>
+	</div>
 
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8b61348dc035a0fa7d71297a6f4a74c5"></script>
 	<script>

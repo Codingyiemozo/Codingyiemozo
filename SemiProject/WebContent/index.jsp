@@ -5,8 +5,7 @@
 
 <jsp:include page="/views/common/header.jsp" />
 
-<div class="container">
-    
+<div class="container">    
     <div class="contents">
                 
         <div class="select-map">

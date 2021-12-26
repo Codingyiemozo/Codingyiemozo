@@ -25,7 +25,7 @@
 	            <div class="comment-editor">
 		            <form action="${ pageContext.request.contextPath }/review/comment" method="POST" id="frm-comment">
 		            	<input type=hidden name="rv_no" value="${ review.rv_no }">
-		            	<textarea name="cm_content" id="commentContent" rows="3" cols="55"></textarea>
+		            	<textarea name="cm_content" id="commentContent" rows="3" cols="55" placeholder="댓글을 입력해주세요."></textarea>
 		            	<button type="submit" id="btn-insert">등록</button>
 		            </form>
 	            </div>
@@ -48,7 +48,7 @@
 	            </table>
 	            <div>
             </div>
-                <button id="btn-list"onclick = "location.href = '/review/reviewList' ">목록</button>
+                <a type="button" id="btn-list" href="${ pageContext.request.contextPath }/review/reviewList">목록</a>
             </div>
         </div>
     </div>
