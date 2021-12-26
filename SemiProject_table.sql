@@ -185,8 +185,8 @@ CREATE TABLE TB_STAY (
     ST_NAME VARCHAR2(100),
     ST_IMG_PATH VARCHAR2(50),
     ST_ADDR VARCHAR2(100),
-    ST_PRICE VARCHAR2(50),
     ST_PHONE VARCHAR2(100),
+    ST_PRICE VARCHAR2(50),
     ST_CONTENT VARCHAR2(2000),
     ST_LAT VARCHAR2(100),
     ST_LONG VARCHAR2(100),
@@ -199,8 +199,8 @@ ALTER TABLE TB_STAY RENAME COLUMN ST_PRICE TO ST_PHONE;
 ALTER TABLE TB_STAY RENAME COLUMN ST_PRICE2 TO ST_PRICE;
 
 COMMENT ON COLUMN TB_STAY.ST_NO IS '게시글 번호';
-COMMENT ON COLUMN TB_STAY.ST_TITLE IS '게시글 제목';
 COMMENT ON COLUMN TB_STAY.ST_TYPE IS '숙박 형태';
+COMMENT ON COLUMN TB_STAY.ST_NAME IS '숙소 이름';
 COMMENT ON COLUMN TB_STAY.ST_IMG_PATH IS '이미지 경로';
 COMMENT ON COLUMN TB_STAY.ST_ADDR IS '주소';
 COMMENT ON COLUMN TB_STAY.ST_PHONE IS '전화번호';
@@ -213,30 +213,30 @@ COMMENT ON COLUMN TB_STAY.LOCAL IS '지역고유번호';
 CREATE SEQUENCE SEQ_TB_STAY_NO;
 
 -- 호텔
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '랜딩관 제주신화월드', '/resources/images/stay/stay', '제주도 서귀포시 안덕면 신화역사로 304번길 38', 92000, '064-111-9505', '제주 서귀포시 안덕면에 위치한 랜딩관 제주신화월드 호텔, 리조트는 5성급 부대시설과 서비스를 제공합니다.', '33.30577265332172', '126.31756179751882', 14);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '롯데 호텔 제주', '/resources/images/stay/stay', '제주도 서귀포시 중문관광로72번길 35', 105000, '064-751-9544', '천제연 폭포, 여미지식물원 등이 걸어서 10분, 중문색달해수욕장, 갯깍주상절리대 등이 걸어서 약 20분 내외의 거리에 있습니다.', '33.24841893785445', '126.41057948446223', 15);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '제주 신라 호텔', '/resources/images/stay/stay', '제주도 서귀포시 중문관광로72번길 75', 88000, '064-151-1105', '해변가가 내려다보이는 쉬리의 언덕이 유명한 제주 신라 호텔은 중문관광단지 내 자리하고 있어 여미지식물원, 천제연폭포, 별 내린 전망대 등이 아주 가까운 거리에 있습니다.', '33.24736986179169', '126.40800855848282', 15);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '호텔 리젠트 마린 더 블루', '/resources/images/stay/stay', '제주도 제주시 서부두2길 20', 99000, '064-551-9203', '제주 탑동에 위치한 호텔 리젠트 마린 더 블루는 제주 국제 공항에서 차로 약 15분 거리에 있습니다. 호텔 바로 앞에는 탁 트인 탑동 광장이 자리해 있으며, 옆에는 제주 최대의 횟집 단지인 서부두 명품 횟집 거리가 있습니다.', '33.51743221042272', '126.5266743748806', 7);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '메리어트관 제주신화월드', '/resources/images/stay/stay', '제주도 서귀포시 안덕면 신화역사로 304번길 38', 92000, '064-333-9505', '제주 최고의 프리미엄 서비스와 차별화된 혜택을 선보이는 글로벌 체인 메리어트 호텔입니다. 오설록, 협재해수욕장, 중문 관광 단지 등 제주의 인기 명소가 인접해 있습니다.', '33.30745441744823', '126.31761043851472', 14);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '그랜드 조선 제주', '/resources/images/stay/stay', '제주도 서귀포시 중문관광로72번길 60', 69000, '064-654-9505', '제주 대표 관광지가 모여 있는 중문관광단지에 위치하고 있어, 중문 색달해변, 천제연폭포, 여미지식물원, 테디베어 뮤지엄 등을 도보로 이동하실 수 있습니다.', '33.25221406351012', '126.40805906041149', 15);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '신라스테이 제주', '/resources/images/stay/stay', '제주도 제주시 노연로 100', 97000, '064-751-3456', '호텔신라의 프리미엄 비즈니스호텔인 신라스테이 제주는 제주 국제공항에서 차로 약 15분 거리에 있습니다.', '33.4855025649021', '126.49090803600815', 7);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '메종 글래드 제주', '/resources/images/stay/stay', '제주도 제주시 노연로 80', 99000, '064-751-9231', '40여 년의 역사와 전통을 자랑하는 메종 글래드 제주는 제주 관광의 랜드마크로서 제주 고유의 매력을 경험할 수 있는 호텔입니다.', '33.485204249438375', '126.48852651824107', 7);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '라마다 프라자 제주 호텔', '/resources/images/stay/stay', '제주도 제주시 탑동로 66', 92000, '064-121-8877', '제주시에 위치한 라마다 프라자 제주 호텔은 제주 공항에서 차로 단 10분 거리에 있습니다.', '33.518782227349575', '126.51787835576916', 7);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '유탑 유블레스호텔', '/resources/images/stay/stay', '제주도 제주시 조천읍 조함해안로 502', 54000, '064-251-6505', '유탑 유블레스호텔은 에메랄드빛 바다와 흰 모래밭이 어우러지는 함덕 서우봉 해변에서 도보로 약 3분 거리에 위치합니다.', '33.54240577648495', '126.66625901945214', 8);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '파크선샤인제주', '/resources/images/stay/stay', '제주특별자치도 서귀포시 천지동 남성중로 135', 90000, '064-766-1000', '깔끔한 객실을 갖춘 현대적인 호텔로 일부 객실에서는 산이 보이며 스타일리시한 레스토랑을 이용할 수 있습니다.', '33.61716532555025', '126.55330246926356', 14);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '랜딩관 제주신화월드', '/resources/images/stay/stay', '제주도 서귀포시 안덕면 신화역사로 304번길 38', '92,000원', '064-111-9505', '제주 서귀포시 안덕면에 위치한 랜딩관 제주신화월드 호텔, 리조트는 5성급 부대시설과 서비스를 제공합니다.', '33.30577265332172', '126.31756179751882', 14);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '롯데 호텔 제주', '/resources/images/stay/stay', '제주도 서귀포시 중문관광로72번길 35', '105,000원', '064-751-9544', '천제연 폭포, 여미지식물원 등이 걸어서 10분, 중문색달해수욕장, 갯깍주상절리대 등이 걸어서 약 20분 내외의 거리에 있습니다.', '33.24841893785445', '126.41057948446223', 15);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '제주 신라 호텔', '/resources/images/stay/stay', '제주도 서귀포시 중문관광로72번길 75', '88,000원', '064-151-1105', '해변가가 내려다보이는 쉬리의 언덕이 유명한 제주 신라 호텔은 중문관광단지 내 자리하고 있어 여미지식물원, 천제연폭포, 별 내린 전망대 등이 아주 가까운 거리에 있습니다.', '33.24736986179169', '126.40800855848282', 15);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '호텔 리젠트 마린 더 블루', '/resources/images/stay/stay', '제주도 제주시 서부두2길 20', '99,000원', '064-551-9203', '제주 탑동에 위치한 호텔 리젠트 마린 더 블루는 제주 국제 공항에서 차로 약 15분 거리에 있습니다. 호텔 바로 앞에는 탁 트인 탑동 광장이 자리해 있으며, 옆에는 제주 최대의 횟집 단지인 서부두 명품 횟집 거리가 있습니다.', '33.51743221042272', '126.5266743748806', 7);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '메리어트관 제주신화월드', '/resources/images/stay/stay', '제주도 서귀포시 안덕면 신화역사로 304번길 38', '92,000원', '064-333-9505', '제주 최고의 프리미엄 서비스와 차별화된 혜택을 선보이는 글로벌 체인 메리어트 호텔입니다. 오설록, 협재해수욕장, 중문 관광 단지 등 제주의 인기 명소가 인접해 있습니다.', '33.30745441744823', '126.31761043851472', 14);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '그랜드 조선 제주', '/resources/images/stay/stay', '제주도 서귀포시 중문관광로72번길 60', '69,000원', '064-654-9505', '제주 대표 관광지가 모여 있는 중문관광단지에 위치하고 있어, 중문 색달해변, 천제연폭포, 여미지식물원, 테디베어 뮤지엄 등을 도보로 이동하실 수 있습니다.', '33.25221406351012', '126.40805906041149', 15);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '신라스테이 제주', '/resources/images/stay/stay', '제주도 제주시 노연로 100', '97,000원', '064-751-3456', '호텔신라의 프리미엄 비즈니스호텔인 신라스테이 제주는 제주 국제공항에서 차로 약 15분 거리에 있습니다.', '33.4855025649021', '126.49090803600815', 7);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '메종 글래드 제주', '/resources/images/stay/stay', '제주도 제주시 노연로 80', '99,000원', '064-751-9231', '40여 년의 역사와 전통을 자랑하는 메종 글래드 제주는 제주 관광의 랜드마크로서 제주 고유의 매력을 경험할 수 있는 호텔입니다.', '33.485204249438375', '126.48852651824107', 7);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '라마다 프라자 제주 호텔', '/resources/images/stay/stay', '제주도 제주시 탑동로 66', '92,000원', '064-121-8877', '제주시에 위치한 라마다 프라자 제주 호텔은 제주 공항에서 차로 단 10분 거리에 있습니다.', '33.518782227349575', '126.51787835576916', 7);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '유탑 유블레스호텔', '/resources/images/stay/stay', '제주도 제주시 조천읍 조함해안로 502', '54,000원', '064-251-6505', '유탑 유블레스호텔은 에메랄드빛 바다와 흰 모래밭이 어우러지는 함덕 서우봉 해변에서 도보로 약 3분 거리에 위치합니다.', '33.54240577648495', '126.66625901945214', 8);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '파크선샤인제주', '/resources/images/stay/stay', '제주특별자치도 서귀포시 천지동 남성중로 135', '90,000원', '064-766-1000', '깔끔한 객실을 갖춘 현대적인 호텔로 일부 객실에서는 산이 보이며 스타일리시한 레스토랑을 이용할 수 있습니다.', '33.61716532555025', '126.55330246926356', 14);
 -- 에어비엔비
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '에어비엔비', '제주 애월 감성 공유 민박', '/resources/images/stay/stay', '제주도 제주시 애월읍', 110000, '064-781-1290', '제주 촌집의 따뜻한 감성은 남기고 이용에 편리하도록 리모델링한 숙소입니다.', '33.45224262788046', '126.30800060776457', 6);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '에어비엔비', '제주 애월 감성 공유 민박', '/resources/images/stay/stay', '제주도 제주시 애월읍', '110,000원', '064-781-1290', '제주 촌집의 따뜻한 감성은 남기고 이용에 편리하도록 리모델링한 숙소입니다.', '33.45224262788046', '126.30800060776457', 6);
 -- 펜션
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '펜션', '더갤러리펜션', '/resources/images/stay/stay', '제주 제주시 조천읍 남조로 1717-24', 90000, '064-651-3344', '품격있는 휴식공간을 만들기 위해 최상의 자재로 럭셔리하고 클래식한 분위기와 아름다운 정원을 만들었습니다.', '33.422109416961966', '126.6755097508577', 8);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '펜션', '해와돌바라기휴양펜션', '/resources/images/stay/stay', '제주특별자치도 서귀포시 하효동', 50000, '064-767-8811', '객실이 깔끔함, 조식이 맛있음, 쇠소깍근처', '33.25245653459947', '126.61716532555025', 14);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '펜션', '더갤러리펜션', '/resources/images/stay/stay', '제주 제주시 조천읍 남조로 1717-24', '90,000원', '064-651-3344', '품격있는 휴식공간을 만들기 위해 최상의 자재로 럭셔리하고 클래식한 분위기와 아름다운 정원을 만들었습니다.', '33.422109416961966', '126.6755097508577', 8);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '펜션', '해와돌바라기휴양펜션', '/resources/images/stay/stay', '제주특별자치도 서귀포시 하효동', '50,000원', '064-767-8811', '객실이 깔끔함, 조식이 맛있음, 쇠소깍근처', '33.25245653459947', '126.61716532555025', 14);
 -- 캠핑
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '캠핑', '디포레카라반파크', '/resources/images/stay/stay', '제주 제주시 구좌읍 송당6길 78-1', 90000, '064-051-0505', '디-포레 카라반 파크에서 새들의 지저귐과 안식향이 가득함 숲속에서 평생 처음 추억으로 간직해 드릴것을 약속 드립니다.', '33.46491693908225', '126.78236630273554', 9);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '캠핑', '디포레카라반파크', '/resources/images/stay/stay', '제주 제주시 구좌읍 송당6길 78-1', '90,000원', '064-051-0505', '디-포레 카라반 파크에서 새들의 지저귐과 안식향이 가득함 숲속에서 평생 처음 추억으로 간직해 드릴것을 약속 드립니다.', '33.46491693908225', '126.78236630273554', 9);
 
 -- 추가
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '교윈스위트호텔제주', '/resources/images/stay/stay', '제주특별자치도 서귀포시 중문관광로72번길 67 스위트호텔', 178000, '064-738-3800', '깔끔하고 음식도 맛있었습니다', '33.24942', '126.40819', 15);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '리치호텔', '/resources/images/stay/stay', '제주특별자치도 제주시 애월읍 고내리 332-1', 80000, '06-4799-1991', '제주 리치 호텔은 곽지과물해변에서 차로 15분 거리에 있습니다. 또한, 차로 30분 거리에 있는 한림항에서 배를 타면 비양도까지 가실 수 있습니다. 아름다운 백록담을 품은 한라산은 차로 1시간 거리에 있으며 제주국제공항까지는 약 50분이 소요됩니다.', '33.47234', '126.34912', 6);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '제주 흰수염고래 리조트', '/resources/images/stay/stay', '제제주시 일주서로 6818', 50000, '064-747-3555', '제주시 애월읍 구엄리에 위치한 키즈펜션 가족리조트입니다.', '33.47541', '126.38151', 6);
-INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '빌라드애월', '/resources/images/stay/stay', '제주특별자치도 제주시 애월읍 애월해안로 516-7', 70000, '064-720-9000', '텔 내에는 야외 수영장, SM디지털 아트 뮤지엄, 잔디 광장 등이 마련되어 있습니다. 특히, 요트 투어를 신청해서 즐길 수 있는 것이 특징입니다.', '33.47737', '126.35930', 6);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '교윈스위트호텔제주', '/resources/images/stay/stay', '제주특별자치도 서귀포시 중문관광로72번길 67 스위트호텔', '178,000원', '064-738-3800', '깔끔하고 음식도 맛있었습니다', '33.24942', '126.40819', 15);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '리치호텔', '/resources/images/stay/stay', '제주특별자치도 제주시 애월읍 고내리 332-1', '80,000원', '06-4799-1991', '제주 리치 호텔은 곽지과물해변에서 차로 15분 거리에 있습니다. 또한, 차로 30분 거리에 있는 한림항에서 배를 타면 비양도까지 가실 수 있습니다. 아름다운 백록담을 품은 한라산은 차로 1시간 거리에 있으며 제주국제공항까지는 약 50분이 소요됩니다.', '33.47234', '126.34912', 6);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '제주 흰수염고래 리조트', '/resources/images/stay/stay', '제제주시 일주서로 6818', '50,000원', '064-747-3555', '제주시 애월읍 구엄리에 위치한 키즈펜션 가족리조트입니다.', '33.47541', '126.38151', 6);
+INSERT INTO TB_STAY VALUES(SEQ_TB_STAY_NO.NEXTVAL, '호텔', '빌라드애월', '/resources/images/stay/stay', '제주특별자치도 제주시 애월읍 애월해안로 516-7', '70,000원', '064-720-9000', '텔 내에는 야외 수영장, SM디지털 아트 뮤지엄, 잔디 광장 등이 마련되어 있습니다. 특히, 요트 투어를 신청해서 즐길 수 있는 것이 특징입니다.', '33.47737', '126.35930', 6);
 
 
 
