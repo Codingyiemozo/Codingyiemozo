@@ -55,12 +55,12 @@ CREATE SEQUENCE SEQ_UNO;
 
 INSERT INTO TB_MEM (NO, MEM_ID, PASSWORD, ROLE, MEM_NM, PHONE, EMAIL, ADDR,STATUS, ENROLL_DATE) 
         VALUES(SEQ_UNO.NEXTVAL, 'admin', '1234', 'ROLE_ADMIN', '관리자', '01041794341', 'admin@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
-INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'yiyoung', '1234', DEFAULT, '김이영', '01051807023', 'yiyoung@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
-INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'hyeongjin', '1234', DEFAULT, '김형진', '01051807023', 'hyeongjin@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
-INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'minyeong', '1234', DEFAULT, '박민영', '01051807023', 'minyeong@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
-INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'sohee', '1234', DEFAULT, '박소희', '01051807023', 'sohee@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
-INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'jinhyeon', '1234', DEFAULT, '유지현', '01051807023', 'jinhyeon@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
-INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'yooil', '1234', DEFAULT, '정유일', '01051807023', 'yooil@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
+INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'yiyoung', '1234', DEFAULT, '김이영', '01011111111', 'yiyoung@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
+INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'hyeongjin', '1234', DEFAULT, '김형진', '01011112222', 'hyeongjin@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
+INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'minyeong', '1234', DEFAULT, '박민영', '01011113333', 'minyeong@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
+INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'sohee', '1234', DEFAULT, '박소희', '01011114444', 'sohee@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
+INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'jinhyeon', '1234', DEFAULT, '유지현', '01011115555', 'jinhyeon@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
+INSERT INTO TB_MEM VALUES(SEQ_UNO.NEXTVAL, 'yooil', '1234', DEFAULT, '정유일', '01011116666', 'yooil@iei.or.kr', '서울시 강남구 역삼동', DEFAULT, DEFAULT);
 
 UPDATE TB_MEM
 SET PASSWORD = 'A6xnQhbz4Vx2HuGl4lXwZ5U2I8iziLRFnhP5eNfIRvQ='
