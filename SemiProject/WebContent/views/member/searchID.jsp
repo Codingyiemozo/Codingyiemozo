@@ -91,12 +91,6 @@
           border: 0;
           padding: 10px 20px;
       }
-
-      img {
-          width: 30px;
-          height: 20px;
-          margin-right: 20px;
-      }
     </style>
     
     
