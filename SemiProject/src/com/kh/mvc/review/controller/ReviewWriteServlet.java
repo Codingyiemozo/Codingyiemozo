@@ -46,6 +46,16 @@ public class ReviewWriteServlet extends HttpServlet {
     	int result = 0;
     	request.setCharacterEncoding("UTF-8");
     	
+    	// file이 저장될 경로
+    	// resources에 저장
+    	String path = getServletContext().getRealPath("/resources/images/review"); // web app의 실제 경로
+    	
+    	// file에 size 지정(10MB)
+    	int maxSize = 10485760; // 10485760: 10MB -> byte로 변환한 값
+    	
+    	// 문자열 encoding 설정
+    	String encoding = "UTF-8";
+    	
     	// 폼 파라미터로 넘어온 값들(파일에 대한 정보 X)
     	String title = request.getParameter("title");
     	String type = request.getParameter("type");

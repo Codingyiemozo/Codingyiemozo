@@ -19,9 +19,20 @@ public class BoardDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String query = 
-				"SELECT RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_CONTENT "
-				+ "FROM TB_REVIEW "
-				+ "WHERE RV_TYPE=?";
+				/*
+				 * "SELECT ROWNUM AS RNUM, RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_CONTENT " +
+				 * "FROM TB_REVIEW " + "WHERE RV_TYPE=?";
+				 */
+		
+				// 여행 후기 게시글 역순으로 정렬
+				"SELECT RNUM, RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_CONTENT "
+				+ "FROM ( "
+				+ "SELECT ROWNUM AS RNUM, RV_NO, RV_TYPE, RV_TITLE, RV_IMG_PATH, RV_CONTENT "
+				+ "FROM ( "
+				+ "      TB_REVIEW "
+				+ " ) "
+				+ " WHERE RV_TYPE=? ORDER BY RV_NO DESC "
+				+ " ) ";
 
 		try {
 			pstmt = connection.prepareStatement(query);

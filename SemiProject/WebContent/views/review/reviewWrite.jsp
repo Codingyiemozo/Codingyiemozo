@@ -29,6 +29,9 @@
 					<textarea class="form-control" rows="15" id="form-content"
 						name="content" placeholder="내용 작성"></textarea>
 				</div>
+				
+				<input type="file">
+				
 				<div>
 					<button type="submit" id="btn-rv_submit">등록</button>
 				</div>
