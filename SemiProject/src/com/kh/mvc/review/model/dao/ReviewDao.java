@@ -116,17 +116,16 @@ public class ReviewDao {
 	public int insertBoard(Connection connection, Review review) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_DATE, RV_IMG_PATH, RV_CONTENT, RV_HITS, MEM_NO) "
-						+ "VALUES(SEQ_TB_REVIEW_NO.NEXTVAL,?,?,DEFAULT,?,?,DEFAULT,?)";
+		String query = "INSERT INTO TB_REVIEW(RV_NO, RV_TYPE, RV_TITLE, RV_DATE, RV_CONTENT, RV_HITS, MEM_NO) "
+						+ "VALUES(SEQ_TB_REVIEW_NO.NEXTVAL,?,?,DEFAULT,?,DEFAULT,?)";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
 			pstmt.setString(1, review.getRv_type());
 			pstmt.setString(2, review.getRv_title());
-			pstmt.setString(3, "/resources/images/review/review");
-			pstmt.setString(4, review.getRv_content());
-			pstmt.setInt(5, review.getMem_no());
+			pstmt.setString(3, review.getRv_content());
+			pstmt.setInt(4, review.getMem_no());
 			
 			System.out.println(result);
 			result = pstmt.executeUpdate();
