@@ -74,7 +74,7 @@
             <tr>
                 <th>현재 비밀번호</th>
                 <td>
-                    <input type="password" name="nowPwd" id="pass1">
+                    <input type="password" >
                     <!--  
                     <input type="hidden" name="userPwd" id="pass2" value="${loginMember.password }">
                     -->
@@ -86,14 +86,14 @@
             <tr>
                 <th>새 비밀번호</th>
                 <td>
-                    <input type="password" name="newPwd" id="pass3" required>
+                    <input type="password" name="userPwd" id="pass1" required>
                 </td>
             </tr>
 
             <tr>
                 <th>새 비밀번호 확인</th>
                 <td>
-                    <input type="password" name="checkPwd" id="pass4">
+                    <input type="password" name="userPwd" id="pass2">
                 </td>
             </tr>
             
@@ -114,14 +114,14 @@
 	
 		// 비밀번호 일치 확인 
 		function validate() {
-			let pass3 = $("#pass3").val();
-			let pass4 = $("#pass4").val();
+			let pass3 = $("#pass1").val();
+			let pass4 = $("#pass2").val();
 			
 			if(pass3.trim() != pass4.trim()){
 				alert("비밀번호가 일치하지 않습니다.");
-				$("#pass3").val("");
-				$("#pass4").val("");
-				$("#pass3").focus();
+				$("#pass1").val("");
+				$("#pass2").val("");
+				$("#pass1").focus();
 				
 				return false;
 			}
