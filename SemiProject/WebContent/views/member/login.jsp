@@ -57,10 +57,15 @@
     cursor: pointer;
 }
 
-</style>
+#con1 {
+	margin-top: 30%;
+	font-size: 3em;
+}
 
+</style>
 <div class="container">
  <section id="contents" class="contents">
+	<c:if test="${ empty loginMember }">
  	<h2 class="page-tit">로그인</h2>
  	<form id="loginFrm" action="${ pageContext.request.contextPath }/member/login" method="post">
  	
@@ -81,8 +86,11 @@
  	<div id="l-menu">
          <input class="l-btn" type="button" value="회원가입" onclick="location.href='${ path }/member/enroll'"> | 
          <input class="l-btn" type="button" value="아이디 찾기" onclick="location.href='${ path }/member/search'">
-     </div>
- 	
+     </div> 	
+	</c:if>
+	<c:if test="${ !empty loginMember }">
+	<p id="con1">로그아웃 시에만 이용 가능한 페이지입니다.</p>
+	</c:if>
  </section>
 </div>
  
