@@ -5,39 +5,64 @@
 <jsp:include page="/views/common/header.jsp" />
 
 <style>
+		form {
+			text-align: center;
+		}
        	#E-title {
        		margin-top: 5%;
        	}
 
-        table {
+        .tbl-enroll {
             border-spacing: 0px;
             font-size: 15px;
-            width: 35%;
-            margin-top: 5%;
-            margin-bottom: 10%;
-            margin-left: 42.5%;
+            width: 50%;
             padding: 0px;
-            border: hidden;
-        }
-
-        th, td {
-            text-align: left;
-            border-spacing: 0px;
-            padding: 0px;
+            border: 1px solid #333;
+            margin: 0 auto;
         }
         
-        input {
-            border-radius: 5px;
-            height: 25px;
+        .tbl-enroll th {
+        	font-weight: 500;
+        }
+	
+		.tbl-enroll th {
+			padding-left: 60px;
+		}
+		
+        .tbl-enroll th,
+        .tbl-enroll td {
+            text-align: left;
+            border-spacing: 0px;
+        }
+        
+        .tbl-enroll td {
+        	padding: 10px 0;
+        }
+        
+        .tbl-enroll td input {
+			height: 30px;
+			border: 1px solid #ddd;
+			padding-left: 10px;
+			outline: 0;
+        }
+        
+        .tbl-enroll td input:focus {
+        	border: 1px solid #ff9227;
+        }
+        
+        .tbl-enroll td input#checkDuplicate {
+        	color: #555;
+        	padding: 5px 10px;
+        	margin-left: 10px;
         }
 
         #enrollSubmit {
-            background-color: #4575cb;
-            color: white;
-            border: 1px solid #4575cb;
-            font-size: 15px;
-            border-radius: 10px;
-            margin: 10px; 
+        	font-size: 14px;
+        	color: #fff;
+        	background: #ff9227;
+        	padding: 10px 15px;
+        	margin: 20px auto 0;
+        	border: 0;
         }
 
         #top_btn {
@@ -47,68 +72,63 @@
         }
 </style>
 
-<section id="content">
-    <div>        
-        <h2 align="center" id="E-title">회원가입</h2> 
-        
-        <div>
-        	<form name="memberEnrollFrm" action="${ pageContext.request.contextPath }/member/enroll" method="post">
-	            <table>
-	                <tr>
-	                    <th style="width: 100px">아이디</th>
-	                    <td style="width: 150px;">
-	                    	<input type="text" name="userId" id="newId" placeholder="내용을 입력해주세요" required>
-	                    </td>
-	                    <td>
-	                    	<input type="button" id="checkDuplicate" value="중복검사" >
-	                    </td>
-	                </tr>
-	                <tr>
-	                    <th>비밀번호</th>
-	                    <td>
-	                    	<input type="password" name="userPwd" id="pass1" required>
-	                    </td>
-	                </tr>
-	                <tr>
-	                    <th>비밀번호 확인</th>
-	                    <td>
-	                    	<input type="password" id="pass2" required>
-	                    </td>
-	                </tr>
-	                <tr>
-	                    <th>이름</th>
-	                    <td>
-	                    	<input type="text" name="userName" id="" placeholder="내용을 입력해주세요" required>
-	                    </td>
-	                </tr>	                
-	                <tr>
-                    	<th>휴대폰</th>
-                    	<td>
-                    		<input type="tel" name="phone" id="phone" maxlength="11" placeholder="(-없이)01012345678" required>
-                    	</td>
-                	</tr>
-                	<tr>
-                    	<th>주소</th>
-                    	<td><input type="text" name="address" id="address"></td>
-                	</tr> 
-	                <tr>
-	                    <th>이메일</th>
-	                    <td><input type="email" name="email" id="email" placeholder="abc@abc.com"></td>
-	                </tr>
-	                
-	                <tr><td>
-	                </td>
-                    <td colspan="3">
-                        <input type="submit" id="enrollSubmit" value="회원가입" style="margin-left: 50px">	
+<div class="container">
+	<div class="contents">       
+       <h2 class="page-tit">회원가입</h2> 
+       
+       <div>
+       	<form name="memberEnrollFrm" action="${ pageContext.request.contextPath }/member/enroll" method="post">
+            <table class="tbl-enroll">
+                <tr>
+                    <th style="width: 100px">아이디</th>
+                    <td style="width: 150px;">
+                    	<input type="text" name="userId" id="newId" placeholder="내용을 입력해주세요" required>
                     </td>
-                    <td></td>
-                   
+                    <td>
+                    	<input type="button" id="checkDuplicate" value="중복검사" >
+                    </td>
                 </tr>
-	            </table>
-            </form>
-        </div>
-    </div>
-</section>
+                <tr>
+                    <th>비밀번호</th>
+                    <td>
+                    	<input type="password" name="userPwd" id="pass1" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인</th>
+                    <td>
+                    	<input type="password" id="pass2" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <td>
+                    	<input type="text" name="userName" id="" placeholder="내용을 입력해주세요" required>
+                    </td>
+                </tr>	                
+                <tr>
+                   	<th>휴대폰</th>
+                   	<td>
+                   		<input type="tel" name="phone" id="phone" maxlength="11" placeholder="(-없이)01012345678" required>
+                   	</td>
+               	</tr>
+               	<tr>
+                   	<th>주소</th>
+                   	<td><input type="text" name="address" id="address"></td>
+               	</tr> 
+                <tr>
+                    <th>이메일</th>
+                    <td><input type="email" name="email" id="email" placeholder="abc@abc.com"></td>
+                </tr>
+               </tr>
+            </table>
+			<input type="submit" id="enrollSubmit" value="회원가입">
+				
+           </form>
+       </div>
+	</div>
+</div>
+
 <script>
 	// 아이디 중복 확인
 	$(document).ready(() => {

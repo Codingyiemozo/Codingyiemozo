@@ -77,7 +77,7 @@
 <div class="container">
 	<div class="contents">
 		<br>
-        <h2 class="page-tit">마이 플래너</h1>
+        <h2 class="page-tit">마이 플래너</h2>
 		<br>
 		<hr>
 		<br>
@@ -245,7 +245,7 @@
     <tr>
       <td align="center">
   
-      <input type="submit" name="button" value="입력 확인" onClick="frmCheck();">
+      <input type="submit" name="button" value="입력 확인">
       </td>
     </tr>
  </table>
